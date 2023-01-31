@@ -1,0 +1,58 @@
+/* селектор {
+    свойство: значение;
+    свойство: значение;
+    свойство: значение;
+    свойство: значение;
+} */
+html {
+    font-size: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    color: red;       /*  цвет */
+    text-align: center ;  /* выровнять текст */
+    font-weight: 900;     /* жирность текста */
+    font-style: italic;  /* стиль текста наклонный */
+    text-decoration: underline; /* подчеркнуть текст */
+  /*   text-decoration: line-through; */    /* зачеркнуть текст */
+    font-size: 30px;      /*  размер шрифта в пикселях */
+    text-transform: uppercase;   /* трансформирует текст в верхний регистр */
+} 
+
+h3 {
+    text-align:center ;
+}
+
+nav {
+    /* position: relative;
+    left: 200px;
+    top:130px ;
+    bottom:120px ; */
+}
+
+.chapter {
+    color: blue;
+}
+
+#begin {
+    color: orange;
+    font-weight:900;
+}
+
+.box {
+    height: 300px; /*  высота */
+    width: 300px;   /* ширина */
+    background-color: green;
+    padding: 20px;
+    border: 3px solid pink;
+    margin: 20px;
+    
+}   
+.big-font {
+    font-size: 1.5rem;
+}
+   
