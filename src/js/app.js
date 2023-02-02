@@ -282,3 +282,27 @@ countPeople([
 
 // const input = [0, 0, 4, 6, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // console.log(setReducer(input));
+
+function setReducer(input) {
+	const newArr = [];
+	let count = 1;
+	let num = 1;
+	for (let i = 0; i < input.length; i++) {
+		if (input[i] !== input[i + 1]) {
+			newArr.push(num);
+		} else {
+			for (let c = i + 1; input[i] === input[c]; c++) {
+				console.log("IIIIII",input[i]);
+				console.log("CCCCCCCCCCCCCC",input[c]);
+				count = count + 1;
+				console.log('count_________', count);
+			}
+			newArr.push(count);
+			count = 1;
+		}
+	}
+	console.log('=========', newArr);
+}
+
+const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
+console.log(setReducer(input));
