@@ -341,3 +341,33 @@ countPeople([
 
 // console.log(minMinMax([-23, -22, -1, 4, 5, 24])); //[-23, -22, 24])
 // console.log(minMinMax([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+function cupAndBalls(b, arr) {
+	let pos = b;
+
+	for (let i = 0; i < arr.length; i++) {
+		
+		const man = arr[i];
+		const index = man.indexOf(pos);
+		
+		
+		if (index === 0) {
+			pos = man[1];
+		}
+		if (index === 1) {
+			pos = man[0];
+		}
+	}
+
+	return pos;
+}
+
+console.log(
+	'oooo',
+	cupAndBalls(2, [
+		[1, 3],
+		[1, 2],
+		[2, 1],
+		[2, 3],
+	])
+); ////           [3]
