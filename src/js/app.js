@@ -283,6 +283,7 @@ countPeople([
 // const input = [0, 0, 4, 6, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // console.log(setReducer(input));
 
+<<<<<<< HEAD
 function setReducer(input) {
 	const newArr = [];
 	let count = 1;
@@ -304,7 +305,93 @@ function setReducer(input) {
 		}
 	}
 	console.log('newArr', newArr);
+=======
+// function setReducer(input) {
+// 	const newArr = [];
+// 	let count = 1;
+// 	let num = 1;
+
+// 	for (let i = 0; i < input.length; i++) {
+
+// 		if (input[i] !== input[i + 1]) {
+// 			newArr.push(num);
+// 			console.log('#####',newArr);
+// 			console.log('i________________________________________________',i);
+// 		} else {
+
+// 			for (let c = i + 1; input[i] === input[c]; c++) {
+// 				console.log("IIIIII",input[i]);
+// 				console.log("CCCCCCCCCCCCCC",input[c]);
+// 				count = count + 1;
+// 				console.log('count_________', count);
+// 			}
+
+// 			newArr.push(count);
+// 			count = 1;
+// 		}
+
+// 	}
+// 	console.log('After=========', newArr);
+// }
+
+// const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
+// console.log(setReducer(input));
+// function largest(n,array) {
+// 	let res = [];
+// 	array.sort((a, b) => a - b);
+
+// 	res = array.slice(-n);
+// 	return res;
+// }
+
+// console.log(largest(0,[10,9,8,7,6,5,4,3,2,1])); // [9, 10];
+
+// function minMinMax(array) {
+// 	const min = Math.min.apply(null, array);
+// 	const res = [min];
+// 	const max = Math.max.apply(null, array);
+
+// 	for (let i = min + 1; i < max; i++) {
+// 		if (!array.some((el) => el === i)) {
+// 			res.push(i);
+// 			break;
+// 		}
+// 	}
+
+// 	res.push(max);
+// 	return res;
+// }
+
+// console.log(minMinMax([-23, -22, -1, 4, 5, 24])); //[-23, -22, 24])
+// console.log(minMinMax([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+function cupAndBalls(b, arr) {
+	let pos = b;
+
+	for (let i = 0; i < arr.length; i++) {
+		
+		const man = arr[i];
+		const index = man.indexOf(pos);
+		
+		
+		if (index === 0) {
+			pos = man[1];
+		}
+		if (index === 1) {
+			pos = man[0];
+		}
+	}
+
+	return pos;
+>>>>>>> 99e0bed267d1e2b78b8a1040e1ed1601b0a6b5f3
 }
 
-const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
-console.log(setReducer(input));
+console.log(
+	'oooo',
+	cupAndBalls(2, [
+		[1, 3],
+		[1, 2],
+		[2, 1],
+		[2, 3],
+	])
+); ////           [3]
