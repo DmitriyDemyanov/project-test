@@ -288,7 +288,7 @@ function setReducer(input) {
 	let count = 1;
 	for (let i = 0; i < input.length; i++) {
 		console.log(input[i]);
-		// если чило не равно следующему числу из списка то добавить к newArr единицу  newArr.push(1)
+		// econ чило не равно следующему числу из списка то добавить к newArr единицу  newArr.push(1)
 		// если чило  равно следующему числу из списка (input[i] === input[i + 1]), то вкл перебор второй(let c) и не добовлять к newArr единицу
 		for (let c = i + 1; input[c] === input[i]; c++) {
 			// а добавить число количеств повторений этого перебора  (count++;) и вконце обнулить счетчик
