@@ -346,11 +346,9 @@ function cupAndBalls(b, arr) {
 	let pos = b;
 
 	for (let i = 0; i < arr.length; i++) {
-		
 		const man = arr[i];
 		const index = man.indexOf(pos);
-		
-		
+
 		if (index === 0) {
 			pos = man[1];
 		}
@@ -371,3 +369,109 @@ console.log(
 		[2, 3],
 	])
 ); ////           [3]
+
+// function isSquare(arr) {
+// 	if (arr.length === 0) {
+// 		return undefined;
+// 	}
+// 	const newArr = []
+// 	for (let i = 0; i < arr.length; i++) {
+// 		newArr.push(Math.sqrt(arr[i]));
+
+// 	}
+
+// 	for (let i = 0; i < newArr.length; i++) {
+
+// 		if (!Number.isInteger(newArr[i])) {
+// 			return false;
+// 			}
+// 	}
+// 	return true;
+// }
+
+// console.log(isSquare([1, 4, 9, 16, 25, 36])); //, true;
+
+// Math.sqrt(16);
+//Number.isInteger()
+
+function isSquare(arr) {
+	if (arr.length === 0) {
+		return undefined;
+	}
+	const newArr = [];
+	for (let i = 0; i < arr.length; i++) {
+		newArr.push(Math.sqrt(arr[i]));
+		if (!Number.isInteger(newArr[i])) {
+			return false;
+		}
+	}
+	return true;
+}
+// console.log(isSquare([1, 4, 9, 16, 25, 36]));
+// console.log(
+// 	input([
+// 		['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// 		['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// 		['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// 		['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// 		['o', 'o', 'o', 'o', 'o', 'o', 'x', 'o'],
+// 		['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// 	])
+// );
+// [[], [], [], [], ['x'], []];
+// function input(arrays) {
+// 	const x = [];
+// 	let count = 0;
+// 	for (let i = 0; i < arrays.length; i++) {
+// 		x.push(
+// 			arrays[i].filter((el) => {
+// 				if (el === 'x') {
+// 					count++;
+// 				}
+// 				return el === 'x';
+// 			})
+// 		);
+// 	}
+
+// 	if (count !== 1) {
+// 		return [];
+// 	}
+
+// 	const yCoord = x.findIndex((el) => el.length);
+// 	const xCoord = arrays[yCoord].indexOf('x');
+
+// 	return [yCoord, xCoord];
+// }
+
+// function nthSmallest(arr, pos) {
+// 	const sort = arr.sort((a, b) => a - b);
+// 	console.log('SORT',sort);
+// 	return sort[pos -1];
+// }
+
+// console.log(nthSmallest([-102, -16, -1, -2, -367,8,11, -9], 5)); //, -2)
+
+function minSum(arr) {
+	const sortArr = arr.sort((a, b) => a - b);
+	let result = 0;
+	for (let i = 0; sortArr.length; i++) {
+		console.log('min: sort', sortArr[0]);
+		console.log('max: sort', sortArr[sortArr.length - 1]);
+		result += sortArr[0] * sortArr[sortArr.length - 1];
+		sortArr.pop();
+		sortArr.shift();
+	}
+	console.log(result);
+	return result;
+}
+
+function minSum2(arr) {
+	let res = 0;
+	const sorted = arr.sort((a, b) => a - b);
+	for (let i = 0; i < sorted.length / 2; i++) {
+		res += sorted[0] * sorted[sorted.length - (i + 1)];
+	}
+	return res;
+}
+
+console.log(minSum([12, 6, 10, 26, 3, 24])); //, 342));
