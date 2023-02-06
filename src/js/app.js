@@ -283,29 +283,6 @@ countPeople([
 // const input = [0, 0, 4, 6, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // console.log(setReducer(input));
 
-<<<<<<< HEAD
-function setReducer(input) {
-	const newArr = [];
-	let count = 1;
-	for (let i = 0; i < input.length; i++) {
-		console.log(input[i]);
-		// econ чило не равно следующему числу из списка то добавить к newArr единицу  newArr.push(1)
-		// если чило  равно следующему числу из списка (input[i] === input[i + 1]), то вкл перебор второй(let c) и не добовлять к newArr единицу
-		for (let c = i + 1; input[c] === input[i]; c++) {
-			// а добавить число количеств повторений этого перебора  (count++;) и вконце обнулить счетчик
-			console.log();
-			console.log('>>>>>input[c]', input[c]);
-			console.log('--------input[i]', input[i]); //разобраться как сделать перебор до кол-ва повторов чисел. Например 4ре восьмёрки 4ре повтора, а не шесть!
-			count++;
-			console.log('count+++', count);
-		}
-		if (count !== 1) {
-			newArr.push(count);
-			count = 1;
-		}
-	}
-	console.log('newArr', newArr);
-=======
 // function setReducer(input) {
 // 	const newArr = [];
 // 	let count = 1;
@@ -383,7 +360,6 @@ function cupAndBalls(b, arr) {
 	}
 
 	return pos;
->>>>>>> 99e0bed267d1e2b78b8a1040e1ed1601b0a6b5f3
 }
 
 console.log(
