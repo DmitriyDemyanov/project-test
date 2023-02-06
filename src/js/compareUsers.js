@@ -99,6 +99,6 @@ function compareUsers(u1, u2) {
 	console.log('U 2', u2);
 }
 
-console.log('User 1 vs User 2', compareUsers(user1, user2));
-console.log('User 2 vs User 3', compareUsers(user2, user3));
-console.log('User 3 vs User 4', compareUsers(user3, user4));
+// console.log('User 1 vs User 2', compareUsers(user1, user2));
+// console.log('User 2 vs User 3', compareUsers(user2, user3));
+// console.log('User 3 vs User 4', compareUsers(user3, user4));
