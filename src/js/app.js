@@ -529,17 +529,13 @@ console.log(setReducerHomeVersion(input));
 function fizzbuzz(n) {
 	const result = [];
 	console.log('n', n);
-	for (let i = 1; i <= n ; ++i) {
+	for (let i = 1; i <= n; ++i) {
 		if (i % 5 === 0 && i % 3 === 0) {
 			console.log('i % 5 && i % 3', i % 5 && i % 3);
 			result.push('FizzBuzz');
-		}
-
-		else if (i % 5 === 0) {
+		} else if (i % 5 === 0) {
 			result.push('Buzz');
-		}
-
-		else if (i % 3 === 0) {
+		} else if (i % 3 === 0) {
 			result.push('Fizz');
 		} else {
 			result.push(i);
@@ -549,7 +545,7 @@ function fizzbuzz(n) {
 	return result;
 }
 
- console.log(fizzbuzz(10));
+console.log(fizzbuzz(10));
 
 // function pairZeros(arr) {
 // 	const result = [];
@@ -570,3 +566,43 @@ function fizzbuzz(n) {
 // }
 
 // console.log(pairZeros([1, 0, 1, 0, 2, 0, 0, 3, 0])); /// [1, 0, 1, 2, 0, 3, 0])
+// function toNumberArray(stringarray) {
+// 	const res = [];
+// 	for (let i = 0; i < stringarray.length; i++) {
+// 		console.log(stringarray[i]);
+// 		res.push(stringarray[i] * 1);
+// 	}
+// 	console.log(res);
+// 	return res
+// }
+// console.log(toNumberArray(["1.1","2.2","3.3"]))// [1.1,2.2,3.3]);
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function howManyGifts(maxBudget, gifts) {
+// 	const arr = gifts.sort((a,b) => a - b);
+// 	let res = 0;
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (res + arr[i] > maxBudget) {
+// 			return i
+// 		} else {
+// 			res = res + arr[i];
+// 		}
+// 	}
+
+// 	return arr.length
+// }
+// console.log(howManyGifts(20, [4, 2, 4, 6, 1])); //, 4);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function flyBy(lamps, drone) {
+// 	let arrayLamps = lamps.split('');
+// 	let length = drone.length;
+// 	if (drone.length > lamps.length) {
+// 		length = lamps.length;
+// 	}
+// 	for (let i = 0; i < length; i++) {
+// 		arrayLamps.splice(i, 1, 'o');
+// 	}
+// 	return arrayLamps.join('');
+// }
+// console.log(flyBy('x','=T')); //, 'oooxxxxxx');)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
