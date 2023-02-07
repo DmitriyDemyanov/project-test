@@ -478,24 +478,33 @@ countPeople([
 
 function setReducerHomeVersion(input) {
 	const newArr = [];
-	let count = 1;
+
 	for (let i = 0; i < input.length; i++) {
-		console.log('input[i]', input[i]);
-		console.log('input[i + 1]', input[i + 1]);
-		console.log('________________________________________');
+		let count = 1;
+
 		if (input[i] === input[i + 1]) {
-			/////////////////////////////////////////////////////////////////////////////////// проверку чтоб попадала один раз
-			for (let c = i + 1; input[c] === input[i]; c++) {
-				console.log('TTTTTTTTT');
-				count++;
+			count++;
+			// i = 5, c = 6, count = 2
+			// i = 5, c = 7, count = 3
+			// i = 5, c = 8, count = 4
+			for (let c = i + 1; c < input.length; c++) {
+				if (input[c] === input[c + 1]) {
+					count++;
+				} else {
+					i = c;
+					c = input.length;
+				}
 			}
-			newArr.push(count);
-			count = 1;
-		} else {
-			newArr.push(1);
 		}
+
+		newArr.push(count);
 	}
-	return newArr;
+
+	if (newArr.length > 1) {
+		return setReducerHomeVersion(newArr);
+	} else {
+		return newArr[0];
+	}
 }
 const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 console.log(setReducerHomeVersion(input));
@@ -516,3 +525,48 @@ console.log(setReducerHomeVersion(input));
 // 	}, []);
 // 	console.log('ACC::::::', newArr);
 // }
+
+function fizzbuzz(n) {
+	const result = [];
+	console.log('n', n);
+	for (let i = 1; i <= n ; ++i) {
+		if (i % 5 === 0 && i % 3 === 0) {
+			console.log('i % 5 && i % 3', i % 5 && i % 3);
+			result.push('FizzBuzz');
+		}
+
+		else if (i % 5 === 0) {
+			result.push('Buzz');
+		}
+
+		else if (i % 3 === 0) {
+			result.push('Fizz');
+		} else {
+			result.push(i);
+		}
+	}
+	// result.pop()
+	return result;
+}
+
+ console.log(fizzbuzz(10));
+
+// function pairZeros(arr) {
+// 	const result = [];
+// 	let flag = true;
+
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (arr[i] === 0 && flag === true) {
+// 			result.push(arr[i]);
+// 			flag = false;
+// 		} else if (arr[i] === 0 && flag === false) {
+// 			flag = true;
+// 		} else {
+// 			result.push(arr[i]);
+// 		}
+// 	}
+
+// 	return result;
+// }
+
+// console.log(pairZeros([1, 0, 1, 0, 2, 0, 0, 3, 0])); /// [1, 0, 1, 2, 0, 3, 0])
