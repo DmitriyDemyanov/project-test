@@ -545,7 +545,7 @@ function fizzbuzz(n) {
 	return result;
 }
 
-console.log(fizzbuzz(10));
+// console.log(fizzbuzz(10));
 
 // function pairZeros(arr) {
 // 	const result = [];
@@ -566,6 +566,7 @@ console.log(fizzbuzz(10));
 // }
 
 // console.log(pairZeros([1, 0, 1, 0, 2, 0, 0, 3, 0])); /// [1, 0, 1, 2, 0, 3, 0])
+
 // function toNumberArray(stringarray) {
 // 	const res = [];
 // 	for (let i = 0; i < stringarray.length; i++) {
@@ -576,21 +577,22 @@ console.log(fizzbuzz(10));
 // 	return res
 // }
 // console.log(toNumberArray(["1.1","2.2","3.3"]))// [1.1,2.2,3.3]);
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// function howManyGifts(maxBudget, gifts) {
-// 	const arr = gifts.sort((a,b) => a - b);
-// 	let res = 0;
-// 	for (let i = 0; i < arr.length; i++) {
-// 		if (res + arr[i] > maxBudget) {
-// 			return i
-// 		} else {
-// 			res = res + arr[i];
-// 		}
-// 	}
 
-// 	return arr.length
-// }
-// console.log(howManyGifts(20, [4, 2, 4, 6, 1])); //, 4);)
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//function howManyGifts(maxBudget, gifts) {
+//	const arr = gifts.sort((a,b) => a - b);
+//	let res = 0;
+//	for (let i = 0; i < arr.length; i++) {
+//		if (res + arr[i] > maxBudget) {
+//			return i
+//		} else {
+//			res = res + arr[i];
+//		}
+//	}
+//
+//	return arr.length
+//}
+//console.log(howManyGifts(20, [4, 2, 4, 6,13, 1])); //, 4);)
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function flyBy(lamps, drone) {
@@ -606,3 +608,34 @@ console.log(fizzbuzz(10));
 // }
 // console.log(flyBy('x','=T')); //, 'oooxxxxxx');)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function search(budget,prices) {
+// 	const newArr = prices.reduce((acc,el) => {
+// 		if (el <= budget) {
+// 			acc.push(el);
+// 		}
+// 		return acc.sort((a,b) => a - b)
+// 	},[]);
+// 	return newArr.join(',');
+// }
+// console.log(search(14, [7, 3, 23, 9, 14, 20, 7])); // "3,7,7,9,14"));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function partlist(arr) {
+// 	const result = [];
+// 	for (let i = 0; i < arr.length - 1; i++) {
+// 		let el1 = arr.slice(0, i + 1).join(' ');
+// 		let el2 = arr.slice(i + 1).join(' ');
+// 		let res = [el1, el2];
+// 		result.push(res);
+// 	}
+// 	return result;
+// }
+
+// console.log(partlist(['I', 'wish', 'I', "hadn't", 'come'])); //  [["cdIw", "tzIy xDu rThG"], ["cdIw tzIy", "xDu rThG"], ["cdIw tzIy xDu", "rThG"]])
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function isSortedAndHow(array) {}
+
+console.log(isSortedAndHow([15, 7, 3, -8])); //, 'yes, descending');
