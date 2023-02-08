@@ -507,7 +507,7 @@ function setReducerHomeVersion(input) {
 	}
 }
 const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
-console.log(setReducerHomeVersion(input));
+// console.log(setReducerHomeVersion(input));
 
 // function setReducerHomeVersion(input) {
 // 	let newArr = [];
@@ -636,6 +636,72 @@ function fizzbuzz(n) {
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function isSortedAndHow(array) {}
+// function isSortedAndHow(array) {
+// 	let flagDes = true;
+// 	let flagInc = true;
+// 	let numDes = array[0];
+// 	let numInc = array[0];
+// 	for (let i = 1; i < array.length; i++) {
+// 		if (numDes <= array[i]) {
+// 			numDes = array[i];
+// 		} else if (numDes > array[i]) {
+// 			flagDes = false;
+// 		}
+// 		if (numInc >= array[i]) {
+// 			numInc = array[i];
+// 		} else if (numInc < array[i]) {
+// 			flagInc = false;
+// 		}
+// 		if (flagInc === false && flagDes === false) {
+// 			return 'no';
+// 		}
+// 	}
+// 	return flagDes ? 'yes, ascending' : 'yes, descending';
+// }
 
-console.log(isSortedAndHow([15, 7, 3, -8])); //, 'yes, descending');
+// console.log(isSortedAndHow([1, 2, 3, 4, 5, 6, 7, 8, 9])); //, 'yes, descending');
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function array(array) {
+// 	const newArray = [];
+// 	 for (let i = 0; i < array.length; i++) {
+// 		 newArray.push(`${i + 1}: ${array[i]}`);
+// 	}
+// 	return newArray;
+//  };
+
+// console.log(array(['a','b','c'])); //, ['1: a', '2: b', '3: c'];
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function sortByLength(array) {
+// 	const newArray = array[0];
+// 	console.log('array===',array)
+// 	for (let i = 0; i < array.length; i++) {
+// 		for (let c = i + 1; c < array.length; c++) {
+
+// 			console.log(' i:::::', array[i].length);
+// 			console.log('let c===', array[c].length);
+// 				if(newArray)
+
+// 		}
+// 	}
+// 	return newArray;
+// }
+// console.log(sortByLength(['Beg', 'Life', 'I', 'To'])); //, ['I', 'To', 'Beg', 'Life'];
+//Sort array by string length
+//----------------------------------------------------------------------------------------------------------
+
+function isFlush(cards) {
+	let res = [];
+	for (let i = 0; i < cards.length; i++) {
+		console.log(cards[i].slice(-1));
+		res.push(cards[i].slice(-1));
+	}
+	console.log('res=====', res);
+	const result = res.filter((el) => el === res[0]).length;
+	console.log('result::', result);
+
+	return result === cards.length;
+}
+
+console.log(isFlush(['10D', '4D', 'QD', 'KD', '5D'])); //true );)
