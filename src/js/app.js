@@ -695,59 +695,70 @@ function fizzbuzz(n) {
 
 // console.log(isFlush(['10D','4D','QD','KD','5D'])); //true );)
 
-function formatDuration(seconds) {
-	if (seconds === 0) {
-		return 'now';
-	}
+// function formatDuration(seconds) {
+// 	if (seconds === 0) {
+// 		return 'now';
+// 	}
 
-	let res = [];
-	let date = '';
-	const days = Math.floor(seconds / 86400);
-	console.log('DAYS:',days);
-	
-	const hour = Math.floor((seconds % days) / 3600); ;
-	console.log('hour:', hour);
-	const sec = Math.floor((seconds % 3600) % 60);
-	console.log('sec:',Math.round(sec));
-	
-	const min = Math.floor((seconds % 3600) / 60);
-	console.log('min:', Math.round(min));
+// 	let res = [];
+// 	let date = '';
+// 	const days = Math.floor(seconds / 86400);
+// 	console.log('DAYS:',days);
 
+// 	const hour = Math.floor((seconds % days) / 3600); ;
+// 	console.log('hour:', hour);
+// 	const sec = Math.floor((seconds % 3600) % 60);
+// 	console.log('sec:',Math.round(sec));
 
-	if (days) {
-		res.push(`${days} ${convert(days, 'day')}`);
-	}
-	if (hour) {
-		res.push(`${hour} ${convert(hour, 'hour')}`);
-	}
-	if (min) {
-		res.push(`${min} ${convert(min, 'minute')}`);
-	}
+// 	const min = Math.floor((seconds % 3600) / 60);
+// 	console.log('min:', Math.round(min));
 
-	if (sec) {
-		res.push(`${sec} ${convert(sec, 'second')}`);
-	} else if (!sec) {
-		return (date = res.join(', '));
-	}
+// 	if (days) {
+// 		res.push(`${days} ${convert(days, 'day')}`);
+// 	}
+// 	if (hour) {
+// 		res.push(`${hour} ${convert(hour, 'hour')}`);
+// 	}
+// 	if (min) {
+// 		res.push(`${min} ${convert(min, 'minute')}`);
+// 	}
 
-	let ind = res.join(', ').lastIndexOf(',');
-	date = res.join(', ');
-	let startStr = date.slice(0, ind); 
-	let finishStr = date.slice(ind + 1);
-	console.log('DATE:',date);
-	console.log('Ind:',ind);
-	console.log('startStr:',startStr);
-	console.log('finishStr:', finishStr);
-	
-	return `${startStr} and ${finishStr}`;
+// 	if (sec) {
+// 		res.push(`${sec} ${convert(sec, 'second')}`);
+// 	} else if (!sec) {
+// 		return (date = res.join(','));
+// 	}
+
+// 	let ind = res.join(', ').lastIndexOf(',');
+// 	date = res.join(', ');
+// 	let startStr = date.slice(0, ind);
+// 	let finishStr = date.slice(ind + 1);
+// 	console.log('DATE:',date);
+// 	console.log('Ind:',ind);
+// 	console.log('startStr:',startStr);
+// 	console.log('finishStr:', finishStr);
+
+// 	return `${startStr} and${finishStr}`;
+// }
+
+// function convert(time, str) {
+// 	if (time !== 1) {
+// 		return `${str}s`;
+// 	}
+// 	return str;
+// }
+
+// console.log(formatDuration(1433669)); // "1 hour, 1 minute and 2 seconds");)
+//----------------------------------------------------------------------------------------------
+
+function last(x) {
+	return x.split(' ').sort((a, b) => {
+		console.log('AAA:', a[a.length - 1]);
+		console.log('BBB:', b[b.length - 1]);
+		a[a.length - 1] - b[b.length - 1];
+	});
 }
 
-function convert(time, str) {
-	if (time !== 1) {
-		return `${str}s`;
-	}
-	return str;
-}
+console.log('>>>>>>>>>>>', last('take me to semynak')); // ['take', 'me', 'semynak', 'tot']);)
 
-console.log(formatDuration(1433669)); // "1 hour, 1 minute and 2 seconds");)
-
+//-----------------------------------------------------------------------------------------------
