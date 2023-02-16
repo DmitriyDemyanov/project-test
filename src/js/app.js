@@ -702,16 +702,21 @@ function formatDuration(seconds) {
 
 	let res = [];
 	let date = '';
-
-	const hour = Math.floor(seconds / 3600);
+	const days = Math.floor(seconds / 86400);
+	console.log('DAYS:',days);
+	
+	const hour = Math.floor((seconds % days) / 3600); ;
 	console.log('hour:', hour);
-
+	const sec = Math.floor((seconds % 3600) % 60);
+	console.log('sec:',Math.round(sec));
+	
 	const min = Math.floor((seconds % 3600) / 60);
 	console.log('min:', Math.round(min));
 
-	const sec = Math.floor((seconds % 3600) % 60);
-	console.log('sec:', Math.round(sec));
 
+	if (days) {
+		res.push(`${days} ${convert(days, 'day')}`);
+	}
 	if (hour) {
 		res.push(`${hour} ${convert(hour, 'hour')}`);
 	}
@@ -727,10 +732,14 @@ function formatDuration(seconds) {
 
 	let ind = res.join(', ').lastIndexOf(',');
 	date = res.join(', ');
+	let startStr = date.slice(0, ind); 
+	let finishStr = date.slice(ind + 1);
 	console.log('DATE:',date);
-	console.log('Ind:', ind);
+	console.log('Ind:',ind);
+	console.log('startStr:',startStr);
+	console.log('finishStr:', finishStr);
 	
-	// return res;
+	return `${startStr} and ${finishStr}`;
 }
 
 function convert(time, str) {
@@ -740,4 +749,5 @@ function convert(time, str) {
 	return str;
 }
 
-console.log(formatDuration(33669)); // "1 hour, 1 minute and 2 seconds");)
+console.log(formatDuration(1433669)); // "1 hour, 1 minute and 2 seconds");)
+
