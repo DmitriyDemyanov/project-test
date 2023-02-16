@@ -673,35 +673,71 @@ function fizzbuzz(n) {
 // console.log(array(['a','b','c'])); //, ['1: a', '2: b', '3: c'];
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// function sortByLength(array) {
-// 	const newArray = array[0];
-// 	console.log('array===',array)
-// 	for (let i = 0; i < array.length; i++) {
-// 		for (let c = i + 1; c < array.length; c++) {
-
-// 			console.log(' i:::::', array[i].length);
-// 			console.log('let c===', array[c].length);
-// 				if(newArray)
-
-// 		}
-// 	}
-// 	return newArray;
+// function sortByLength(input) {
+// 	return input.sort((a, b) => a.length - b.length);
 // }
-// console.log(sortByLength(['Beg', 'Life', 'I', 'To'])); //, ['I', 'To', 'Beg', 'Life'];
-//Sort array by string length
-//----------------------------------------------------------------------------------------------------------
+// console.log('sortByLength:', sortByLength(['Beg', 'Life', 'I', 'To'])); //, ['I', 'To', 'Beg', 'Life'];
+// // Sort array by string length
+// //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function isFlush(cards) {
-	let res = [];
-	for (let i = 0; i < cards.length; i++) {
-		console.log(cards[i].slice(-1));
-		res.push(cards[i].slice(-1));
+// function isFlush(cards) {
+// 	let res = [];
+// 	for (let i = 0; i < cards.length; i++) {
+// 		console.log(cards[i].slice(-1));
+// 		res.push(cards[i].slice(-1));
+// 	}
+// 	console.log('res=====', res);
+// 	const result = res.filter((el) => el === res[0]).length;
+// 	console.log('result::', result);
+
+// 	return result === cards.length;
+// }
+
+// console.log(isFlush(['10D','4D','QD','KD','5D'])); //true );)
+
+function formatDuration(seconds) {
+	if (seconds === 0) {
+		return 'now';
 	}
-	console.log('res=====', res);
-	const result = res.filter((el) => el === res[0]).length;
-	console.log('result::', result);
 
-	return result === cards.length;
+	let res = [];
+	let date = '';
+
+	const hour = Math.floor(seconds / 3600);
+	console.log('hour:', hour);
+
+	const min = Math.floor((seconds % 3600) / 60);
+	console.log('min:', Math.round(min));
+
+	const sec = Math.floor((seconds % 3600) % 60);
+	console.log('sec:', Math.round(sec));
+
+	if (hour) {
+		res.push(`${hour} ${convert(hour, 'hour')}`);
+	}
+	if (min) {
+		res.push(`${min} ${convert(min, 'minute')}`);
+	}
+
+	if (sec) {
+		res.push(`${sec} ${convert(sec, 'second')}`);
+	} else if (!sec) {
+		return (date = res.join(', '));
+	}
+
+	let ind = res.join(', ').lastIndexOf(',');
+	date = res.join(', ');
+	console.log('DATE:',date);
+	console.log('Ind:', ind);
+	
+	// return res;
 }
 
-console.log(isFlush(['10D', '4D', 'QD', 'KD', '5D'])); //true );)
+function convert(time, str) {
+	if (time !== 1) {
+		return `${str}s`;
+	}
+	return str;
+}
+
+console.log(formatDuration(33669)); // "1 hour, 1 minute and 2 seconds");)
