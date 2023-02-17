@@ -526,23 +526,23 @@ const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // 	console.log('ACC::::::', newArr);
 // }
 
-function fizzbuzz(n) {
-	const result = [];
-	console.log('n', n);
-	for (let i = 1; i <= n; ++i) {
-		if (i % 5 === 0 && i % 3 === 0) {
-			console.log('i % 5 && i % 3', i % 5 && i % 3);
-			result.push('FizzBuzz');
-		} else if (i % 5 === 0) {
-			result.push('Buzz');
-		} else if (i % 3 === 0) {
-			result.push('Fizz');
-		} else {
-			result.push(i);
-		}
-	}
-	// result.pop()
-	return result;
+// function fizzbuzz(n) {
+// 	const result = [];
+// 	console.log('n', n);
+// 	for (let i = 1; i <= n; ++i) {
+// 		if (i % 5 === 0 && i % 3 === 0) {
+// 			console.log('i % 5 && i % 3', i % 5 && i % 3);
+// 			result.push('FizzBuzz');
+// 		} else if (i % 5 === 0) {
+// 			result.push('Buzz');
+// 		} else if (i % 3 === 0) {
+// 			result.push('Fizz');
+// 		} else {
+// 			result.push(i);
+// 		}
+// 	}
+// 	// result.pop()
+// 	return result;
 }
 
 // console.log(fizzbuzz(10));
@@ -680,85 +680,190 @@ function fizzbuzz(n) {
 // // Sort array by string length
 // //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// function isFlush(cards) {
-// 	let res = [];
-// 	for (let i = 0; i < cards.length; i++) {
-// 		console.log(cards[i].slice(-1));
-// 		res.push(cards[i].slice(-1));
-// 	}
-// 	console.log('res=====', res);
-// 	const result = res.filter((el) => el === res[0]).length;
-// 	console.log('result::', result);
+function isFlush(cards) {
+	let res = [];
+	for (let i = 0; i < cards.length; i++) {
+		console.log(cards[i].slice(-1));
+		res.push(cards[i].slice(-1));
+	}
+	console.log('res=====', res);
+	const result = res.filter((el) => el === res[0]).length;
+	console.log('result::', result);
 
-// 	return result === cards.length;
-// }
-
-// console.log(isFlush(['10D','4D','QD','KD','5D'])); //true );)
-
-// function formatDuration(seconds) {
-// 	if (seconds === 0) {
-// 		return 'now';
-// 	}
-
-// 	let res = [];
-// 	let date = '';
-// 	const days = Math.floor(seconds / 86400);
-// 	console.log('DAYS:',days);
-
-// 	const hour = Math.floor((seconds % days) / 3600); ;
-// 	console.log('hour:', hour);
-// 	const sec = Math.floor((seconds % 3600) % 60);
-// 	console.log('sec:',Math.round(sec));
-
-// 	const min = Math.floor((seconds % 3600) / 60);
-// 	console.log('min:', Math.round(min));
-
-// 	if (days) {
-// 		res.push(`${days} ${convert(days, 'day')}`);
-// 	}
-// 	if (hour) {
-// 		res.push(`${hour} ${convert(hour, 'hour')}`);
-// 	}
-// 	if (min) {
-// 		res.push(`${min} ${convert(min, 'minute')}`);
-// 	}
-
-// 	if (sec) {
-// 		res.push(`${sec} ${convert(sec, 'second')}`);
-// 	} else if (!sec) {
-// 		return (date = res.join(','));
-// 	}
-
-// 	let ind = res.join(', ').lastIndexOf(',');
-// 	date = res.join(', ');
-// 	let startStr = date.slice(0, ind);
-// 	let finishStr = date.slice(ind + 1);
-// 	console.log('DATE:',date);
-// 	console.log('Ind:',ind);
-// 	console.log('startStr:',startStr);
-// 	console.log('finishStr:', finishStr);
-
-// 	return `${startStr} and${finishStr}`;
-// }
-
-// function convert(time, str) {
-// 	if (time !== 1) {
-// 		return `${str}s`;
-// 	}
-// 	return str;
-// }
-
-// console.log(formatDuration(1433669)); // "1 hour, 1 minute and 2 seconds");)
-//----------------------------------------------------------------------------------------------
-
-function last(x) {
-	return x.split(' ').sort((a, b) => {
-		console.log('AAA:', a[a.length - 1]);
-		console.log('BBB:', b[b.length - 1]);
-		a[a.length - 1] - b[b.length - 1];
-	});
+	return result === cards.length;
 }
 
-console.log('>>>>>>>>>>>', last('take me to semynak')); // ['take', 'me', 'semynak', 'tot']);)
+console.log(isFlush(['10D','4D','QD','KD','5D'])); //true );)
 
-//-----------------------------------------------------------------------------------------------
+function formatDuration(seconds) {
+	if (seconds === 0) {
+		return 'now';
+	}
+	if (seconds === 1) {
+		return '1 second';
+	}
+
+	let res = [];
+	let date = '';
+
+	const years = Math.floor(seconds / (60 * 60 * 24 * 365));
+	console.log('YEARS:', years);
+
+	seconds -= years * (60 * 60 * 24 * 365);
+
+	const days = Math.floor(seconds / (60 * 60 * 24));
+	console.log('DAYS:', days);
+
+	seconds -= days * (60 * 60 * 24);
+
+	const hour = Math.floor(seconds / (60 * 60));
+	console.log('hour:', hour);
+
+	seconds -= hour * (60 * 60);
+
+	const min = Math.floor(seconds / 60);
+	console.log('min:', Math.round(min));
+
+	seconds -= min * 60;
+
+	const sec = Math.floor(seconds % 60);
+	console.log('sec:', Math.round(sec));
+
+	if (years) {
+		res.push(`${years} ${convert(years, 'year')}`);
+	}
+	if (days) {
+		res.push(`${days} ${convert(days, 'day')}`);
+	}
+	if (hour) {
+		res.push(`${hour} ${convert(hour, 'hour')}`);
+	}
+	if (min) {
+		res.push(`${min} ${convert(min, 'minute')}`);
+	}
+
+	if (sec) {
+		res.push(`and ${sec} ${convert(sec, 'second')}`);
+	} else if (!sec) {
+		return (date = res.join(','));
+	}
+
+	let ind = res.join(', ').lastIndexOf(',');
+	date = res.join(', ');
+	let startStr = date.slice(0, ind);
+	let finishStr = date.slice(ind + 1);
+	console.log('DATE:', date);
+	console.log('Ind:', ind);
+	console.log('startStr:', startStr);
+	console.log('finishStr:', finishStr);
+
+	return `${startStr} ${finishStr}`;
+}
+
+function convert(time, str) {
+	if (time !== 1) {
+		return `${str}s`;
+	}
+	return str;
+}
+
+console.log(formatDuration(653734521)); // "1 hour, 1 minute and 2 seconds");)
+//Human readable duration format
+//----------------------------------------------------------------------------------------------
+
+// function last(x) {
+// 	return x.split(' ').sort((a, b) => {
+// 		if (a[a.length - 1] > b[b.length - 1]) {
+// 			return 1;
+// 		}
+// 		if (a[a.length - 1] < b[b.length - 1]) {
+// 			return -1;
+// 		}
+// 		return 0;
+// 	});
+// }
+
+// console.log('>>>>>>>>>>>', last('take me to semynak')); // ['take', 'me', 'semynak', 'tot']);)
+//----------------------------------------------------------------------------------------------------
+
+// function sumOfMinimums(arr) {
+// 	return arr.reduce(
+// 		(acc, current) => (acc += Math.min.apply(null, current)),
+// 		0
+// 	);
+// }
+
+// console.log(
+// 	sumOfMinimums([
+// 		[7, 9, 8, 6, 2],
+// 		[6, 3, 5, 4, 3],
+// 		[5, 8, 7, 4, 5],
+// 	])
+// ); // 9));)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Object.defineProperty(Array.prototype, 'numberOfOccurrences', {
+// 	value: function numberOfOccurrences(element) {
+// 		return this.filter((el) => el === element).length;
+// 	},
+// });
+
+// const myArr = [5,8,7,4,5];
+// console.log('<>',[7,9,8,6,2,7].numberOfOccurrences(7));
+// [6,3,5,4,3].numberOfOccurrences(6);
+// myArr.numberOfOccurrences(5);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function convertHashToArray(hash) {
+// 	return Object.entries(hash).sort((a,b) => {
+// 		if (a[0] > b[0]) {
+// 			return 1;
+// 		}
+// 		if (a[0] < b[0]) {
+// 			return -1;
+// 		}
+// 		return 0
+// 	});
+	
+// }
+
+// console.log(
+// 	convertHashToArray({name: 'Jeremy', age: 24, role: 'Software Engineer'})
+// ); //[["age", 24], ["name", "Jeremy"], ["role", "Software Engineer"]]))
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ entries
+
+
+// function rowSumOddNumbers(n) {
+// 	let index = n * (n - 1) - 1;
+// 	let res = index + 1;
+// 	for (let i = 0; i < n; i++) {
+// 		res += index + 2;
+// 	}
+// 	return res
+// };
+
+// console.log(rowSumOddNumbers(42));// 74088));
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function array(array) {
+	
+// 	 const res = array.reduce((acc,current) => {
+// 		 if (Array.isArray(current)) {
+// 			 console.log('Current:',current)
+// 			 console.log('ACC:',acc);
+// 			current.map((el) => acc.push(el));
+// 			console.log(acc);
+// 			return acc;
+// 		} else {
+// 			 acc.push(current);
+// 			 return acc;
+// 		}
+// 	}
+		
+// 		,[])
+// 	return res
+// }
+
+
+// console.log(array([7,[1,2,3],["a","b","c"],[1,2,3]])); // [1, 2, 3, "a", "b", "c", 1, 2, 3]);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
