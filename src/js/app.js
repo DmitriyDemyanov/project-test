@@ -476,37 +476,37 @@ countPeople([
 
 // console.log(minSum([12, 6, 10, 26, 3, 24])); //, 342));
 
-function setReducerHomeVersion(input) {
-	const newArr = [];
+// function setReducerHomeVersion(input) {
+// 	const newArr = [];
 
-	for (let i = 0; i < input.length; i++) {
-		let count = 1;
+// 	for (let i = 0; i < input.length; i++) {
+// 		let count = 1;
 
-		if (input[i] === input[i + 1]) {
-			count++;
-			// i = 5, c = 6, count = 2
-			// i = 5, c = 7, count = 3
-			// i = 5, c = 8, count = 4
-			for (let c = i + 1; c < input.length; c++) {
-				if (input[c] === input[c + 1]) {
-					count++;
-				} else {
-					i = c;
-					c = input.length;
-				}
-			}
-		}
+// 		if (input[i] === input[i + 1]) {
+// 			count++;
+// 			// i = 5, c = 6, count = 2
+// 			// i = 5, c = 7, count = 3
+// 			// i = 5, c = 8, count = 4
+// 			for (let c = i + 1; c < input.length; c++) {
+// 				if (input[c] === input[c + 1]) {
+// 					count++;
+// 				} else {
+// 					i = c;
+// 					c = input.length;
+// 				}
+// 			}
+// 		}
 
-		newArr.push(count);
-	}
+// 		newArr.push(count);
+// 	}
 
-	if (newArr.length > 1) {
-		return setReducerHomeVersion(newArr);
-	} else {
-		return newArr[0];
-	}
-}
-const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
+// 	if (newArr.length > 1) {
+// 		return setReducerHomeVersion(newArr);
+// 	} else {
+// 		return newArr[0];
+// 	}
+// }
+// const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // console.log(setReducerHomeVersion(input));
 
 // function setReducerHomeVersion(input) {
@@ -543,7 +543,7 @@ const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // 	}
 // 	// result.pop()
 // 	return result;
-}
+// }
 
 // console.log(fizzbuzz(10));
 
@@ -680,94 +680,93 @@ const input = [0, 4, 0, 4, 6, 8, 8, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // // Sort array by string length
 // //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function isFlush(cards) {
-	let res = [];
-	for (let i = 0; i < cards.length; i++) {
-		console.log(cards[i].slice(-1));
-		res.push(cards[i].slice(-1));
-	}
-	console.log('res=====', res);
-	const result = res.filter((el) => el === res[0]).length;
-	console.log('result::', result);
+// function isFlush(cards) {
+// 	let res = [];
+// 	for (let i = 0; i < cards.length; i++) {
+// 		console.log(cards[i].slice(-1));
+// 		res.push(cards[i].slice(-1));
+// 	}
+// 	console.log('res=====', res);
+// 	const result = res.filter((el) => el === res[0]).length;
+// 	console.log('result::', result);
 
-	return result === cards.length;
-}
+// 	return result === cards.length;
+// }
 
-console.log(isFlush(['10D','4D','QD','KD','5D'])); //true );)
+// console.log(isFlush(['10D', '4D', 'QD', 'KD', '5D'])); //true );)
 
-function formatDuration(seconds) {
-	if (seconds === 0) {
-		return 'now';
-	}
-	if (seconds === 1) {
-		return '1 second';
-	}
+// function formatDuration(seconds) {
+// 	if (seconds === 0) {
+// 		return 'now';
+// 	}
+// 	if (seconds === 1) {
+// 		return '1 second';
+// 	}
 
-	let res = [];
-	let date = '';
+// 	let res = [];
+// 	let date = '';
 
-	const years = Math.floor(seconds / (60 * 60 * 24 * 365));
-	console.log('YEARS:', years);
+// 	const years = Math.floor(seconds / (60 * 60 * 24 * 365));
+// 	console.log('YEARS:', years);
 
-	seconds -= years * (60 * 60 * 24 * 365);
+// 	seconds -= years * (60 * 60 * 24 * 365);
 
-	const days = Math.floor(seconds / (60 * 60 * 24));
-	console.log('DAYS:', days);
+// 	const days = Math.floor(seconds / (60 * 60 * 24));
+// 	console.log('DAYS:', days);
 
-	seconds -= days * (60 * 60 * 24);
+// 	seconds -= days * (60 * 60 * 24);
 
-	const hour = Math.floor(seconds / (60 * 60));
-	console.log('hour:', hour);
+// 	const hour = Math.floor(seconds / (60 * 60));
+// 	console.log('hour:', hour);
 
-	seconds -= hour * (60 * 60);
+// 	seconds -= hour * (60 * 60);
 
-	const min = Math.floor(seconds / 60);
-	console.log('min:', Math.round(min));
+// 	const min = Math.floor(seconds / 60);
+// 	console.log('min:', Math.round(min));
 
-	seconds -= min * 60;
+// 	seconds -= min * 60;
 
-	const sec = Math.floor(seconds % 60);
-	console.log('sec:', Math.round(sec));
+// 	const sec = Math.floor(seconds % 60);
+// 	console.log('sec:', Math.round(sec));
 
-	if (years) {
-		res.push(`${years} ${convert(years, 'year')}`);
-	}
-	if (days) {
-		res.push(`${days} ${convert(days, 'day')}`);
-	}
-	if (hour) {
-		res.push(`${hour} ${convert(hour, 'hour')}`);
-	}
-	if (min) {
-		res.push(`${min} ${convert(min, 'minute')}`);
-	}
+// 	if (years) {
+// 		res.push(`${years} ${convert(years, 'year')}`);
+// 	}
+// 	if (days) {
+// 		res.push(`${days} ${convert(days, 'day')}`);
+// 	}
+// 	if (hour) {
+// 		res.push(`${hour} ${convert(hour, 'hour')}`);
+// 	}
+// 	if (min) {
+// 		res.push(`${min} ${convert(min, 'minute')}`);
+// 	}
 
-	if (sec) {
-		res.push(`and ${sec} ${convert(sec, 'second')}`);
-	} else if (!sec) {
-		return (date = res.join(','));
-	}
+// 	if (sec) {
+// 		res.push(`${sec} ${convert(sec, 'second')}`);
+// 	}
 
-	let ind = res.join(', ').lastIndexOf(',');
-	date = res.join(', ');
-	let startStr = date.slice(0, ind);
-	let finishStr = date.slice(ind + 1);
-	console.log('DATE:', date);
-	console.log('Ind:', ind);
-	console.log('startStr:', startStr);
-	console.log('finishStr:', finishStr);
+// 	let ind = res.join(', ').lastIndexOf(',');
+// 	date = res.join(', ');
+// 	let startStr = date.slice(0, ind);
+// 	let finishStr = date.slice(ind + 1);
+// 	console.log('DATE:', date);
+// 	console.log('startStr:', startStr);
+// 	console.log('finishStr:', finishStr);
 
-	return `${startStr} ${finishStr}`;
-}
+// 	return `${startStr} and${finishStr}`;
+// }
 
-function convert(time, str) {
-	if (time !== 1) {
-		return `${str}s`;
-	}
-	return str;
-}
-
-console.log(formatDuration(653734521)); // "1 hour, 1 minute and 2 seconds");)
+// function convert(time, str) {
+// 	if (time !== 1) {
+// 		return `${str}s`;
+// 	}
+// 	return str;
+// }
+// или поставить 	let finishStr = date.slice(ind + 2); если без and,
+//или return `${startStr} and${finishStr}`; если с and в любом случае!
+//return (date = res.join(', '));
+// console.log(formatDuration(120)); // "1 hour, 1 minute and 2 seconds");)
 //Human readable duration format
 //----------------------------------------------------------------------------------------------
 
@@ -824,14 +823,13 @@ console.log(formatDuration(653734521)); // "1 hour, 1 minute and 2 seconds");)
 // 		}
 // 		return 0
 // 	});
-	
+
 // }
 
 // console.log(
 // 	convertHashToArray({name: 'Jeremy', age: 24, role: 'Software Engineer'})
 // ); //[["age", 24], ["name", "Jeremy"], ["role", "Software Engineer"]]))
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ entries
-
 
 // function rowSumOddNumbers(n) {
 // 	let index = n * (n - 1) - 1;
@@ -846,7 +844,7 @@ console.log(formatDuration(653734521)); // "1 hour, 1 minute and 2 seconds");)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function array(array) {
-	
+
 // 	 const res = array.reduce((acc,current) => {
 // 		 if (Array.isArray(current)) {
 // 			 console.log('Current:',current)
@@ -859,11 +857,57 @@ console.log(formatDuration(653734521)); // "1 hour, 1 minute and 2 seconds");)
 // 			 return acc;
 // 		}
 // 	}
-		
+
 // 		,[])
 // 	return res
 // }
 
-
 // console.log(array([7,[1,2,3],["a","b","c"],[1,2,3]])); // [1, 2, 3, "a", "b", "c", 1, 2, 3]);)
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function hasSurvived(attackers, defenders) {
+// 	let pointAttack = 0;
+// 	let pointDefend = 0;
+// 	let totalAttack = 0;
+// 	attackers.forEach((el) => (totalAttack += el));
+
+// 	let totalDef = 0;
+
+// 	defenders.forEach((el) => (totalDef += el));
+
+// 	let length = attackers.length;
+// 	if (length < defenders.length) {
+// 		length = defenders.length;
+// 	}
+
+// 	for (let i = 0; i < length; i++) {
+// 		if (attackers[i] > defenders[i] || !defenders[i]) {
+// 			pointAttack++;
+// 		}
+// 		if (attackers[i] < defenders[i] || !attackers[i]) {
+// 			pointDefend++;
+// 		}
+// 	}
+// 	console.log('pointAttack-->', pointAttack);
+// 	console.log('pointDefend <--', pointDefend);
+// 	console.log('totalAttack', totalAttack);
+// 	console.log('totalDef', totalDef);
+// 	if (pointAttack === pointDefend && totalAttack === totalDef) {
+// 		return true;
+// 	}
+// 	if (pointAttack === pointDefend) {
+// 		return totalAttack < totalDef;
+// 	}
+
+// 	return pointAttack < pointDefend;
+// }
+
+// console.log(
+// 	hasSurvived(
+// 		[64, 34, 43, 83, 53, 21, 95, 49, 45, 56],
+// 		[19, 94, 41, 41, 100, 84, 66, 34, 78, 63]
+// 	)
+// ); // true);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
+
