@@ -694,6 +694,7 @@ countPeople([
 // }
 
 // console.log(isFlush(['10D', '4D', 'QD', 'KD', '5D'])); //true );)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function formatDuration(seconds) {
 // 	if (seconds === 0) {
@@ -908,6 +909,66 @@ countPeople([
 // 		[19, 94, 41, 41, 100, 84, 66, 34, 78, 63]
 // 	)
 // ); // true);)
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// function sortByLength (array) {
+// 	return array.sort((a,b) => {
+// 		if (a.length > b.length) {
+// 		 return 1
+// 		}
+// 		if (a.length < b.length) {
+// 			return -1;
+// 		}
+// 		return 0
+//  })
+// };
+// console.log(sortByLength(["","Moderately","Brains","Pizza"]));//["", "Pizza", "Brains", "Moderately"])
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// function stantonMeasure(input) {
+// 	const ind = input.filter((el) => el === 1);
+// 	console.log('INDEX:',ind)
+// 	return input.filter((el) => el === ind.length).length
+// }
+
+// console.log(stantonMeasure([1, 4, 3, 2, 1, 2, 3, 2])); //3))
+
+// function smallEnough(a,limit) {
+// 	return a.every((el) => el <= limit);
+//  }
+
+// console.log(smallEnough([101,45,75,105,99,107],107));// true);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function adjacentElementsProduct(array) {
+// 	const res = [];
+// 	for (let i = 0; i < array.length - 1; i++) {
+// 		res.push(array[i] * array[i + 1]);
+// 	}
+// 	console.log('RESULT:',res)
+// 	return Math.max.apply(null, res);
+// }
+
+// console.log(adjacentElementsProduct([4,12,3,1,5, 50]));//, 48)//;)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function pendulum(values) {
+// 	const res = [];
+// 	const sortArr = values.sort((a,b) => a - b);
+// 	console.log('SORT:',sortArr);
+// 	for (let i = 0; i < sortArr.length; i++) {
+// 		if (i % 2 === 0) {
+// 			console.log('TTTTTTT2',i)
+// 			res.unshift(sortArr[i]);
+// 		}
+// 		else if (i % 2 !== 0) {
+// 			console.log('IND1',i);
+// 			res.push(sortArr[i]);
+// 		}
+// 	}
+// 	console.log('RESULT:',res)
+// 	return res
+// }
+// //The Poet And The Pendulum
+// console.log(pendulum([33,38,38,36,43,48,32,40,47,50,33]));//,[50, 47, 40, 38, 33, 32, 33, 36, 38, 43, 48]));
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++???????????????????????????????????????????????????????????
