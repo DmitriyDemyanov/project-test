@@ -972,3 +972,55 @@ countPeople([
 // //The Poet And The Pendulum
 // console.log(pendulum([33,38,38,36,43,48,32,40,47,50,33]));//,[50, 47, 40, 38, 33, 32, 33, 36, 38, 43, 48]));
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++???????????????????????????????????????????????????????????
+
+// function oddOrEven(array) {
+// 	let res = 0;
+// 	array.forEach((el) => (res += el));
+// 	console.log(res);
+// 	if (res % 2 === 0) {
+// 		return 'even'
+// 	}
+// 	return 'odd';
+// }
+
+// console.log(oddOrEven([-1023, 1, -2])); //, 'even'))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+// function tidyNumber(n) {
+// 	const res = n.toString().split('');
+// 	for (let i = 0; i < res.length; i++) {
+// 		if (res[i] > res[i + 1]) {
+// 			return false;
+// 		}
+// 	}
+// 	return true;
+// }
+
+// console.log(tidyNumber(2789));//,true))
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function moveTen(s) {
+	let res = [];
+	let arrayS = s.split('');
+	console.log(arrayS)
+	let arrayNumber = arrayS.reduce((acc,current) => {
+		acc.push(current.charCodeAt() + 10);
+		
+		return acc
+	},[])
+	res = arrayNumber.reduce((acc,current) => {
+		console.log('CURRENT:',current)
+		acc.push(String.fromCharCode(current));
+	},[])
+	console.log('RES',res)
+	// res = acc.join();
+	// console.log('before', res);
+	// String.fromCharCode(res);
+	// console.log('after', res);
+	// console.log('RESULT:', res)
+	console.log('arrayNumber====', arrayNumber);
+ }
+
+console.log(moveTen("abccodewars"));//, "mynogkbc"))
