@@ -869,38 +869,36 @@ countPeople([
 // function hasSurvived(attackers, defenders) {
 // 	let pointAttack = 0;
 // 	let pointDefend = 0;
-// 	let totalAttack = 0;
-// 	attackers.forEach((el) => (totalAttack += el));
 
+// 	let totalAttack = 0;
 // 	let totalDef = 0;
 
-// 	defenders.forEach((el) => (totalDef += el));
-
-// 	let length = attackers.length;
-// 	if (length < defenders.length) {
-// 		length = defenders.length;
-// 	}
+// 	let length =
+// 		attackers.length > defenders.length ? attackers.length : defenders.length;
 
 // 	for (let i = 0; i < length; i++) {
-// 		if (attackers[i] > defenders[i] || !defenders[i]) {
-// 			pointAttack++;
+// 		if (attackers[i] !== undefined) {
+// 			totalAttack += attackers[i];
+// 			if (attackers[i] > defenders[i]) {
+// 				pointAttack++;
+// 			}
 // 		}
-// 		if (attackers[i] < defenders[i] || !attackers[i]) {
-// 			pointDefend++;
+
+// 		if (defenders[i] !== undefined) {
+// 			totalDef += defenders[i];
+// 			if (defenders[i] > attackers[i]) {
+// 				pointDefend++;
+// 			}
 // 		}
 // 	}
-// 	console.log('pointAttack-->', pointAttack);
-// 	console.log('pointDefend <--', pointDefend);
-// 	console.log('totalAttack', totalAttack);
-// 	console.log('totalDef', totalDef);
+
 // 	if (pointAttack === pointDefend && totalAttack === totalDef) {
 // 		return true;
 // 	}
-// 	if (pointAttack === pointDefend) {
-// 		return totalAttack < totalDef;
-// 	}
 
-// 	return pointAttack < pointDefend;
+// 	return pointAttack === pointDefend
+// 		? totalAttack < totalDef
+// 		: pointAttack < pointDefend;
 // }
 
 // console.log(
@@ -960,8 +958,7 @@ countPeople([
 // 		if (i % 2 === 0) {
 // 			console.log('TTTTTTT2',i)
 // 			res.unshift(sortArr[i]);
-// 		}
-// 		else if (i % 2 !== 0) {
+// 		} else {
 // 			console.log('IND1',i);
 // 			res.push(sortArr[i]);
 // 		}
@@ -971,7 +968,7 @@ countPeople([
 // }
 // //The Poet And The Pendulum
 // console.log(pendulum([33,38,38,36,43,48,32,40,47,50,33]));//,[50, 47, 40, 38, 33, 32, 33, 36, 38, 43, 48]));
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++???????????????????????????????????????????????????????????
+// //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++???????????????????????????????????????????????????????????
 
 // function oddOrEven(array) {
 // 	let res = 0;
@@ -985,7 +982,6 @@ countPeople([
 
 // console.log(oddOrEven([-1023, 1, -2])); //, 'even'))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 
 // function tidyNumber(n) {
 // 	const res = n.toString().split('');
@@ -1001,26 +997,88 @@ countPeople([
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function moveTen(s) {
-	let res = [];
-	let arrayS = s.split('');
-	console.log(arrayS)
-	let arrayNumber = arrayS.reduce((acc,current) => {
-		acc.push(current.charCodeAt() + 10);
-		
-		return acc
-	},[])
-	res = arrayNumber.reduce((acc,current) => {
-		console.log('CURRENT:',current)
-		acc.push(String.fromCharCode(current));
-	},[])
-	console.log('RES',res)
-	// res = acc.join();
-	// console.log('before', res);
-	// String.fromCharCode(res);
-	// console.log('after', res);
-	// console.log('RESULT:', res)
-	console.log('arrayNumber====', arrayNumber);
- }
+// function moveTen(s) {
+// 	let res = [];
+// 	let arrayS = s.split('');
+// 	console.log(arrayS)
+// 	let arrayNumber = arrayS.reduce((acc,current) => {
+// 		//
+// 		if (current.charCodeAt() + 10 > 122) {
+// 		  acc.push(current.charCodeAt() + 10 - 122 + 96)
+// 		} else {
+// 			acc.push(current.charCodeAt() + 10);
+// 		}
+// 		return acc
+// 	},[])
+// 	res = arrayNumber.reduce((acc,current) => {
+// 		console.log('####',current+'')
+// 		acc.push(String.fromCharCode(current + ''));
+// 		return acc;
+// 	},[])
+// 	return res.join('');
+//  }
 
-console.log(moveTen("abccodewars"));//, "mynogkbc"))
+// console.log(moveTen('testcase'));//, 'docdmkco');
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function fireFight(s) {
+// 	return s
+// 		.split(' ')
+// 		.map((el) => {
+// 			if (el === 'Fire') {
+// 				return '~~';
+// 			}
+// 			return el;
+// 		})
+// 		.join(' ');
+// }
+
+// console.log(
+// 	fireFight(
+// 		'Fire Deck Engine Sail Deck Fire Fire Fire Rudder Fire Boat Fire Fire Captain'
+// 	)
+// ); //,'~~ Deck Engine Sail Deck ~~ ~~ ~~ Rudder ~~ Boat ~~ ~~ Captain'));
+
+
+// function consecutive(arr) {
+// 	let count = 0;
+// 	const res = arr.sort((a,b) => a - b);
+// 	for (let i = 0; i < res.length - 1; i++) {
+// 		if (res[i + 1] - res[i] !== 1) {
+// 			count += res[i + 1] - res[i] -1;
+// 		}
+// 	}
+// 	return count;
+// }
+
+// console.log(consecutive([4,8,6,10]));//,2);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function arithmeticSequenceElements(a, d, n) {
+// 	let res = [a];
+// 	for (let i = 0; i < n - 1; i++) {
+// 		res.push((a += d));
+// 	}
+// 	return res.join(', ');
+// }
+// console.log(arithmeticSequenceElements(1,-3,10)); // "1, -2, -5, -8, -11, -14, -17, -20, -23, -26"))
+
+
+function bitMarch(n) {
+	const res = [];
+
+}
+
+console.log(bitMarch(3));
+
+// const r = [
+// 	[0, 0, 0, 0, 0, 1, 1, 1],
+// 	[0, 0, 0, 0, 1, 1, 1, 0],
+// 	[0, 0, 0, 1, 1, 1, 0, 0],
+// 	[0, 0, 1, 1, 1, 0, 0, 0],
+// 	[0, 1, 1, 1, 0, 0, 0, 0],
+// 	[1, 1, 1, 0, 0, 0, 0, 0],
+// ];
+// new Array(8).fill(0)
+//Odd March Bits 8 bits
+
