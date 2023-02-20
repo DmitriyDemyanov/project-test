@@ -1039,7 +1039,6 @@ countPeople([
 // 	)
 // ); //,'~~ Deck Engine Sail Deck ~~ ~~ ~~ Rudder ~~ Boat ~~ ~~ Captain'));
 
-
 // function consecutive(arr) {
 // 	let count = 0;
 // 	const res = arr.sort((a,b) => a - b);
@@ -1063,10 +1062,28 @@ countPeople([
 // }
 // console.log(arithmeticSequenceElements(1,-3,10)); // "1, -2, -5, -8, -11, -14, -17, -20, -23, -26"))
 
-
 function bitMarch(n) {
-	const res = [];
+	let res = [0,0,0,0,0,0,0,0];
+	const result = [];
 
+	res.fill(1, res.length - n);
+	result.push(res);
+	
+	console.log('=====<<<<<<<<',result);
+	
+	for (let i = 0; i < res.length -1; i++) {
+		if (res[0] === 0) {
+			res.shift();
+			res.push(0);
+			console.log("<><><><>",res);
+			result.push(res);
+			console.log('=====>>', result);
+		}
+		if (res[0] === 1) {
+			return result;
+		}
+	}
+return result;
 }
 
 console.log(bitMarch(3));
@@ -1081,4 +1098,5 @@ console.log(bitMarch(3));
 // ];
 // new Array(8).fill(0)
 //Odd March Bits 8 bits
+
 
