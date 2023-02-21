@@ -1131,5 +1131,73 @@ countPeople([
 // }
 
 // console.log(gordon('What feck damn cake')); // 'WH@T!!!! F*CK!!!! D@MN!!!! C@K*!!!!');)
+//____________________________________________________________________________________________________________
+// function maxProduct(numbers, size) {
+// 	const sortArr = numbers.sort((a, b) => b - a);
+// 	let res = 1;
+// 	for (let i = 0; i < size; i++) {
+// 		res = res * sortArr[i];
+// 	}
+// 	return res;
+// }
 
+// console.log(maxProduct([13, 12, -27, -302, 25, 37, 133, 155, -14], 5)); //, 247895375))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// function duckShoot(ammo,aim,ducks) {
+// 	let luckyShoot = Math.floor(ammo * aim);
+// 	let res = ducks.split('');
+// 	let array = [];
+// 	for (let i = 0; i < res.length; i++) {
+// 		if (res[i] === '2' && luckyShoot !== 0) {
+// 			array.push('x');
+// 			luckyShoot--
+// 		}
+// 		else {
+// 			array.push(res[i]);
+// 		}
+// 	}
+// 	return array.join('');
+// }
+
+// console.log(duckShoot(6,0.41,'|~~~~~22~2~~~~~|'));// '|~~~~~XX~2~~~~~|'))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function maxTriSum(numbers) {
+// 	const arr = Array.from(new Set(numbers.sort((a,b) => b - a)));
+// 	return arr[0] + arr[1] + arr[2];
+// }
+
+// console.log(maxTriSum([3,2,6,8,2,3])); //17))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function flattenAndSort(array) {
+// 	const newArray = array.reduce((acc,current) => {
+// 		current.forEach(element => acc.push(element));
+// 		return acc
+// 	},[])
+// 	;
+// 	return newArray.sort((a,b) => a - b);
+// }
+
+// console.log(flattenAndSort([[3,2,1],[7,9,8],[6,4,5]]));// [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function removeRotten(bagOfFruits) {
+// 	if (!Array.isArray(bagOfFruits)) {
+// 		return [];
+// 	}
+// 	let res = [];
+// 	for (let i = 0; i < bagOfFruits.length; i++) {
+// 		if (bagOfFruits[i].includes('rotten')) {
+// 			res.push(bagOfFruits[i].replace('rotten', '').toLowerCase());
+// 		}
+// 		else {
+// 			res.push(bagOfFruits[i]);
+// 		}
+// 	}
+// 	return res
+// }
+
+// console.log(removeRotten(['apple', 'banana', 'kiwi', "rottenBanana", 'melone', 'rottenOrange']));
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
