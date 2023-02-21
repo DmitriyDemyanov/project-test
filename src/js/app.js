@@ -1062,31 +1062,30 @@ countPeople([
 // }
 // console.log(arithmeticSequenceElements(1,-3,10)); // "1, -2, -5, -8, -11, -14, -17, -20, -23, -26"))
 
-function bitMarch(n) {
-	let res = [0,0,0,0,0,0,0,0];
-	const result = [];
+// function bitMarch(n) {
+// 	let res = [0, 0, 0, 0, 0, 0, 0, 0];
+// 	const result = [];
 
-	res.fill(1, res.length - n);
-	result.push(res);
-	
-	console.log('=====<<<<<<<<',result);
-	
-	for (let i = 0; i < res.length -1; i++) {
-		if (res[0] === 0) {
-			res.shift();
-			res.push(0);
-			console.log("<><><><>",res);
-			result.push(res);
-			console.log('=====>>', result);
-		}
-		if (res[0] === 1) {
-			return result;
-		}
-	}
-return result;
-}
+// 	res.fill(1, res.length - n);
 
-console.log(bitMarch(3));
+// 	console.log('=====<<<<<<<<', result);
+
+// 	for (let i = 0; i < res.length - n; i++) {
+
+// 		if (res[0] === 0) {
+// 			let arr = [...res];
+// 			res.shift();
+// 			res.push(0);
+// 			console.log('<><><><>', res);
+// 			result.push(arr);
+// 			console.log('=====>>', result);
+// 		}
+// 	}
+// 	result.push(res);
+// 	return result;
+// }
+
+// console.log('!!!!!!!!!!!!!!!!!!!!!!!!!', bitMarch(3));
 
 // const r = [
 // 	[0, 0, 0, 0, 0, 1, 1, 1],
@@ -1098,5 +1097,39 @@ console.log(bitMarch(3));
 // ];
 // new Array(8).fill(0)
 //Odd March Bits 8 bits
+
+// function min(arr, toReturn) {
+// 	const val = [...arr].sort((a, b) => a - b);
+// 	const num = val[0];
+// 	console.log('num:', num);
+// 	if (toReturn === 'value') {
+// 		return val[0];
+// 	}
+// 	return arr.findIndex((el) => el === num);
+// }
+
+// console.log(min([2, 3, 4, 1, 5], 'index')); //, 0))
+
+// function gordon(a) {
+// 	const vowels = ['e', 'i', 'o', 'u'];
+// 	let arr = a.split('');
+// 	let result = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (arr[i] === 'a' || arr[i] === 'A') {
+// 			result.push('@');
+// 		}
+// 		else if (arr[i] === ' ') {
+// 			result.push('!!!! ');
+// 		}
+// 		else if (vowels.find((el) => el === arr[i])) {
+// 			result.push('*');
+// 		} else  {
+// 			result.push(arr[i]);
+// 		}
+// 	}
+// 	return `${result.join('').toUpperCase()}!!!!`;
+// }
+
+// console.log(gordon('What feck damn cake')); // 'WH@T!!!! F*CK!!!! D@MN!!!! C@K*!!!!');)
 
 
