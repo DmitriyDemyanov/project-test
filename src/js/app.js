@@ -1164,19 +1164,18 @@ countPeople([
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function maxTriSum(numbers) {
-// 	const arr = Array.from(new Set(numbers.sort((a,b) => b - a)));
-// 	return arr[0] + arr[1] + arr[2];
+// 	const [a, b, c] = [...new Set(numbers.sort((a, b) => b - a))];
+// 	return a + b + c;
 // }
 
-// console.log(maxTriSum([3,2,6,8,2,3])); //17))
+// console.log(maxTriSum([3, 2, 6, 8, 2, 3])); //17))
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function flattenAndSort(array) {
-// 	const newArray = array.reduce((acc,current) => {
+// 	const result = array.reduce((acc,current) => {
 // 		current.forEach(element => acc.push(element));
 // 		return acc
-// 	},[])
-// 	;
-// 	return newArray.sort((a,b) => a - b);
+// 	},[]);
+// 	return result.sort((a,b) => a - b);
 // }
 
 // console.log(flattenAndSort([[3,2,1],[7,9,8],[6,4,5]]));// [1, 2, 3, 4, 5, 6, 7, 8, 9]))
@@ -1188,16 +1187,137 @@ countPeople([
 // 	}
 // 	let res = [];
 // 	for (let i = 0; i < bagOfFruits.length; i++) {
-// 		if (bagOfFruits[i].includes('rotten')) {
-// 			res.push(bagOfFruits[i].replace('rotten', '').toLowerCase());
-// 		}
-// 		else {
-// 			res.push(bagOfFruits[i]);
-// 		}
+// 		res.push(bagOfFruits[i].replace('rotten', '').toLowerCase());
 // 	}
-// 	return res
+// 	return res;
 // }
 
-// console.log(removeRotten(['apple', 'banana', 'kiwi', "rottenBanana", 'melone', 'rottenOrange']));
+// console.log(
+// 	removeRotten([
+// 		'apple',
+// 		'banana',
+// 		'kiwi',
+// 		'rottenBanana',
+// 		'melone',
+// 		'rottenOrange',
+// 	])
+// );
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_________________________________________________________________________________________________________________________
+
+// function spacify(str) {
+// 	return str.replace(/(\d)/gi, '$1 ').trim();
+// }
+// return str.replace(/([a-z])/g, '$1 ');
+// const spacify2 = ($) => $.replace(/./g, (e) => e + ' ').trim();
+
+// console.log(spacify('hello world')); //'h e l l o   w o r l d');)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function divCon(x) {
+// 	let num = 0;
+// 	let str = 0;
+// 	for (let i = 0; i < x.length; i++) {
+// 		if (typeof x[i] === 'string') {
+// 			str += +x[i];
+// 		} else {
+// 			num += x[i];
+// 		}
+// 	}
+// 	return num - str
+// }
+
+// console.log(divCon(['3',6,6,0,'5',8,5,'6',2,'0'])); // 13);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function assert(name, arr) {
+// 	const result = [];
+// 	if (name === 'head') {
+// 		return arr[0];
+// 	}
+// 	if (name === 'last') {
+// 		return arr[arr.length - 1];
+// 	}
+
+// 	if (name === 'tail') {
+// 		const [a, ...rest] = arr;
+// 		return rest;
+// 	}
+// 	if (name === 'init') {
+// 		return arr.slice(0, arr.length - 1);
+// 	}
+// 	return result;
+// }
+
+// console.log(assert('last', [7, 2])); //, 2);))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function getNewNotes(salary, bills) {
+// 	const allBills = bills.reduce((acc,current) => acc += current,0);
+// 	if (salary <= allBills) {
+// 		return 0;
+// 	}
+// 		return Math.floor((salary - allBills) / 5);
+// }
+
+// console.log(getNewNotes(2300, [590, 1500, 45, 655, 150]));//, 1139)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function factory(x) {
+// 	return function (myArray) {
+// 		return myArray.reduce((acc, current) => {
+// 			acc.push(current * x);
+// 			return acc;
+// 		}, []);
+// 	};
+// }
+
+// const myArray = [1, 2, 3];
+
+// const threes = factory(3);
+// const fives = factory(5);
+
+// console.log(threes(myArray));
+// console.log(fives(myArray));
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function calc(x) {
+// 	let res = '';
+// 	for (let i = 0; i < x.length; i++) {
+// 		res += x[i].charCodeAt();
+// 	}
+// 	let num = res
+// 		.replaceAll('7', '1')
+// 		.split('')
+// 		.reduce((acc, current) => (acc += +current), 0);
+// 	const num1 = res.split('').reduce((acc, current) => (acc += +current), 0);
+// 	return num1 - num;
+// }
+
+// console.log(calc('ABC')); //, //6);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function isNice(arr) {
+// 	return arr.reduce((acc,current) => {
+// 		if (acc === false) {
+// 			return acc;
+// 		}
+// 		if (
+// 			arr.some((el) => el === current + 1 || el === current - 1)
+// 		) {
+// 			return true;
+// 		}
+// 		return false;
+// 	}, true);
+// }
+
+
+// console.log(isNice([7, 11, 6, 3, 4, 9, 10])); //false))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function gimme(triplet) { 
+	const res = triplet.sort((a,b) => a - b);
+	console.log('res', res[1])
+	return triplet.findIndex((el) => el === res[1]);
+}
+
+console.log(gimme([1,2,3])); //1
