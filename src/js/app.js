@@ -1314,10 +1314,46 @@ countPeople([
 
 // console.log(isNice([7, 11, 6, 3, 4, 9, 10])); //false))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function gimme(triplet) { 
-	const res = triplet.sort((a,b) => a - b);
-	console.log('res', res[1])
-	return triplet.findIndex((el) => el === res[1]);
-}
+//_____________________________________________________________________________________________________________________________________
+// function gimme(triplet) {
+// 	const res = [...triplet].sort((a,b) => a - b);
+// 	return triplet.findIndex((el) => el === res[1]);
+// }
 
-console.log(gimme([1,2,3])); //1
+// console.log(gimme([3,2,1])); //1
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function outed(meet,boss) {
+// 	let res = Object.entries(meet);
+//   const ind = res.filter((el) => el === el.findIndex((el) => el === boss));
+// 	console.log('res', res);
+// 	console.log(ind);
+//  }
+// //The Office I - Outed
+// console.log((outed({ tim: 0,jim: 2,randy: 0,sandy: 7,andy: 0,katie: 5,laura: 1,saajid: 2,alex: 3,john: 2,mr: 0,},'laura'))); //'Get Out Now!');
+// includes();
+//--------------------------------------------------------------------------------------------------------------------------------
+
+// const solution = (mtrx) => {
+	
+// 	let arrow = 0;
+// 	let target = 0;
+// 	for (let i = 0; i < mtrx.length; i++) {
+// 		if (mtrx[i].filter((el) => el === '>' || el === 'x').length === 2) {
+// 			arrow = mtrx[i].indexOf('>');
+// 			target = mtrx[i].indexOf('x');
+// 			return arrow < target
+// 		}
+// 	}
+// 	return false;
+// };
+
+// console.log(solution([
+// 	[' ',' ',' ',' ',' '],
+// 	[' ',' ',' ',' ',' '],
+// 	[' ',' ',' ',' ',' '],
+// 	[' ',' ','>',' ','x'],
+// 	[' ',' ','',' ',' ']
+// ]));//, true);)
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
