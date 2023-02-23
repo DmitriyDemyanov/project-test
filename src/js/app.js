@@ -1264,12 +1264,17 @@ countPeople([
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function factory(x) {
-// 	return function (myArray) {
+// 	let counter = 0;
+
+// 	function multiple(myArray) {
 // 		return myArray.reduce((acc, current) => {
 // 			acc.push(current * x);
+// 			counter++;
 // 			return acc;
 // 		}, []);
 // 	};
+
+// 	return multiple;
 // }
 
 // const myArray = [1, 2, 3];
@@ -1311,7 +1316,6 @@ countPeople([
 // 	}, true);
 // }
 
-
 // console.log(isNice([7, 11, 6, 3, 4, 9, 10])); //false))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //_____________________________________________________________________________________________________________________________________
@@ -1323,19 +1327,30 @@ countPeople([
 // console.log(gimme([3,2,1])); //1
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// function outed(meet,boss) {
-// 	let res = Object.entries(meet);
-//   const ind = res.filter((el) => el === el.findIndex((el) => el === boss));
-// 	console.log('res', res);
-// 	console.log(ind);
-//  }
+// function outed(meet, boss) {
+// 	const res = Object.entries(meet);
+// 	const value = res.reduce((acc, user) => {
+// 		if (user[0] === boss) {
+// 			acc += user[1] * 2;
+// 		} else {
+// 			acc += user[1];
+// 		}
+// 		return acc;
+// 	}, 0);
+// 	return value / res.length <= 5 ? 'Get Out Now!' : 'Nice Work Champ!';
+// }
 // //The Office I - Outed
-// console.log((outed({ tim: 0,jim: 2,randy: 0,sandy: 7,andy: 0,katie: 5,laura: 1,saajid: 2,alex: 3,john: 2,mr: 0,},'laura'))); //'Get Out Now!');
-// includes();
-//--------------------------------------------------------------------------------------------------------------------------------
+// console.log(
+// 	outed(
+// 		{"tim":8,"jim":6,"randy":5,"sandy":4,"andy":4,"katie":0,"laura":7,"saajid":1,"alex":6,"john":7,"mr":0},
+// 		'john'
+// 	)
+// ); //'Get Out Now!');
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // const solution = (mtrx) => {
-	
+
 // 	let arrow = 0;
 // 	let target = 0;
 // 	for (let i = 0; i < mtrx.length; i++) {
@@ -1357,3 +1372,140 @@ countPeople([
 // ]));//, true);)
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_______________________________________________________________________________________________________________
+
+// function alternate(n, firstValue, secondValue) {
+// 	const res = [];
+// 	if (n === 0) {
+// 		return [];
+// 	}
+// 	for (let i = 0; i < n; i++) {
+// 		if (res.length % 2 !== 0) {
+// 			res.push(secondValue);
+// 		} else {
+// 			res.push(firstValue);
+// 		}
+// 	}
+// 	return res;
+// }
+
+// console.log(alternate(5,true,false)); // [true, false, true, false, true])
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++;
+
+const list1 = [
+	{
+		firstName: 'Noah',
+		lastName: 'M.',
+		country: 'Switzerland',
+		continent: 'Europe',
+		age: 19,
+		language: 'C',
+	},
+	{
+		firstName: 'Anna',
+		lastName: 'R.',
+		country: 'Liechtenstein',
+		continent: 'Europe',
+		age: 52,
+		language: 'JavaScript',
+	},
+	{
+		firstName: 'Ramon',
+		lastName: 'R.',
+		country: 'Paraguay',
+		continent: 'Americas',
+		age: 29,
+		language: 'Ruby',
+	},
+	{
+		firstName: 'George',
+		lastName: 'B.',
+		country: 'England',
+		continent: 'Europe',
+		age: 81,
+		language: 'C',
+	},
+];
+
+//  const answer = {C: 2, JavaScript: 1, Ruby: 1};
+
+function countLanguages(list) {
+	return list1.reduce((acc, {language}) => {
+		console.log('U', language);
+		console.log('OBJECT', Object.keys(acc));
+		if (Object.keys(acc) !== language) {
+			acc[language] = 1;
+		}
+		if (Object.keys(acc) === language) {
+			acc[language] = 1;
+		}
+		return acc;
+	}, {});
+}
+//console.log(countLanguages(list1));
+//Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages
+//-----------------------------------------------------------------------------------------------------
+
+// function evenNumbers(array,number) {
+
+// 	return array.reduceRight((acc,cur) => {
+// 		if (acc.length !== number && cur % 2 === 0) {
+// 			acc.unshift(cur);
+// 		}
+// 		return acc
+// 	},[]);
+
+// }
+// console.log(evenNumbers([1,2,3,4,5,6,7,8,9,12],3));// [4, 6, 8]);)
+// function evenNumbers(array, number) {
+// 	const res = [];
+// 	for (let i = array.length; i >= 0; i--) {
+// 		if (array[i] % 2 === 0) {
+// 			res.unshift(array[i]);
+// 		}
+// 		if (res.length === number) {
+// 			return res
+// 		}
+// 	}
+
+// }
+// //Even numbers in an array
+//console.log(evenNumbers([1,2,3,4,5,6,7,8,9,12],3));// [4, 6, 8]);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// const bingo = [2,7,9,14,15]
+
+// function bingo(a) {
+// 	const un = Array.from(new Set(a));
+// 	if (un.filter((el) => el === 2 || el === 7 || el === 9 || el === 14 || el === 15).length === 5) {
+// 		return 'WIN'
+// 	}
+// 	return 'LOSE'
+// }
+
+// console.log(bingo([21,13,2,7,5,14,7,15,9,9,10]));//, "WIN"));
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function duplicates(array) {
+// 	return array.reduce((acc,current) => {
+		
+// 		if (array.filter((el) => el === current)) {
+			
+// 		}
+// 		return acc
+// 	},0)
+// }
+
+function duplicates(array) {
+	let count = 0;
+	for (let i = 0; i < array.length; i++) {
+		for (let c = i + 1; c < array.length; c++) {
+			console.log('AR : I', array[i]);
+			console.log(c);
+		}
+			
+			
+	}
+	
+}
+
+console.log(duplicates([1, 2, 2, 20, 6, 20, 2, 6, 2])); //,4 ))
