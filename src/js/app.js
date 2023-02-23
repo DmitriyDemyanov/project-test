@@ -1432,17 +1432,17 @@ const list1 = [
 function countLanguages(list) {
 	return list1.reduce((acc, {language}) => {
 		console.log('U', language);
-		console.log('OBJECT', Object.keys(acc));
-		if (Object.keys(acc) !== language) {
-			acc[language] = 1;
+		acc[language] = 1;
+		console.log('>>>>>>>>>>>>>>>>>>>',acc);
+		if (  language === 'C') {
+			console.log('JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ',acc[language] + 1 )
+			acc[language] + 1
 		}
-		if (Object.keys(acc) === language) {
-			acc[language] = 1;
-		}
+
 		return acc;
 	}, {});
 }
-//console.log(countLanguages(list1));
+console.log(countLanguages(list1));
 //Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages
 //-----------------------------------------------------------------------------------------------------
 
@@ -1487,25 +1487,25 @@ function countLanguages(list) {
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function duplicates(array) {
 // 	return array.reduce((acc,current) => {
-		
+
 // 		if (array.filter((el) => el === current)) {
-			
+
 // 		}
 // 		return acc
 // 	},0)
 // }
 
-function duplicates(array) {
-	let count = 0;
-	for (let i = 0; i < array.length; i++) {
-		for (let c = i + 1; c < array.length; c++) {
-			console.log('AR : I', array[i]);
-			console.log(c);
-		}
-			
-			
-	}
-	
-}
+// function duplicates(array) {
+// 	let count = 0;
+// 	for (let i = 0; i < array.length; i++) {
+// 		for (let c = i + 1; c < array.length; c++) {
+// 			console.log('AR : I', array[i]);
+// 			console.log(c);
+// 		}
 
-console.log(duplicates([1, 2, 2, 20, 6, 20, 2, 6, 2])); //,4 ))
+
+// 	}
+
+// }
+
+// console.log(duplicates([1, 2, 2, 20, 6, 20, 2, 6, 2])); //,4 ))
