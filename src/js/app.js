@@ -1392,57 +1392,54 @@ countPeople([
 // console.log(alternate(5,true,false)); // [true, false, true, false, true])
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++;
 
-const list1 = [
-	{
-		firstName: 'Noah',
-		lastName: 'M.',
-		country: 'Switzerland',
-		continent: 'Europe',
-		age: 19,
-		language: 'C',
-	},
-	{
-		firstName: 'Anna',
-		lastName: 'R.',
-		country: 'Liechtenstein',
-		continent: 'Europe',
-		age: 52,
-		language: 'JavaScript',
-	},
-	{
-		firstName: 'Ramon',
-		lastName: 'R.',
-		country: 'Paraguay',
-		continent: 'Americas',
-		age: 29,
-		language: 'Ruby',
-	},
-	{
-		firstName: 'George',
-		lastName: 'B.',
-		country: 'England',
-		continent: 'Europe',
-		age: 81,
-		language: 'C',
-	},
-];
+// const list1 = [
+// 	{
+// 		firstName: 'Noah',
+// 		lastName: 'M.',
+// 		country: 'Switzerland',
+// 		continent: 'Europe',
+// 		age: 19,
+// 		language: 'C',
+// 	},
+// 	{
+// 		firstName: 'Anna',
+// 		lastName: 'R.',
+// 		country: 'Liechtenstein',
+// 		continent: 'Europe',
+// 		age: 52,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Ramon',
+// 		lastName: 'R.',
+// 		country: 'Paraguay',
+// 		continent: 'Americas',
+// 		age: 29,
+// 		language: 'Ruby',
+// 	},
+// 	{
+// 		firstName: 'George',
+// 		lastName: 'B.',
+// 		country: 'England',
+// 		continent: 'Europe',
+// 		age: 81,
+// 		language: 'C',
+// 	},
+// ];
 
 //  const answer = {C: 2, JavaScript: 1, Ruby: 1};
 
-function countLanguages(list) {
-	return list1.reduce((acc, {language}) => {
-		console.log('U', language);
-		acc[language] = 1;
-		console.log('>>>>>>>>>>>>>>>>>>>',acc);
-		if (  language === 'C') {
-			console.log('JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ',acc[language] + 1 )
-			acc[language] + 1
-		}
-
-		return acc;
-	}, {});
-}
-console.log(countLanguages(list1));
+// function countLanguages(list) {
+// 	return list1.reduce((acc, {language}) => {
+// 		console.log('U', language);
+// 		if (!acc[language]) {
+// 			acc[language] = 0;
+// 		}
+// 		acc[language] += 1;
+// 		return acc;
+// 	}, {});
+// }
+// console.log(countLanguages(list1));
 //Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages
 //-----------------------------------------------------------------------------------------------------
 
@@ -1496,16 +1493,125 @@ console.log(countLanguages(list1));
 // }
 
 // function duplicates(array) {
-// 	let count = 0;
-// 	for (let i = 0; i < array.length; i++) {
-// 		for (let c = i + 1; c < array.length; c++) {
-// 			console.log('AR : I', array[i]);
-// 			console.log(c);
-// 		}
-
-
-// 	}
 
 // }
 
-// console.log(duplicates([1, 2, 2, 20, 6, 20, 2, 6, 2])); //,4 ))
+// console.log(duplicates([0, 0, 0, 0, 0, 0, 0])); //,4 ))
+//Find all pairs (retired)
+//---------------------------------------------------------------
+//________________________________________________________________
+
+// const list1 = [
+// 	{
+// 		firstName: 'Sofia',
+// 		lastName: 'I.',
+// 		country: 'Argentina',
+// 		continent: 'Americas',
+// 		age: 35,
+// 		language: 'Java',
+// 	},
+// 	{
+// 		firstName: 'Lukas',
+// 		lastName: 'X.',
+// 		country: 'Croatia',
+// 		continent: 'Europe',
+// 		age: 35,
+// 		language: 'Python',
+// 	},
+// 	{
+// 		firstName: 'Madison',
+// 		lastName: 'U.',
+// 		country: 'United States',
+// 		continent: 'Americas',
+// 		age: 32,
+// 		language: 'Ruby',
+// 	},
+// ];
+
+// function greetDevelopers(list) {
+// 	const res = list1.reduce((acc, current) => {
+// 		current.greeting = `Hi ${current.firstName}, what do you like the most about ${current.language}`;
+// 		acc.push(current);
+// 		return acc;
+// 	}, []);
+// 	return res;
+// }
+
+// console.log(greetDevelopers(list1));
+
+//{ firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java',
+//     greeting: 'Hi Sofia, what do you like the most about Java?'
+//   },
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function meeting(x) {
+// 	const idx = x.findIndex((el) => el === 'O');
+// 	return idx === -1 ? 'None available!' : idx;
+//  }
+
+// console.log(meeting(['X','O','X','X','X','X']));//, 0))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function dropCap(n) {
+// 	let res = n.split(' ');
+// 	const arr = res.map(el => {
+// 		if (el.length > 2) {
+// 			return el[0].toUpperCase() + el.substring(1).toLowerCase();
+// 		}
+// 		else {
+// 			return el
+// 		}
+// 	});
+// 	return arr.join(' ');
+// }
+
+// console.log(dropCap('T axdaYFDZXGRy EMLQPJGHZq TxBF rO')); //,"Random Caps Craziness"))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function insertDash(num) {
+	/*
+	let str = '';
+	let res = num.toString().split('');
+	for (let i = 0; i < res.length; i++) {
+		if (res[i] % 2 !== 0 && res[i + 1] && res[i + 1] % 2 !== 0) {
+			str += `${res[i]}-`;
+		} else {
+			str += res[i];
+		}
+	}
+	return str;
+	*/
+// 	let prev = null;
+// 	return num
+// 		.toString()
+// 		.split('')
+// 		.reduce((acc, curr) => {
+// 			if (prev && prev % 2 && curr % 2) {
+// 				acc += '-';
+// 			}
+// 			acc += curr;
+// 			prev = curr;
+// 			return acc;
+// 		}, '');
+// }
+
+// console.log(insertDash(1454793)); //,'4547-9-3'))
+	
+// var capitals = function (word) {
+// 		const arr = []
+// 		let res = word.split('');
+// 		for (let i = 0; i < res.length; i++){
+// 			if (res[i].charCodeAt() > 64 && res[i].charCodeAt() < 91) {
+// 				arr.push(i);
+// 			}
+// 		}
+// 	return arr;
+// 	};
+	var capitals = function (word) {
+		return word.split('').reduce((acc,current,ind) => {
+			if (current.charCodeAt() > 64 && current.charCodeAt() < 91) {
+				acc.push(ind);
+			}
+			return acc
+		},[])
+	};
+	console.log(capitals('MAzQtLZohe'));//, [0,3,4,6] );)
