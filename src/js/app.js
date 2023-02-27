@@ -1568,7 +1568,7 @@ countPeople([
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function insertDash(num) {
-	/*
+/*
 	let str = '';
 	let res = num.toString().split('');
 	for (let i = 0; i < res.length; i++) {
@@ -1595,7 +1595,7 @@ countPeople([
 // }
 
 // console.log(insertDash(1454793)); //,'4547-9-3'))
-	
+
 // var capitals = function (word) {
 // 		const arr = []
 // 		let res = word.split('');
@@ -1606,12 +1606,88 @@ countPeople([
 // 		}
 // 	return arr;
 // 	};
-	var capitals = function (word) {
-		return word.split('').reduce((acc,current,ind) => {
-			if (current.charCodeAt() > 64 && current.charCodeAt() < 91) {
-				acc.push(ind);
-			}
-			return acc
-		},[])
-	};
-	console.log(capitals('MAzQtLZohe'));//, [0,3,4,6] );)
+// var capitals = function (word) {
+// 	return word.split('').reduce((acc,current,ind) => {
+// 		if (current.charCodeAt() > 64 && current.charCodeAt() < 91) {
+// 			acc.push(ind);
+// 		}
+// 		return acc
+// 	},[])
+// };
+// console.log(capitals('MAzQtLZohe'));//, [0,3,4,6] );)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//___________________________________________________________________________________________________
+
+// 	function maxDiff(list) {
+// 		if (list.length < 2) {
+// 			return 0;
+// 		}
+// 		const res = list.sort((a,b) => b - a);
+// 		return res[0] - res[res.length - 1];
+// };
+
+// console.log(maxDiff([]));
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//  let input = [
+// 		'Dasher Tonoyan',
+// 		'Dancer Moore',
+// 		'Prancer Chua',
+// 		'Vixen Hall',
+// 		'Comet Karavani',
+// 		'Cupid Foroutan',
+// 		'Donder Jonker',
+// 		'Blitzen Claus',
+// ];
+
+// function sortReindeer(reindeerNames) {
+// 	return reindeerNames.sort((a,b) => {
+// 		const [firstDeerName, firstDeerLastName] = a.split(" ");
+// 		const [secondDeerName,secondDeerLastName] = b.split(" ");
+// 		if (firstDeerLastName > secondDeerLastName) {
+// 			return 1;
+// 		}
+// 		if (firstDeerLastName < secondDeerLastName) {
+// 			return -1;
+// 		} else {
+// 			return 0;
+// 		}
+// 	})
+// }
+
+// console.log(sortReindeer(input));
+
+// let output = [
+// 	'Prancer Chua',
+// 	'Blitzen Claus',
+// 	'Cupid Foroutan',
+// 	'Vixen Hall',
+// 	'Donder Jonker',
+// 	'Comet Karavani',
+// 	'Dancer Moore',
+// 	'Dasher Tonoyan',
+// ];
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function nthChar(words){
+// 	return words.reduce((acc,current,index) => {
+// 		acc += current[index];
+// 		return acc
+//  },'')
+// }
+// console.log(nthChar(['yoda','best','has'])); // 'yes'))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function arrayLeaders(numbers) {
+// 	const res = [];
+// 	for (let i = 0; i < numbers.length; i++) {
+// 		let sum = 0;
+// 		for (let c = i + 1; c < numbers.length; c++) {
+// 			sum += numbers[c];
+// 		}
+// 		if (numbers[i] > sum) {
+// 			res.push(numbers[i]);
+// 		}
+// 	}
+// 	return res;
+// }
+
+// console.log(arrayLeaders([16, 17, 4, 3, 5, 2])); // [17,5,2]))
