@@ -1691,3 +1691,191 @@ countPeople([
 // }
 
 // console.log(arrayLeaders([16, 17, 4, 3, 5, 2])); // [17,5,2]))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_____________________________________________________________________________________________
+
+// function save(sizes,hd) {
+// 	let sum = 0;
+// 	for (let i = 0; i < sizes.length; ++i) {
+// 		sum += sizes[i];
+// 		if (sum >= hd) {
+// 			return i
+// 		}
+// 	}
+// }
+// //Computer problem series #1: Fill the Hard Disk Drive
+// console.log(save([4,4,4,3,3],11)); // 2)))
+//------------------------------------------------------------------------------------------
+
+// var list1 = [
+// 	{
+// 		firstName: 'Noah',
+// 		lastName: 'M.',
+// 		country: 'Switzerland',
+// 		continent: 'Europe',
+// 		age: 19,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Maia',
+// 		lastName: 'S.',
+// 		country: 'Tahiti',
+// 		continent: 'Oceania',
+// 		age: 28,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Shufen',
+// 		lastName: 'L.',
+// 		country: 'Taiwan',
+// 		continent: 'Asia',
+// 		age: 35,
+// 		language: 'HTML',
+// 	},
+// 	{
+// 		firstName: 'Sumayah',
+// 		lastName: 'M.',
+// 		country: 'Tajikistan',
+// 		continent: 'Asia',
+// 		age: 30,
+// 		language: 'CSS',
+// 	},
+// ];
+
+// function countDevelopers(list) {
+// 	return list.reduce((acc, {continent, language}) => {
+// 		console.log('continent',continent);
+// 		console.log('language',language);
+// 		if (continent === 'Europe' && language === 'JavaScript') {
+// 			acc ++
+// 		}
+// 			return acc;
+// 	}, 0);
+// }
+
+// console.log(countDevelopers(list1));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// let a = [13, 64, 15, 17, 88];
+// let b = [23, 14, 53, 17, 80];
+
+// function getLargerNumbers(a, b) {
+// 	const res = [];
+// 	for (let i = 0; i < a.length; i++) {
+// 		if (a[i] >= b[i]) {
+// 			res.push(a[i])
+// 		} else {
+// 			res.push(b[i]);
+// 		}
+// 	}
+// 	return res
+// }
+
+// console.log(getLargerNumbers(a, b));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function consecutiveOnes(nums) {
+
+// };
+// //ONE ONe One one
+// console.log(consecutiveOnes([1,1,0,0,0,1,1,1,0,1,0])); //, 3))
+//--------------------------------------------------------------------------------------------------------------------
+
+// function scoreTest(str,right,omit,wrong) {
+// 	let good = 0;
+// 	let noGood = 0;
+// 	let bad = 0;
+// 	for (let i = 0; i < str.length; i++) {
+// 		if (str[i] === 0) {
+// 			good++
+// 		}
+// 		if (str[i] === 1) {
+// 			noGood++;
+// 		} if (str[i] === 2) {
+// 			bad++;
+// 		}
+// 	}
+// 	return good * right + (noGood * omit) -( bad * wrong);
+// }
+
+// console.log(scoreTest([0, 0, 0, 0, 2, 1, 0], 2, 0, 1)); //9)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+// var list1 = [
+// 	{
+// 		firstName: 'Noah',
+// 		lastName: 'M.',
+// 		country: 'Switzerland',
+// 		continent: 'Europe',
+// 		age: 19,
+// 		language: 'C',
+// 		meal: 'vegetarian',
+// 	},
+// 	{
+// 		firstName: 'Anna',
+// 		lastName: 'R.',
+// 		country: 'Liechtenstein',
+// 		continent: 'Europe',
+// 		age: 52,
+// 		language: 'JavaScript',
+// 		meal: 'standard',
+// 	},
+// 	{
+// 		firstName: 'Ramona',
+// 		lastName: 'R.',
+// 		country: 'Paraguay',
+// 		continent: 'Americas',
+// 		age: 29,
+// 		language: 'Ruby',
+// 		meal: 'vegan',
+// 	},
+// 	{
+// 		firstName: 'George',
+// 		lastName: 'B.',
+// 		country: 'England',
+// 		continent: 'Europe',
+// 		age: 81,
+// 		language: 'C',
+// 		meal: 'vegetarian',
+// 	},
+// ];
+
+// function orderFood(list) {
+// 	return list.reduce((acc,{ meal }) => {
+// 		console.log('meal',meal);
+// 		console.log('acc[meal]',acc[meal]);
+// 		if (!acc[meal]) {
+// 			acc[meal] = 1;
+// 		}
+// 		else {
+// 			acc[meal] += 1
+// 		}
+// 		return acc
+// 	} ,{})
+// }
+
+// console.log(orderFood(list1));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function matrix(array) {
+// 	const res = [];
+// 	for (let i = 0; i < array.length; i++) {
+// 		for (let c = )
+// 	}
+// }
+
+// console.log(
+// 	matrix([
+// 		[1,1,-5,5],
+// 		[2,-4,11,2],
+// 		[3,1,-1,4],
+// 		[2,-6,8,10],
+// 	]));
+// // 	[
+// // 		[1, 1, -5, 5],
+// // 		[2, 0, 11, 2],
+// // 		[3, 1, 0, 4],
+// // 		[2, -6, 8, 1],
+// // 	]
+// // );
