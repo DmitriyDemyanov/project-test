@@ -1696,16 +1696,18 @@ countPeople([
 
 // function save(sizes,hd) {
 // 	let sum = 0;
+// 	let res = [];
 // 	for (let i = 0; i < sizes.length; ++i) {
 // 		sum += sizes[i];
-// 		if (sum >= hd) {
-// 			return i
+// 		if (sum <= hd) {
+// 			res.push(sizes[i]);
 // 		}
 // 	}
+// 	return res.length;
 // }
 // //Computer problem series #1: Fill the Hard Disk Drive
 // console.log(save([4,4,4,3,3],11)); // 2)))
-//------------------------------------------------------------------------------------------
+// //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // var list1 = [
 // 	{
@@ -1774,11 +1776,25 @@ countPeople([
 // console.log(getLargerNumbers(a, b));
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// function consecutiveOnes(nums) {
-
-// };
-// //ONE ONe One one
-// console.log(consecutiveOnes([1,1,0,0,0,1,1,1,0,1,0])); //, 3))
+function consecutiveOnes(nums) {
+   	const res = [];
+		let count = 1;
+		for (let i = 0; i < nums.length; i++) {
+			if (nums[i] === nums[i + 1] && nums[i] !== 0) {
+				count++;
+			} else if (nums[i] !== nums[i + 1] && count !== 1) {
+				res.push(count);
+				count = 1;
+			}
+		}
+	res.sort((a,b) => b - a);
+	if (res.length === 0 && nums.filter(el => el === 0).length !== 0) {
+		return 1
+	}
+		return res[0];
+};
+//ONE ONe One one
+console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
 //--------------------------------------------------------------------------------------------------------------------
 
 // function scoreTest(str,right,omit,wrong) {
@@ -1859,10 +1875,25 @@ countPeople([
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function matrix(array) {
-// 	const res = [];
+// 	const result = [];
 // 	for (let i = 0; i < array.length; i++) {
-// 		for (let c = )
+// 		let res = [];
+// 		console.log('array[i][i]', array[i][i]);
+		
+// 		array[i].forEach((el, ind) => {
+// 			console.log('length',ind);
+// 			if (ind === i && el < 0) {
+// 				res.push(0)
+// 			}
+// 			 else if (ind === i && el >= 0) {
+// 				res.push(1);
+// 			} else {
+// 				res.push(el);
+// 			}
+// 		})
+// 		result.push(res)
 // 	}
+// 	return result
 // }
 
 // console.log(
@@ -1879,3 +1910,4 @@ countPeople([
 // // 		[2, -6, 8, 1],
 // // 	]
 // // );
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
