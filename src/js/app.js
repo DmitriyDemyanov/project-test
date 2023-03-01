@@ -1776,25 +1776,25 @@ countPeople([
 // console.log(getLargerNumbers(a, b));
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function consecutiveOnes(nums) {
-   	const res = [];
-		let count = 1;
-		for (let i = 0; i < nums.length; i++) {
-			if (nums[i] === nums[i + 1] && nums[i] !== 0) {
-				count++;
-			} else if (nums[i] !== nums[i + 1] && count !== 1) {
-				res.push(count);
-				count = 1;
-			}
-		}
-	res.sort((a,b) => b - a);
-	if (res.length === 0 && nums.filter(el => el === 0).length !== 0) {
-		return 1
-	}
-		return res[0];
-};
-//ONE ONe One one
-console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
+// function consecutiveOnes(nums) {
+//    	const res = [];
+// 		let count = 1;
+// 		for (let i = 0; i < nums.length; i++) {
+// 			if (nums[i] === nums[i + 1] && nums[i] !== 0) {
+// 				count++;
+// 			} else if (nums[i] !== nums[i + 1] && count !== 1) {
+// 				res.push(count);
+// 				count = 1;
+// 			}
+// 		}
+// 	res.sort((a,b) => b - a);
+// 	if (res.length === 0 && nums.filter(el => el === 0).length !== 0) {
+// 		return 1
+// 	}
+// 		return res[0];
+// };
+// //ONE ONe One one
+// console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
 //--------------------------------------------------------------------------------------------------------------------
 
 // function scoreTest(str,right,omit,wrong) {
@@ -1816,7 +1816,6 @@ console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
 
 // console.log(scoreTest([0, 0, 0, 0, 2, 1, 0], 2, 0, 1)); //9)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 
 // var list1 = [
 // 	{
@@ -1879,7 +1878,7 @@ console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
 // 	for (let i = 0; i < array.length; i++) {
 // 		let res = [];
 // 		console.log('array[i][i]', array[i][i]);
-		
+
 // 		array[i].forEach((el, ind) => {
 // 			console.log('length',ind);
 // 			if (ind === i && el < 0) {
@@ -1911,3 +1910,337 @@ console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
 // // 	]
 // // );
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//______________________________________________________________________________________________________________
+
+// function divisibleByThree(str) {
+// 	let res = 0;
+// 	str.split('').forEach((el) => (res += +el)) % 3 === 0;
+// 	return res % 3 === 0;
+// }
+
+// console.log(divisibleByThree('19254')); //, true);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// var list1 = [
+// 	{
+// 		firstName: 'Harry',
+// 		lastName: 'K.',
+// 		country: 'Brazil',
+// 		continent: 'Americas',
+// 		age: 22,
+// 		language: 'JavaScript',
+// 		githubAdmin: 'yes',
+// 	},
+// 	{
+// 		firstName: 'Kseniya',
+// 		lastName: 'T.',
+// 		country: 'Belarus',
+// 		continent: 'Europe',
+// 		age: 49,
+// 		language: 'Ruby',
+// 		githubAdmin: 'no',
+// 	},
+// 	{
+// 		firstName: 'Jing',
+// 		lastName: 'X.',
+// 		country: 'China',
+// 		continent: 'Asia',
+// 		age: 34,
+// 		language: 'JavaScript',
+// 		githubAdmin: 'yes',
+// 	},
+// 	{
+// 		firstName: 'Piotr',
+// 		lastName: 'B.',
+// 		country: 'Poland',
+// 		continent: 'Europe',
+// 		age: 128,
+// 		language: 'JavaScript',
+// 		githubAdmin: 'no',
+// 	},
+// ];
+// function findAdmin(list, lang) {
+// 	return list.reduce((acc,current) => {
+// 		if (current.githubAdmin === 'yes' && current.language === lang) {
+// 			acc.push(current);
+// 		}
+// 		return acc
+// 	},[])
+// }
+
+// console.log(findAdmin(list1, 'JavaScript'));
+// var list2 = [
+// 	{
+// 		firstName: 'Mariami',
+// 		lastName: 'G.',
+// 		country: 'Georgia',
+// 		continent: 'Europe',
+// 		age: 29,
+// 		language: 'Python',
+// 	},
+// 	{
+// 		firstName: 'Mia',
+// 		lastName: 'H.',
+// 		country: 'Germany',
+// 		continent: 'Europe',
+// 		age: 39,
+// 		language: 'Ruby',
+// 	},
+// 	{
+// 		firstName: 'Maria',
+// 		lastName: 'I.',
+// 		country: 'Greece',
+// 		continent: 'Europe',
+// 		age: 32,
+// 		language: 'C',
+// 	},
+// ];
+// var list1 = [
+// 	{
+// 		firstName: 'Daniel',
+// 		lastName: 'J.',
+// 		country: 'Aruba',
+// 		continent: 'Americas',
+// 		age: 42,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Kseniya',
+// 		lastName: 'T.',
+// 		country: 'Belarus',
+// 		continent: 'Europe',
+// 		age: 22,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Hanna',
+// 		lastName: 'L.',
+// 		country: 'Hungary',
+// 		continent: 'Europe',
+// 		age: 65,
+// 		language: 'JavaScript',
+// 	},
+// ];
+// function isSameLanguage(list) {
+// 	const lang = list[0].language;
+// 	return list.filter((el) => el.language === lang).length === list.length;
+// }
+
+// console.log(isSameLanguage(list1));
+// console.log(isSameLanguage(list2));
+// var list1 = [
+// 	{
+// 		firstName: 'Mark',
+// 		lastName: 'G.',
+// 		country: 'Scotland',
+// 		continent: 'Europe',
+// 		age: 22,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Victoria',
+// 		lastName: 'T.',
+// 		country: 'Puerto Rico',
+// 		continent: 'Americas',
+// 		age: 30,
+// 		language: 'Python',
+// 	},
+// 	{
+// 		firstName: 'Emma',
+// 		lastName: 'B.',
+// 		country: 'Norway',
+// 		continent: 'Europe',
+// 		age: 19,
+// 		language: 'Clojure',
+// 	},
+// ];
+// var list2 = [
+// 	{
+// 		firstName: 'Kseniya',
+// 		lastName: 'T.',
+// 		country: 'Belarus',
+// 		continent: 'Europe',
+// 		age: 29,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Amar',
+// 		lastName: 'V.',
+// 		country: 'Bosnia and Herzegovina',
+// 		continent: 'Europe',
+// 		age: 32,
+// 		language: 'Ruby',
+// 	},
+// ];
+// function getFirstPython(list) {
+
+// 	for (let i = 0; i < list.length; i++) {
+// 		if (list[i].language === 'Python') {
+// 			return `${list[i].firstName}, ${list[i].country}`;
+// 		}
+// 	}
+// 	return 'There will be no Python developers';
+// }
+
+// console.log(getFirstPython(list1)); //, 'Victoria, Puerto Rico'));
+// console.log(getFirstPython(list2)); //, 'There will be no Python developers');
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// var list1 = [
+// 	{
+// 		firstName: 'Sofia',
+// 		lastName: 'I.',
+// 		country: 'Argentina',
+// 		continent: 'Americas',
+// 		age: 35,
+// 		language: 'Java',
+// 	},
+// 	{
+// 		firstName: 'Lukas',
+// 		lastName: 'X.',
+// 		country: 'Croatia',
+// 		continent: 'Europe',
+// 		age: 35,
+// 		language: 'Python',
+// 	},
+// 	{
+// 		firstName: 'Madison',
+// 		lastName: 'U.',
+// 		country: 'United States',
+// 		continent: 'Americas',
+// 		age: 32,
+// 		language: 'Ruby',
+// 	},
+// ];
+
+// var list2 = [
+// 	{
+// 		firstName: 'Sofia',
+// 		lastName: 'I.',
+// 		country: 'Argentina',
+// 		continent: 'Americas',
+// 		age: 35,
+// 		language: 'Java',
+// 	},
+// 	{
+// 		firstName: 'Lukas',
+// 		lastName: 'X.',
+// 		country: 'Croatia',
+// 		continent: 'Europe',
+// 		age: 35,
+// 		language: 'Python',
+// 	},
+// ];
+// function isRubyComing(list) {
+// 	return list.some((el) => el.language === 'Ruby');
+// }
+// console.log(isRubyComing(list1));//, true));
+// console.log(isRubyComing(list2))//, false));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// var list1 = [
+// 	{
+// 		firstName: 'Maria',
+// 		lastName: 'Y.',
+// 		country: 'Cyprus',
+// 		continent: 'Europe',
+// 		age: 30,
+// 		language: 'Java',
+// 	},
+// 	{
+// 		firstName: 'Victoria',
+// 		lastName: 'T.',
+// 		country: 'Puerto Rico',
+// 		continent: 'Americas',
+// 		age: 70,
+// 		language: 'Python',
+// 	},
+// ];
+// var list2 = [
+// 	{
+// 		firstName: 'Noa',
+// 		lastName: 'A.',
+// 		country: 'Israel',
+// 		continent: 'Asia',
+// 		age: 20,
+// 		language: 'Ruby',
+// 	},
+// 	{
+// 		firstName: 'Andrei',
+// 		lastName: 'E.',
+// 		country: 'Romania',
+// 		continent: 'Europe',
+// 		age: 21,
+// 		language: 'C',
+// 	},
+// ];
+// function getAverageAge(list) {
+// 	let age = 0;
+// 	list.forEach((el) => (age += el.age));
+// 	return Math.round(age / list.length);
+// }
+
+// console.log(getAverageAge(list1))//, 50));
+// console.log(getAverageAge(list2))//, 21));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function getEvenNumbers(numbersArray) {
+// 	return numbersArray.filter((el) => el % 2 === 0);
+// }
+
+// console.log(getEvenNumbers([1,2,3,6,8,10]));//, [2,6,8,10]))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function sortByValueAndIndex(array) {
+// 	const res = [];
+
+// 	for (let i = 0; i < array.length; i++) {
+// 		console.log('array.slice====', array.slice(i + 1));
+// 		console.log('array[i]', array[i]);
+// 		let newArr = array.slice(i + 1);
+// 		let num = array[i];
+// 		for (let c = 0; c < newArr.length; c++) {
+// 			console.log(' newArr', newArr);
+// 			console.log('c + 2', c + 2);
+// 			if (array[i] * (i + 1) >= newArr[c] * (c + 2)) {
+// 				num = array[i];
+// 			} else {
+// 				num = array[c];
+// 			}
+// 		}
+// 		res.push(num);
+// 		console.log('res.push', res);
+// 	}
+// 	return res;
+// }
+
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // expected = [2, 3, 4, 5, 26];
+
+// Sort an array by value and index
+//------------------------------------------------------------------------------------------------------------
+
+// function doubleEveryOther(a) {
+// 	return a.map((el,ind) => {
+// 		if ((ind + 1) % 2 === 0) {
+// 			return el * 2;
+// 		}
+// 		else {
+// 			return el
+// 		}
+// 	})
+// }
+
+// console.log(doubleEveryOther([1,2,3,4]));//, [1,4,3,8] ))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function scrollingText(text) {
+// 	let str = text.toUpperCase();
+// 	let res = [str];
+
+// 	for (let i = 1; i < text.length; i++) {
+// 		str = str.slice(1) + str[0];
+// 		res.push(str);
+// 	}
+
+// 	return res;
+// }
+
+// console.log(scrollingText('abcdefg')); // ["ABC","BCA","CAB"]))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
