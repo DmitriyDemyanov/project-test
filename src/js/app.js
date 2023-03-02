@@ -2243,4 +2243,78 @@ countPeople([
 
 // console.log(scrollingText('abcdefg')); // ["ABC","BCA","CAB"]))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_____________________________________________________________________________________________________________________
+// function rowWeights(array) {
+// 	let even = 0;
+// 	let odd = 0;
+// 	array.forEach((el,ind) => {
+// 		if ([ind + 1] % 2 !== 0) {
+// 			odd += el;
+// 		} else {
+// 			even += el;
+// 		}
+// 	})
+// 	const res = [odd, even];
+// 	return res;
+// }
 
+// console.log(rowWeights([50, 60, 70, 80]))//, [120, 140]);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function sabb(s,val,happiness) { }
+// //
+// The Office VI - Sabbatical
+// console.log(sabb('Can I have a sabbatical?',5,5));//, 'Sabbatical! Boom!'))
+
+//?????????????????????????????????????????????????????????????????????????????????????????????????????????????
+// function evenLast(numbers) {
+// 	return numbers.reduce((acc,cur,ind) => {
+// 		if (ind % 2 === 0) {
+// 			acc += cur
+// 		}
+// 		return acc
+// 	},0) * numbers[numbers.length - 1] || 0;
+// }
+
+// console.log(evenLast([])); //, 30))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function duplicateElements(m, n) {
+// 	return m.some((num) => n.some((el) => el === num));
+// }
+
+// console.log(duplicateElements([1,2,3,4,5],[6,7,8,9]));//, true);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function minimumSteps(numbers, value) {
+	let res = numbers.sort((a,b) => a - b);
+
+	let sum = 0;
+
+	for (let i = 0; i < res.length; i++) {
+
+		sum += res[i];
+
+		if (sum >= value) {
+			return i;
+		}
+	}
+}
+
+console.log(minimumSteps([19,98,69,28,75,45,17,98,67],464));//, 8);
+//2,4,8,9,10
+// Minimum Steps (Array Series #6)
+
+function sum(arr) {
+	console.log(arr.sort((a, b) => a - b));
+	return arr.sort((a,b) => a-b).reduce((acc,cur) => acc += cur);
+}
+
+console.log(sum([19,98,69,28,75,45,17,67]));
+
+//   let results1 = twoOldestAges([1, 5, 87, 45, 8, 8]);
+// 	let results2 = twoOldestAges([6, 5, 83, 5, 3, 18]);
+// // function twoOldestAges(ages) {
+// 	return ages.sort((a,b) => a - b).slice(2);
+//  }
+
+// console.log('#####################', results1);
+// console.log('#############',results2);
