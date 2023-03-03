@@ -2284,37 +2284,137 @@ countPeople([
 // console.log(duplicateElements([1,2,3,4,5],[6,7,8,9]));//, true);)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function minimumSteps(numbers, value) {
-	let res = numbers.sort((a,b) => a - b);
+// function minimumSteps(numbers, value) {
+// 	let res = numbers.sort((a,b) => a - b);
 
-	let sum = 0;
+// 	let sum = 0;
 
-	for (let i = 0; i < res.length; i++) {
+// 	for (let i = 0; i < res.length; i++) {
 
-		sum += res[i];
+// 		sum += res[i];
 
-		if (sum >= value) {
-			return i;
-		}
-	}
-}
+// 		if (sum >= value) {
+// 			return i;
+// 		}
+// 	}
+// }
 
-console.log(minimumSteps([19,98,69,28,75,45,17,98,67],464));//, 8);
-//2,4,8,9,10
-// Minimum Steps (Array Series #6)
+// console.log(minimumSteps([19,98,69,28,75,45,17,98,67],464));//, 8);
+// //2,4,8,9,10
+// // Minimum Steps (Array Series #6)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function sum(arr) {
-	console.log(arr.sort((a, b) => a - b));
-	return arr.sort((a,b) => a-b).reduce((acc,cur) => acc += cur);
-}
+// function sum(arr) {
+// 	console.log(arr.sort((a, b) => a - b));
+// 	return arr.sort((a,b) => a-b).reduce((acc,cur) => acc += cur);
+// }
 
-console.log(sum([19,98,69,28,75,45,17,67]));
+// console.log(sum([19,98,69,28,75,45,17,67]));
 
-//   let results1 = twoOldestAges([1, 5, 87, 45, 8, 8]);
-// 	let results2 = twoOldestAges([6, 5, 83, 5, 3, 18]);
-// // function twoOldestAges(ages) {
-// 	return ages.sort((a,b) => a - b).slice(2);
+// //   let results1 = twoOldestAges([1, 5, 87, 45, 8, 8]);
+// // 	let results2 = twoOldestAges([6, 5, 83, 5, 3, 18]);
+// // // function twoOldestAges(ages) {
+// // 	return ages.sort((a,b) => a - b).slice(2);
+// //  }
+
+// // console.log('#####################', results1);
+// // console.log('#############',results2);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_________________________________________________________________________________________________________
+// function trouble(x,t) {
+// 	let res = [];
+// 	for (let i = 0; i < x.length; i++) {
+// 		if (x[i] + x[i + 1] === t) {
+// 			res.push(i);
+// 			i++
+// 		}
+// 	}
+// console.log('RES{',res)
+// 	return x.reduce((acc,cur,ind) => {
+// 		if (!res.some((el) => el === ind)) {
+// 			acc.push(cur);
+// 		}
+// 		return acc
+// 	},[]);
 //  }
 
-// console.log('#####################', results1);
-// console.log('#############',results2);
+// Double Trouble
+// console.log(trouble([2, 2, 2, 2, 2, 2], 4))//, [2]);
+//-----------------------------------------------------------------------------
+
+// function mergeArrays(a,b) {
+// 	let newArr = [];
+// 	let leng = a.length > b.length ? a.length : b.length;
+// 	console.log('LENGTH:', leng)
+// 	for (let i = 0; i < leng; i++) {
+// 		if (a[i] !== undefined) {
+// 			newArr.push(a[i]);
+// 		}
+// 		if (b[i] !== undefined) {
+// 			newArr.push(b[i]);
+// 		}
+// 	}
+// 	return newArr;
+// }
+
+// console.log(mergeArrays(['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]))//, ['a', 1, 'b', 2, 'c', 3, 'd', 4, 'e', 5]);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function numbers() {
+// 	return num
+// }
+// For the sake of argument
+// console.log(numbers(1, 3, 4, 'f', null));
+//---------------------------------------------------------------------------------------------
+
+// function diffBig2(arr) {
+// 	let res = [];
+	
+// 	for (let i = 0; i = arr.length; ++i) {
+// 		res.push(arr.splice(arr.indexOf(Math.max(...arr)), 1)[0]);
+// 	}
+// 	return res[0] - res[1]
+// }
+// console.log(diffBig2([1, 8, 3]))//, 5))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function getMissingElement(superImportantArray) {
+// 	return superImportantArray
+// 		.sort((a,b) => a - b).reduce((acc,cur,ind) => {
+// 			if (cur !== ind + 1 && ind + 1 !== undefined) {
+// 				acc = ind + 1
+
+// 			}
+// 			return acc
+// 		},0)
+// }
+
+// console.log(getMissingElement( [0,5,1,3,2,9,7,6,4]))// 8);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//   let before = {
+// 		Ice: 'Cream',
+// 		Age: '21',
+// 		Light: 'Cream',
+// 		Double: 'Cream',
+// 	};
+
+// 	// let expectedAns = {
+// 	// 	Cream: ['Ice', 'Double', 'Light'],
+// 	// 	21: ['Age'],
+// 	// };
+// function switchDict(dic) {
+// 	console.log(Object.entries(dic));
+// 	return Object.entries(dic).reduce((acc,cur) =>  {
+// 		console.log('Cur>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>:', cur[1]);
+// 		acc[cur[1]] = [cur[0]];
+// 		if (cur[0]) {
+// 			console.log('GGGGGGGGg')
+// 		}
+// 			console.log('ACC',acc[cur[0]]);
+
+// 		return acc
+// 	},{})
+//  }
+
+
+// console.log('############3',switchDict(before));
+//????????????????????????????????????????????????????????????????????
