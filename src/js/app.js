@@ -2368,7 +2368,7 @@ countPeople([
 
 // function diffBig2(arr) {
 // 	let res = [];
-	
+
 // 	for (let i = 0; i = arr.length; ++i) {
 // 		res.push(arr.splice(arr.indexOf(Math.max(...arr)), 1)[0]);
 // 	}
@@ -2390,31 +2390,38 @@ countPeople([
 // console.log(getMissingElement( [0,5,1,3,2,9,7,6,4]))// 8);)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-//   let before = {
-// 		Ice: 'Cream',
-// 		Age: '21',
-// 		Light: 'Cream',
-// 		Double: 'Cream',
-// 	};
+// let before = {
+// 	Ice: 'Cream',
+// 	Age: '21',
+// 	Light: 'Cream',
+// 	Double: 'Cream',
+// };
 
-// 	// let expectedAns = {
-// 	// 	Cream: ['Ice', 'Double', 'Light'],
-// 	// 	21: ['Age'],
-// 	// };
+// // 	// let expectedAns = {
+// // 	// 	Cream: ['Ice', 'Double', 'Light'],
+// // 	// 	21: ['Age'],
+// // 	// };
 // function switchDict(dic) {
 // 	console.log(Object.entries(dic));
-// 	return Object.entries(dic).reduce((acc,cur) =>  {
-// 		console.log('Cur>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>:', cur[1]);
-// 		acc[cur[1]] = [cur[0]];
-// 		if (cur[0]) {
-// 			console.log('GGGGGGGGg')
+// 	return Object.entries(dic).reduce((acc, [key, value]) => {
+// 		if (!acc[value]) {
+// 			acc[value] = [];
 // 		}
-// 			console.log('ACC',acc[cur[0]]);
+// 		acc[value].push(key);
+// 		return acc;
+// 	}, {});
+// }
 
-// 		return acc
-// 	},{})
-//  }
+// console.log('############3', switchDict(before));
 
+// function oddOnesOut(nums) {
+// 	let res = nums.reduce((acc,cur) => {
+// 		if (nums.filter((el) => el === cur).length % 2 === 0) {
+// 			acc.push(cur);
+// 		}
+// 		return acc;
+// 	},[])
+// 	return res
+// }
 
-// console.log('############3',switchDict(before));
-//????????????????????????????????????????????????????????????????????
+// console.log(oddOnesOut([42, 72, 32, 4, 94, 82, 67, 67]))//, [67, 67]);)
