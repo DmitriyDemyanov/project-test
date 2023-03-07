@@ -2425,3 +2425,86 @@ countPeople([
 // }
 
 // console.log(oddOnesOut([42, 72, 32, 4, 94, 82, 67, 67]))//, [67, 67]);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//____________________________________________________________________________________________________
+// function decodePass(passArr,bin) {
+// 	let array = bin.split(' ');
+// 	let password = '';
+// 	for (let i = 0; i < array.length; i++) {
+// 		password += String.fromCharCode(parseInt(array[i], 2));
+// 	}
+// 	for (let i = 0; i < passArr.length; i++) {
+// 		if (password === passArr[i]) {
+// 			return passArr[i];
+// 		}
+// 	}
+// 	return false;
+// }
+	
+
+
+// console.log(
+// 	decodePass(
+// 		['password321', 'admin', 'admin1'],
+// 		'01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'
+// 	)
+// ); //, false);)
+//+-=_=-+-=-_+-_+_=-_+-_+-++__+_+-+-_+-+_=-_=-_+
+
+// function checkExam(array1,array2) {
+// 	let sum = 0;
+// 	for (let i = 0; i < array1.length; i++) {
+// 		if (array1[i] === array2[i]) {
+// 			sum += 4;
+// 		}
+// 		else if (array1[i] !== array2[i] && array2[i] !== '') {
+// 			sum -= 1;
+// 		}
+// 	}
+// 	if (sun < 0) {
+// 		return 0
+// 	}
+// 	return sum
+// }
+
+
+// console.log(checkExam(['a', 'a', 'c', 'b'], ['a', 'a', 'b', '']))//, 7);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function noOdds(values) {
+// 	return values.reduce((acc, cur) => {
+// 		if (cur % 2 === 0) {
+// 			acc.push(cur);
+// 		}
+// 		return acc;
+// 	}, []);
+// }
+
+// console.log(noOdds( [0,1,2,3] ))//, [0,2] ))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function strangeMath(n,k) {
+// 	let numArr = [];
+// 	for (let i = 0; i <= n; i++) {
+// 		numArr.push(i);
+// 	}
+// 	return numArr.sort().reduce((acc,cur,ind) => {
+// 		console.log('cur', cur);
+// 		console.log('ind', ind);
+// 		if (cur === k) {
+// 			acc = ind
+// 		}
+// 		return acc
+// 	},0)
+// }
+
+// // console.log(strangeMath(15, 15))//, 7);
+// //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function strangeMath(n,k) {
+// 	let numArr = [];
+// 	for (let i = 0; i <= n; i++) {
+// 		numArr.push(i);
+// 	}
+// 	return numArr.sort().indexOf(k);
+// }
+
+// console.log(strangeMath(15, 15))//, 7);
