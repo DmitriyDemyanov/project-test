@@ -2440,8 +2440,6 @@ countPeople([
 // 	}
 // 	return false;
 // }
-	
-
 
 // console.log(
 // 	decodePass(
@@ -2466,7 +2464,6 @@ countPeople([
 // 	}
 // 	return sum
 // }
-
 
 // console.log(checkExam(['a', 'a', 'c', 'b'], ['a', 'a', 'b', '']))//, 7);
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -2500,11 +2497,155 @@ countPeople([
 // // console.log(strangeMath(15, 15))//, 7);
 // //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function strangeMath(n,k) {
-// 	let numArr = [];
-// 	for (let i = 0; i <= n; i++) {
-// 		numArr.push(i);
+// let numArr = [];
+// for (let i = 0; i <= n; i++) {
+// 	numArr.push(i);
+// }
+// return numArr.sort().indexOf(k);
+// }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//______________________________________________________________________________________________
+// console.log(strangeMath(15, 15))//, 7);
+// function well(x) {
+// 	let newArr = x.reduce((acc, cur) => acc.concat(cur), []);
+// 	const res = newArr.reduce((acc, cur) => {
+// 		if (cur.toLowerCase() === 'good') {
+// 			acc.push(cur);
+// 		}
+// 		return acc;
+// 	}, []);
+
+// 	if (res.length > 2) {
+// 		return 'I smell a series!';
+// 	} else if (res.length === 0) {
+// 		return 'Fail!';
+// 	} else if (res.length <= 2) {
+// 		return 'Publish!';
 // 	}
-// 	return numArr.sort().indexOf(k);
 // }
 
-// console.log(strangeMath(15, 15))//, 7);
+// console.log(
+// 	well([
+// 		['gOOd', 'bad', 'BAD', 'bad', 'bad'],
+// 		['bad', 'bAd', 'bad'],
+// 		['GOOD', 'bad', 'bad', 'bAd'],
+// 	])
+// ); //, 'Publish!');)
+// ------------------------------------------------------------------------------------------------
+
+// function broken(x) {
+// 	return x.split('').reduce((acc,cur) => {
+
+// 		if (cur === '1') {
+// 			acc.push('0');
+// 		} else {
+// 			acc.push('1')
+// 		}
+// 		return acc
+// 	},[]).join('')
+// }
+
+// console.log(broken("10000000101101111110011001000"))//, "01111111010010000001100110111");)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function bald(x) {
+// 	let count = 0;
+// 	let str = x.split('').reduce((acc,cur) => {
+// 		if (cur === '/') {
+// 			count++
+// 			acc += '-'
+// 		} else {
+// 			acc += '-'
+// 		}
+// 		return acc
+// 	},'')
+// 	function nameCount(num) {
+// 		if (!num) {
+// 			return "Clean!"
+// 		}
+// 		else if (num === 1) {
+// 			return "Unicorn!"
+// 		}
+// 		else if (num === 2) {
+// 			return "Homer!"
+// 		}
+// 		else if (num >= 3 && num <= 5) {
+// 			return "Careless!"
+// 		} else {
+// 			return "Hobo!"
+// 		}
+// 	}
+// 	return [str, nameCount(count)]
+
+//  }
+
+// console.log(bald('--/--/---/-/---'))//, ['---------------', 'Careless!']);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function planeSeat(a) {
+// 		let num = '';
+// 		let str = '';
+// 		a.split('').forEach((el) => {
+// 			if (isNaN(el)) {
+// 				str += el;
+// 			}
+// 			if (!isNaN(el)) {
+// 				num += el;
+// 			}
+// 		});
+// 		function placeNumber(num) {
+// 			if (num * 1 <= 20) {
+// 				return 'Front';
+// 			}
+// 			if (num * 1 > 20 && num * 1 <= 40) {
+// 				return 'Middle';
+// 			}
+// 			if (num * 1 > 40 && num * 1 <= 60) {
+// 				return 'Back';
+// 			} else {
+// 				return undefined;
+// 			}
+// 		}
+// 		function placeLetter(str) {
+// 			console.log('str---', str);
+// 			if (str === 'A' || str === 'B' || str === 'C') {
+// 				return 'Left';
+// 			}
+// 			if (str === 'D' || str === 'F' || str === 'E') {
+// 				return 'Middle';
+// 			}
+// 			if (str === 'G' || str === 'K' || str === 'H') {
+// 				return 'Right';
+// 			} else {
+// 				return undefined;
+// 			}
+// 		}
+// 		if (placeNumber(num) === undefined || placeLetter(str) === undefined) {
+// 			return 'No Seat!!';
+// 		} else {
+// 			return `${placeNumber(num)}-${placeLetter(str)}`;
+// 		}
+// }
+
+// console.log(planeSeat('11H'))//, 'No Seat!!');
+//Back-Middle
+//'Middle-Right'
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function findDeletedNumber(arr,mixArr) {
+ 
+	// if (arr.length === mixArr.length || !arr.length) {
+	// 	return 0;
+	// }
+	// const res = mixArr.sort((a, b) => a - b);
+	// for (let i = 0; i < arr.length; i++) {
+	// 	if (arr[i] !== mixArr[i]) {
+	// 		return i + 1;
+	// 	}
+	// }
+	
+  
+
+// console.log(
+// 	findDeletedNumber([], [1, 9, 7, 4, 6, 2, 3, 8])
+// ); //, 5,
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
