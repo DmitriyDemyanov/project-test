@@ -1776,7 +1776,6 @@ countPeople([
 // console.log(getLargerNumbers(a, b));
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-<<<<<<< HEAD
 function consecutiveOnes(nums) {
 	const res = [];
 	let count = 1;
@@ -1796,27 +1795,6 @@ function consecutiveOnes(nums) {
 }
 //ONE ONe One one
 console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
-=======
-// function consecutiveOnes(nums) {
-//    	const res = [];
-// 		let count = 1;
-// 		for (let i = 0; i < nums.length; i++) {
-// 			if (nums[i] === nums[i + 1] && nums[i] !== 0) {
-// 				count++;
-// 			} else if (nums[i] !== nums[i + 1] && count !== 1) {
-// 				res.push(count);
-// 				count = 1;
-// 			}
-// 		}
-// 	res.sort((a,b) => b - a);
-// 	if (res.length === 0 && nums.filter(el => el === 0).length !== 0) {
-// 		return 1
-// 	}
-// 		return res[0];
-// };
-// //ONE ONe One one
-// console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
->>>>>>> 27111da13f6dcef971b1511c01631691281f52b8
 //--------------------------------------------------------------------------------------------------------------------
 
 // function scoreTest(str,right,omit,wrong) {
@@ -1932,8 +1910,7 @@ console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
 // // 	]
 // // );
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-<<<<<<< HEAD
-=======
+
 //______________________________________________________________________________________________________________
 
 // function divisibleByThree(str) {
@@ -2655,22 +2632,95 @@ console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function findDeletedNumber(arr,mixArr) {
- 
-	// if (arr.length === mixArr.length || !arr.length) {
-	// 	return 0;
-	// }
-	// const res = mixArr.sort((a, b) => a - b);
-	// for (let i = 0; i < arr.length; i++) {
-	// 	if (arr[i] !== mixArr[i]) {
-	// 		return i + 1;
-	// 	}
-	// }
-	
-  
+
+// if (arr.length === mixArr.length || !arr.length) {
+// 	return 0;
+// }
+// const res = mixArr.sort((a, b) => a - b);
+// for (let i = 0; i < arr.length; i++) {
+// 	if (arr[i] !== mixArr[i]) {
+// 		return i + 1;
+// 	}
+// }
 
 // console.log(
 // 	findDeletedNumber([], [1, 9, 7, 4, 6, 2, 3, 8])
 // ); //, 5,
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_________________________________________________________________________________________________________________
+// function arrange(arr){
+// }
 
->>>>>>> 27111da13f6dcef971b1511c01631691281f52b8
+// console.log(arrange(["4T","300G","450G","900KG"]))//, ["300G","450G","900KG","4T"]))
+//-------------------------- Order of weight ------------------------------------------------------------------------------------
+
+// function fistBeard(arr) {
+// 	let newArr = arr.reduce((acc,cur) => acc.concat(cur),[]);
+// 	return newArr.reduce((acc,cur) => acc += String.fromCharCode(cur),'');
+// }
+// console.log(fistBeard([[78], [117, 110, 99], [104, 117], [107, 115]])); //, 'Nunchuks');)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function crap(x, bags, cap) {
+// 	const newArr = x.reduce((acc, el) => acc.concat(el));
+// 	let count = 0;
+// 	for (let i = 0; i < newArr.length; i++) {
+// 		if (newArr[i] === 'D') {
+// 			return 'Dog!!';
+// 		}
+// 		if (newArr[i] === '@') {
+// 			count++;
+// 		}
+// 	}
+
+// 	if (count > 0 && bags === 0) {
+// 		return 'Cr@p';
+// 	}
+// 	if (count > 0 && bags !== 0 && cap === 0) {
+// 		return 'Cr@p';
+// 	}
+
+// 	if (count <= cap || count <= bags) {
+// 		return 'Clean';
+// 	}
+// 	if (count > cap) {
+// 		return 'Cr@p';
+// 	}
+// }
+
+// console.log(
+// 	crap(
+// 		[
+// 			['_', '_', '_', '_'],
+// 			['_', '_', '_', '@'],
+// 			['_', '_', '@', '_'],
+// 		],
+// 		1,
+// 		1
+// 	)
+// ); //, "Cr@p");)/
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function numObj(s) {
+// 	let res = []
+// 	res.push(s.reduce((acc,cur) => {
+// 		console.log('#',cur)
+// 		acc[cur] = String.fromCharCode(cur);
+// 		return acc;
+// 	}
+// 		,{}))
+// 	return res
+// }
+// console.log(numObj([118,117,120,116]))//,[{'118':'v'}, {'117':'u'}, {'120':'x'}]);)
+//--------------------------- Numbers to Objects -------------------------------------------
+
+function numObj(s) {
+	let res = [];
+	for (let i = 0; i < s.length; i++) {
+		let obj = {};
+		obj[s[i]] = String.fromCharCode(s[i]);
+		res.push(obj)
+	}
+return res
+}
+console.log('>>>',numObj([118,117,120,116]))//,[{'118':'v'}, {'117':'u'}, {'120':'x'}]);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
