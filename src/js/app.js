@@ -1777,24 +1777,24 @@ countPeople([
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 function consecutiveOnes(nums) {
-   	const res = [];
-		let count = 1;
-		for (let i = 0; i < nums.length; i++) {
-			if (nums[i] === nums[i + 1] && nums[i] !== 0) {
-				count++;
-			} else if (nums[i] !== nums[i + 1] && count !== 1) {
-				res.push(count);
-				count = 1;
-			}
+	const res = [];
+	let count = 1;
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] === nums[i + 1] && nums[i] !== 0) {
+			count++;
+		} else if (nums[i] !== nums[i + 1] && count !== 1) {
+			res.push(count);
+			count = 1;
 		}
-	res.sort((a,b) => b - a);
-	if (res.length === 0 && nums.filter(el => el === 0).length !== 0) {
-		return 1
 	}
-		return res[0];
-};
+	res.sort((a, b) => b - a);
+	if (res.length === 0 && nums.filter((el) => el === 0).length !== 0) {
+		return 1;
+	}
+	return res[0];
+}
 //ONE ONe One one
-console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
+console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
 //--------------------------------------------------------------------------------------------------------------------
 
 // function scoreTest(str,right,omit,wrong) {
@@ -1816,7 +1816,6 @@ console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
 
 // console.log(scoreTest([0, 0, 0, 0, 2, 1, 0], 2, 0, 1)); //9)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 
 // var list1 = [
 // 	{
@@ -1879,7 +1878,7 @@ console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
 // 	for (let i = 0; i < array.length; i++) {
 // 		let res = [];
 // 		console.log('array[i][i]', array[i][i]);
-		
+
 // 		array[i].forEach((el, ind) => {
 // 			console.log('length',ind);
 // 			if (ind === i && el < 0) {
