@@ -1776,6 +1776,7 @@ countPeople([
 // console.log(getLargerNumbers(a, b));
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+<<<<<<< HEAD
 function consecutiveOnes(nums) {
 	const res = [];
 	let count = 1;
@@ -1795,6 +1796,27 @@ function consecutiveOnes(nums) {
 }
 //ONE ONe One one
 console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
+=======
+// function consecutiveOnes(nums) {
+//    	const res = [];
+// 		let count = 1;
+// 		for (let i = 0; i < nums.length; i++) {
+// 			if (nums[i] === nums[i + 1] && nums[i] !== 0) {
+// 				count++;
+// 			} else if (nums[i] !== nums[i + 1] && count !== 1) {
+// 				res.push(count);
+// 				count = 1;
+// 			}
+// 		}
+// 	res.sort((a,b) => b - a);
+// 	if (res.length === 0 && nums.filter(el => el === 0).length !== 0) {
+// 		return 1
+// 	}
+// 		return res[0];
+// };
+// //ONE ONe One one
+// console.log(consecutiveOnes([0,0,0,0,1]));//, 1); //, 3))
+>>>>>>> 27111da13f6dcef971b1511c01631691281f52b8
 //--------------------------------------------------------------------------------------------------------------------
 
 // function scoreTest(str,right,omit,wrong) {
@@ -1910,3 +1932,745 @@ console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
 // // 	]
 // // );
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<<<<<<< HEAD
+=======
+//______________________________________________________________________________________________________________
+
+// function divisibleByThree(str) {
+// 	let res = 0;
+// 	str.split('').forEach((el) => (res += +el)) % 3 === 0;
+// 	return res % 3 === 0;
+// }
+
+// console.log(divisibleByThree('19254')); //, true);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// var list1 = [
+// 	{
+// 		firstName: 'Harry',
+// 		lastName: 'K.',
+// 		country: 'Brazil',
+// 		continent: 'Americas',
+// 		age: 22,
+// 		language: 'JavaScript',
+// 		githubAdmin: 'yes',
+// 	},
+// 	{
+// 		firstName: 'Kseniya',
+// 		lastName: 'T.',
+// 		country: 'Belarus',
+// 		continent: 'Europe',
+// 		age: 49,
+// 		language: 'Ruby',
+// 		githubAdmin: 'no',
+// 	},
+// 	{
+// 		firstName: 'Jing',
+// 		lastName: 'X.',
+// 		country: 'China',
+// 		continent: 'Asia',
+// 		age: 34,
+// 		language: 'JavaScript',
+// 		githubAdmin: 'yes',
+// 	},
+// 	{
+// 		firstName: 'Piotr',
+// 		lastName: 'B.',
+// 		country: 'Poland',
+// 		continent: 'Europe',
+// 		age: 128,
+// 		language: 'JavaScript',
+// 		githubAdmin: 'no',
+// 	},
+// ];
+// function findAdmin(list, lang) {
+// 	return list.reduce((acc,current) => {
+// 		if (current.githubAdmin === 'yes' && current.language === lang) {
+// 			acc.push(current);
+// 		}
+// 		return acc
+// 	},[])
+// }
+
+// console.log(findAdmin(list1, 'JavaScript'));
+// var list2 = [
+// 	{
+// 		firstName: 'Mariami',
+// 		lastName: 'G.',
+// 		country: 'Georgia',
+// 		continent: 'Europe',
+// 		age: 29,
+// 		language: 'Python',
+// 	},
+// 	{
+// 		firstName: 'Mia',
+// 		lastName: 'H.',
+// 		country: 'Germany',
+// 		continent: 'Europe',
+// 		age: 39,
+// 		language: 'Ruby',
+// 	},
+// 	{
+// 		firstName: 'Maria',
+// 		lastName: 'I.',
+// 		country: 'Greece',
+// 		continent: 'Europe',
+// 		age: 32,
+// 		language: 'C',
+// 	},
+// ];
+// var list1 = [
+// 	{
+// 		firstName: 'Daniel',
+// 		lastName: 'J.',
+// 		country: 'Aruba',
+// 		continent: 'Americas',
+// 		age: 42,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Kseniya',
+// 		lastName: 'T.',
+// 		country: 'Belarus',
+// 		continent: 'Europe',
+// 		age: 22,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Hanna',
+// 		lastName: 'L.',
+// 		country: 'Hungary',
+// 		continent: 'Europe',
+// 		age: 65,
+// 		language: 'JavaScript',
+// 	},
+// ];
+// function isSameLanguage(list) {
+// 	const lang = list[0].language;
+// 	return list.filter((el) => el.language === lang).length === list.length;
+// }
+
+// console.log(isSameLanguage(list1));
+// console.log(isSameLanguage(list2));
+// var list1 = [
+// 	{
+// 		firstName: 'Mark',
+// 		lastName: 'G.',
+// 		country: 'Scotland',
+// 		continent: 'Europe',
+// 		age: 22,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Victoria',
+// 		lastName: 'T.',
+// 		country: 'Puerto Rico',
+// 		continent: 'Americas',
+// 		age: 30,
+// 		language: 'Python',
+// 	},
+// 	{
+// 		firstName: 'Emma',
+// 		lastName: 'B.',
+// 		country: 'Norway',
+// 		continent: 'Europe',
+// 		age: 19,
+// 		language: 'Clojure',
+// 	},
+// ];
+// var list2 = [
+// 	{
+// 		firstName: 'Kseniya',
+// 		lastName: 'T.',
+// 		country: 'Belarus',
+// 		continent: 'Europe',
+// 		age: 29,
+// 		language: 'JavaScript',
+// 	},
+// 	{
+// 		firstName: 'Amar',
+// 		lastName: 'V.',
+// 		country: 'Bosnia and Herzegovina',
+// 		continent: 'Europe',
+// 		age: 32,
+// 		language: 'Ruby',
+// 	},
+// ];
+// function getFirstPython(list) {
+
+// 	for (let i = 0; i < list.length; i++) {
+// 		if (list[i].language === 'Python') {
+// 			return `${list[i].firstName}, ${list[i].country}`;
+// 		}
+// 	}
+// 	return 'There will be no Python developers';
+// }
+
+// console.log(getFirstPython(list1)); //, 'Victoria, Puerto Rico'));
+// console.log(getFirstPython(list2)); //, 'There will be no Python developers');
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// var list1 = [
+// 	{
+// 		firstName: 'Sofia',
+// 		lastName: 'I.',
+// 		country: 'Argentina',
+// 		continent: 'Americas',
+// 		age: 35,
+// 		language: 'Java',
+// 	},
+// 	{
+// 		firstName: 'Lukas',
+// 		lastName: 'X.',
+// 		country: 'Croatia',
+// 		continent: 'Europe',
+// 		age: 35,
+// 		language: 'Python',
+// 	},
+// 	{
+// 		firstName: 'Madison',
+// 		lastName: 'U.',
+// 		country: 'United States',
+// 		continent: 'Americas',
+// 		age: 32,
+// 		language: 'Ruby',
+// 	},
+// ];
+
+// var list2 = [
+// 	{
+// 		firstName: 'Sofia',
+// 		lastName: 'I.',
+// 		country: 'Argentina',
+// 		continent: 'Americas',
+// 		age: 35,
+// 		language: 'Java',
+// 	},
+// 	{
+// 		firstName: 'Lukas',
+// 		lastName: 'X.',
+// 		country: 'Croatia',
+// 		continent: 'Europe',
+// 		age: 35,
+// 		language: 'Python',
+// 	},
+// ];
+// function isRubyComing(list) {
+// 	return list.some((el) => el.language === 'Ruby');
+// }
+// console.log(isRubyComing(list1));//, true));
+// console.log(isRubyComing(list2))//, false));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// var list1 = [
+// 	{
+// 		firstName: 'Maria',
+// 		lastName: 'Y.',
+// 		country: 'Cyprus',
+// 		continent: 'Europe',
+// 		age: 30,
+// 		language: 'Java',
+// 	},
+// 	{
+// 		firstName: 'Victoria',
+// 		lastName: 'T.',
+// 		country: 'Puerto Rico',
+// 		continent: 'Americas',
+// 		age: 70,
+// 		language: 'Python',
+// 	},
+// ];
+// var list2 = [
+// 	{
+// 		firstName: 'Noa',
+// 		lastName: 'A.',
+// 		country: 'Israel',
+// 		continent: 'Asia',
+// 		age: 20,
+// 		language: 'Ruby',
+// 	},
+// 	{
+// 		firstName: 'Andrei',
+// 		lastName: 'E.',
+// 		country: 'Romania',
+// 		continent: 'Europe',
+// 		age: 21,
+// 		language: 'C',
+// 	},
+// ];
+// function getAverageAge(list) {
+// 	let age = 0;
+// 	list.forEach((el) => (age += el.age));
+// 	return Math.round(age / list.length);
+// }
+
+// console.log(getAverageAge(list1))//, 50));
+// console.log(getAverageAge(list2))//, 21));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function getEvenNumbers(numbersArray) {
+// 	return numbersArray.filter((el) => el % 2 === 0);
+// }
+
+// console.log(getEvenNumbers([1,2,3,6,8,10]));//, [2,6,8,10]))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function sortByValueAndIndex(array) {
+// 	const res = [];
+
+// 	for (let i = 0; i < array.length; i++) {
+// 		console.log('array.slice====', array.slice(i + 1));
+// 		console.log('array[i]', array[i]);
+// 		let newArr = array.slice(i + 1);
+// 		let num = array[i];
+// 		for (let c = 0; c < newArr.length; c++) {
+// 			console.log(' newArr', newArr);
+// 			console.log('c + 2', c + 2);
+// 			if (array[i] * (i + 1) >= newArr[c] * (c + 2)) {
+// 				num = array[i];
+// 			} else {
+// 				num = array[c];
+// 			}
+// 		}
+// 		res.push(num);
+// 		console.log('res.push', res);
+// 	}
+// 	return res;
+// }
+
+// console.log(sortByValueAndIndex([26, 2, 3, 4, 5])); // expected = [2, 3, 4, 5, 26];
+
+// Sort an array by value and index
+//------------------------------------------------------------------------------------------------------------
+
+// function doubleEveryOther(a) {
+// 	return a.map((el,ind) => {
+// 		if ((ind + 1) % 2 === 0) {
+// 			return el * 2;
+// 		}
+// 		else {
+// 			return el
+// 		}
+// 	})
+// }
+
+// console.log(doubleEveryOther([1,2,3,4]));//, [1,4,3,8] ))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function scrollingText(text) {
+// 	let str = text.toUpperCase();
+// 	let res = [str];
+
+// 	for (let i = 1; i < text.length; i++) {
+// 		str = str.slice(1) + str[0];
+// 		res.push(str);
+// 	}
+
+// 	return res;
+// }
+
+// console.log(scrollingText('abcdefg')); // ["ABC","BCA","CAB"]))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_____________________________________________________________________________________________________________________
+// function rowWeights(array) {
+// 	let even = 0;
+// 	let odd = 0;
+// 	array.forEach((el,ind) => {
+// 		if ([ind + 1] % 2 !== 0) {
+// 			odd += el;
+// 		} else {
+// 			even += el;
+// 		}
+// 	})
+// 	const res = [odd, even];
+// 	return res;
+// }
+
+// console.log(rowWeights([50, 60, 70, 80]))//, [120, 140]);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function sabb(s,val,happiness) { }
+// //
+// The Office VI - Sabbatical
+// console.log(sabb('Can I have a sabbatical?',5,5));//, 'Sabbatical! Boom!'))
+
+//?????????????????????????????????????????????????????????????????????????????????????????????????????????????
+// function evenLast(numbers) {
+// 	return numbers.reduce((acc,cur,ind) => {
+// 		if (ind % 2 === 0) {
+// 			acc += cur
+// 		}
+// 		return acc
+// 	},0) * numbers[numbers.length - 1] || 0;
+// }
+
+// console.log(evenLast([])); //, 30))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function duplicateElements(m, n) {
+// 	return m.some((num) => n.some((el) => el === num));
+// }
+
+// console.log(duplicateElements([1,2,3,4,5],[6,7,8,9]));//, true);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function minimumSteps(numbers, value) {
+// 	let res = numbers.sort((a,b) => a - b);
+
+// 	let sum = 0;
+
+// 	for (let i = 0; i < res.length; i++) {
+
+// 		sum += res[i];
+
+// 		if (sum >= value) {
+// 			return i;
+// 		}
+// 	}
+// }
+
+// console.log(minimumSteps([19,98,69,28,75,45,17,98,67],464));//, 8);
+// //2,4,8,9,10
+// // Minimum Steps (Array Series #6)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function sum(arr) {
+// 	console.log(arr.sort((a, b) => a - b));
+// 	return arr.sort((a,b) => a-b).reduce((acc,cur) => acc += cur);
+// }
+
+// console.log(sum([19,98,69,28,75,45,17,67]));
+
+// //   let results1 = twoOldestAges([1, 5, 87, 45, 8, 8]);
+// // 	let results2 = twoOldestAges([6, 5, 83, 5, 3, 18]);
+// // // function twoOldestAges(ages) {
+// // 	return ages.sort((a,b) => a - b).slice(2);
+// //  }
+
+// // console.log('#####################', results1);
+// // console.log('#############',results2);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_________________________________________________________________________________________________________
+// function trouble(x,t) {
+// 	let res = [];
+// 	for (let i = 0; i < x.length; i++) {
+// 		if (x[i] + x[i + 1] === t) {
+// 			res.push(i);
+// 			i++
+// 		}
+// 	}
+// console.log('RES{',res)
+// 	return x.reduce((acc,cur,ind) => {
+// 		if (!res.some((el) => el === ind)) {
+// 			acc.push(cur);
+// 		}
+// 		return acc
+// 	},[]);
+//  }
+
+// Double Trouble
+// console.log(trouble([2, 2, 2, 2, 2, 2], 4))//, [2]);
+//-----------------------------------------------------------------------------
+
+// function mergeArrays(a,b) {
+// 	let newArr = [];
+// 	let leng = a.length > b.length ? a.length : b.length;
+// 	console.log('LENGTH:', leng)
+// 	for (let i = 0; i < leng; i++) {
+// 		if (a[i] !== undefined) {
+// 			newArr.push(a[i]);
+// 		}
+// 		if (b[i] !== undefined) {
+// 			newArr.push(b[i]);
+// 		}
+// 	}
+// 	return newArr;
+// }
+
+// console.log(mergeArrays(['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]))//, ['a', 1, 'b', 2, 'c', 3, 'd', 4, 'e', 5]);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function numbers() {
+// 	return num
+// }
+// For the sake of argument
+// console.log(numbers(1, 3, 4, 'f', null));
+//---------------------------------------------------------------------------------------------
+
+// function diffBig2(arr) {
+// 	let res = [];
+
+// 	for (let i = 0; i = arr.length; ++i) {
+// 		res.push(arr.splice(arr.indexOf(Math.max(...arr)), 1)[0]);
+// 	}
+// 	return res[0] - res[1]
+// }
+// console.log(diffBig2([1, 8, 3]))//, 5))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function getMissingElement(superImportantArray) {
+// 	return superImportantArray
+// 		.sort((a,b) => a - b).reduce((acc,cur,ind) => {
+// 			if (cur !== ind + 1 && ind + 1 !== undefined) {
+// 				acc = ind + 1
+
+// 			}
+// 			return acc
+// 		},0)
+// }
+
+// console.log(getMissingElement( [0,5,1,3,2,9,7,6,4]))// 8);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// let before = {
+// 	Ice: 'Cream',
+// 	Age: '21',
+// 	Light: 'Cream',
+// 	Double: 'Cream',
+// };
+
+// // 	// let expectedAns = {
+// // 	// 	Cream: ['Ice', 'Double', 'Light'],
+// // 	// 	21: ['Age'],
+// // 	// };
+// function switchDict(dic) {
+// 	console.log(Object.entries(dic));
+// 	return Object.entries(dic).reduce((acc, [key, value]) => {
+// 		if (!acc[value]) {
+// 			acc[value] = [];
+// 		}
+// 		acc[value].push(key);
+// 		return acc;
+// 	}, {});
+// }
+
+// console.log('############3', switchDict(before));
+
+// function oddOnesOut(nums) {
+// 	let res = nums.reduce((acc,cur) => {
+// 		if (nums.filter((el) => el === cur).length % 2 === 0) {
+// 			acc.push(cur);
+// 		}
+// 		return acc;
+// 	},[])
+// 	return res
+// }
+
+// console.log(oddOnesOut([42, 72, 32, 4, 94, 82, 67, 67]))//, [67, 67]);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//____________________________________________________________________________________________________
+// function decodePass(passArr,bin) {
+// 	let array = bin.split(' ');
+// 	let password = '';
+// 	for (let i = 0; i < array.length; i++) {
+// 		password += String.fromCharCode(parseInt(array[i], 2));
+// 	}
+// 	for (let i = 0; i < passArr.length; i++) {
+// 		if (password === passArr[i]) {
+// 			return passArr[i];
+// 		}
+// 	}
+// 	return false;
+// }
+
+// console.log(
+// 	decodePass(
+// 		['password321', 'admin', 'admin1'],
+// 		'01110000 01100001 01110011 01110011 01110111 01101111 01110010 01100100 00110001 00110010 00110011'
+// 	)
+// ); //, false);)
+//+-=_=-+-=-_+-_+_=-_+-_+-++__+_+-+-_+-+_=-_=-_+
+
+// function checkExam(array1,array2) {
+// 	let sum = 0;
+// 	for (let i = 0; i < array1.length; i++) {
+// 		if (array1[i] === array2[i]) {
+// 			sum += 4;
+// 		}
+// 		else if (array1[i] !== array2[i] && array2[i] !== '') {
+// 			sum -= 1;
+// 		}
+// 	}
+// 	if (sun < 0) {
+// 		return 0
+// 	}
+// 	return sum
+// }
+
+// console.log(checkExam(['a', 'a', 'c', 'b'], ['a', 'a', 'b', '']))//, 7);
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function noOdds(values) {
+// 	return values.reduce((acc, cur) => {
+// 		if (cur % 2 === 0) {
+// 			acc.push(cur);
+// 		}
+// 		return acc;
+// 	}, []);
+// }
+
+// console.log(noOdds( [0,1,2,3] ))//, [0,2] ))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function strangeMath(n,k) {
+// 	let numArr = [];
+// 	for (let i = 0; i <= n; i++) {
+// 		numArr.push(i);
+// 	}
+// 	return numArr.sort().reduce((acc,cur,ind) => {
+// 		console.log('cur', cur);
+// 		console.log('ind', ind);
+// 		if (cur === k) {
+// 			acc = ind
+// 		}
+// 		return acc
+// 	},0)
+// }
+
+// // console.log(strangeMath(15, 15))//, 7);
+// //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function strangeMath(n,k) {
+// let numArr = [];
+// for (let i = 0; i <= n; i++) {
+// 	numArr.push(i);
+// }
+// return numArr.sort().indexOf(k);
+// }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//______________________________________________________________________________________________
+// console.log(strangeMath(15, 15))//, 7);
+// function well(x) {
+// 	let newArr = x.reduce((acc, cur) => acc.concat(cur), []);
+// 	const res = newArr.reduce((acc, cur) => {
+// 		if (cur.toLowerCase() === 'good') {
+// 			acc.push(cur);
+// 		}
+// 		return acc;
+// 	}, []);
+
+// 	if (res.length > 2) {
+// 		return 'I smell a series!';
+// 	} else if (res.length === 0) {
+// 		return 'Fail!';
+// 	} else if (res.length <= 2) {
+// 		return 'Publish!';
+// 	}
+// }
+
+// console.log(
+// 	well([
+// 		['gOOd', 'bad', 'BAD', 'bad', 'bad'],
+// 		['bad', 'bAd', 'bad'],
+// 		['GOOD', 'bad', 'bad', 'bAd'],
+// 	])
+// ); //, 'Publish!');)
+// ------------------------------------------------------------------------------------------------
+
+// function broken(x) {
+// 	return x.split('').reduce((acc,cur) => {
+
+// 		if (cur === '1') {
+// 			acc.push('0');
+// 		} else {
+// 			acc.push('1')
+// 		}
+// 		return acc
+// 	},[]).join('')
+// }
+
+// console.log(broken("10000000101101111110011001000"))//, "01111111010010000001100110111");)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function bald(x) {
+// 	let count = 0;
+// 	let str = x.split('').reduce((acc,cur) => {
+// 		if (cur === '/') {
+// 			count++
+// 			acc += '-'
+// 		} else {
+// 			acc += '-'
+// 		}
+// 		return acc
+// 	},'')
+// 	function nameCount(num) {
+// 		if (!num) {
+// 			return "Clean!"
+// 		}
+// 		else if (num === 1) {
+// 			return "Unicorn!"
+// 		}
+// 		else if (num === 2) {
+// 			return "Homer!"
+// 		}
+// 		else if (num >= 3 && num <= 5) {
+// 			return "Careless!"
+// 		} else {
+// 			return "Hobo!"
+// 		}
+// 	}
+// 	return [str, nameCount(count)]
+
+//  }
+
+// console.log(bald('--/--/---/-/---'))//, ['---------------', 'Careless!']);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function planeSeat(a) {
+// 		let num = '';
+// 		let str = '';
+// 		a.split('').forEach((el) => {
+// 			if (isNaN(el)) {
+// 				str += el;
+// 			}
+// 			if (!isNaN(el)) {
+// 				num += el;
+// 			}
+// 		});
+// 		function placeNumber(num) {
+// 			if (num * 1 <= 20) {
+// 				return 'Front';
+// 			}
+// 			if (num * 1 > 20 && num * 1 <= 40) {
+// 				return 'Middle';
+// 			}
+// 			if (num * 1 > 40 && num * 1 <= 60) {
+// 				return 'Back';
+// 			} else {
+// 				return undefined;
+// 			}
+// 		}
+// 		function placeLetter(str) {
+// 			console.log('str---', str);
+// 			if (str === 'A' || str === 'B' || str === 'C') {
+// 				return 'Left';
+// 			}
+// 			if (str === 'D' || str === 'F' || str === 'E') {
+// 				return 'Middle';
+// 			}
+// 			if (str === 'G' || str === 'K' || str === 'H') {
+// 				return 'Right';
+// 			} else {
+// 				return undefined;
+// 			}
+// 		}
+// 		if (placeNumber(num) === undefined || placeLetter(str) === undefined) {
+// 			return 'No Seat!!';
+// 		} else {
+// 			return `${placeNumber(num)}-${placeLetter(str)}`;
+// 		}
+// }
+
+// console.log(planeSeat('11H'))//, 'No Seat!!');
+//Back-Middle
+//'Middle-Right'
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function findDeletedNumber(arr,mixArr) {
+ 
+	// if (arr.length === mixArr.length || !arr.length) {
+	// 	return 0;
+	// }
+	// const res = mixArr.sort((a, b) => a - b);
+	// for (let i = 0; i < arr.length; i++) {
+	// 	if (arr[i] !== mixArr[i]) {
+	// 		return i + 1;
+	// 	}
+	// }
+	
+  
+
+// console.log(
+// 	findDeletedNumber([], [1, 9, 7, 4, 6, 2, 3, 8])
+// ); //, 5,
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>>>>>>> 27111da13f6dcef971b1511c01631691281f52b8
