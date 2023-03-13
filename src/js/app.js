@@ -1776,25 +1776,25 @@ countPeople([
 // console.log(getLargerNumbers(a, b));
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function consecutiveOnes(nums) {
-	const res = [];
-	let count = 1;
-	for (let i = 0; i < nums.length; i++) {
-		if (nums[i] === nums[i + 1] && nums[i] !== 0) {
-			count++;
-		} else if (nums[i] !== nums[i + 1] && count !== 1) {
-			res.push(count);
-			count = 1;
-		}
-	}
-	res.sort((a, b) => b - a);
-	if (res.length === 0 && nums.filter((el) => el === 0).length !== 0) {
-		return 1;
-	}
-	return res[0];
-}
-//ONE ONe One one
-console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
+// function consecutiveOnes(nums) {
+// 	const res = [];
+// 	let count = 1;
+// 	for (let i = 0; i < nums.length; i++) {
+// 		if (nums[i] === nums[i + 1] && nums[i] !== 0) {
+// 			count++;
+// 		} else if (nums[i] !== nums[i + 1] && count !== 1) {
+// 			res.push(count);
+// 			count = 1;
+// 		}
+// 	}
+// 	res.sort((a, b) => b - a);
+// 	if (res.length === 0 && nums.filter((el) => el === 0).length !== 0) {
+// 		return 1;
+// 	}
+// 	return res[0];
+// }
+// //ONE ONe One one
+// console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
 //--------------------------------------------------------------------------------------------------------------------
 
 // function scoreTest(str,right,omit,wrong) {
@@ -2648,11 +2648,22 @@ console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
 // ); //, 5,
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //_________________________________________________________________________________________________________________
-// function arrange(arr){
+// function arrange(arr) {
+// 	return arr.sort((a, b) => {
+// 		const first = +a
+// 			.replace('T', '000000')
+// 			.replace('KG', '000')
+// 			.replace('G', '');
+// 		const second = +b
+// 			.replace('T', '000000')
+// 			.replace('KG', '000')
+// 			.replace('G', '');
+// 		return first - second;
+// 	});
 // }
 
-// console.log(arrange(["4T","300G","450G","900KG"]))//, ["300G","450G","900KG","4T"]))
-//-------------------------- Order of weight ------------------------------------------------------------------------------------
+// console.log(arrange(['4T', '300G', '450G', '900KG'])); //, ["300G","450G","900KG","4T"]))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function fistBeard(arr) {
 // 	let newArr = arr.reduce((acc,cur) => acc.concat(cur),[]);
@@ -2701,26 +2712,81 @@ console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // function numObj(s) {
-// 	let res = []
-// 	res.push(s.reduce((acc,cur) => {
-// 		console.log('#',cur)
-// 		acc[cur] = String.fromCharCode(cur);
+// 	return s.reduce((acc, cur) => {
+// 		console.log('#', cur);
+// 		let res = {};
+// 		res[cur] = String.fromCharCode(cur);
+// 		acc.push(res);
 // 		return acc;
-// 	}
-// 		,{}))
-// 	return res
+// 	}, []);
 // }
-// console.log(numObj([118,117,120,116]))//,[{'118':'v'}, {'117':'u'}, {'120':'x'}]);)
-//--------------------------- Numbers to Objects -------------------------------------------
+// console.log(numObj([118, 117, 120, 116])); //,[{'118':'v'}, {'117':'u'}, {'120':'x'}]);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function numObj(s) {
-	let res = [];
-	for (let i = 0; i < s.length; i++) {
-		let obj = {};
-		obj[s[i]] = String.fromCharCode(s[i]);
-		res.push(obj)
-	}
-return res
+// function numObj(s) {
+// 	let res = [];
+// 	for (let i = 0; i < s.length; i++) {
+// 		let obj = {};
+// 		obj[s[i]] = String.fromCharCode(s[i]);
+// 		res.push(obj)
+// 	}
+// return res
+// }
+// console.log('>>>',numObj([118,117,120,116]))//,[{'118':'v'}, {'117':'u'}, {'120':'x'}]);)
+// // // //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//________________________________________________________________________
+// function dbSort(a) {
+// 	let num = a.filter((el) => typeof el === 'number');
+// 	let str = a.filter((el) => typeof el === 'string');
+// 	return num.sort((a,b) => a - b).concat(str.sort());
+// }
+
+// console.log(dbSort(["Banana", "Orange", "Apple", "Mango", 0, 2, 2]))//, [0,2,2,"Apple","Banana","Mango","Orange"]);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function pairs(ar){
+// 	let count = 0;
+// 	for (let i = 0; i < ar.length; i += 2) {
+// 		console.log('ar[i]', ar[i]);
+// 		console.log('ar[i + 1]', ar[i + 1]);
+// 		if (ar[i] === ar[i + 1] + 1 || ar[i] === ar[i + 1] - 1) {
+// 			count++
+// 		}
+// 	}
+// 	return count
+// };
+
+// console.log(pairs([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]))//,2))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function solve(arr){
+// 	let res = null;
+// 	for (let i = 0; i < arr.length; i++) {
+
+// 	}
+// };
+
+// console.log(solve([-110,110,-38,-38,-62,62,-38,-38,-38]))//,-38);)
+//----------------------------------Array element parity-------------------
+// function solve(arr) {
+// 	let min = [...arr].sort((a, b) => a - b);
+// 	let max = [...arr].sort((a, b) => b - a);
+// 	let res = [];
+// 	for (let i = 0; i < arr.length / 2; i++) {
+// 		res.push(max[i]);
+// 		res.push(min[i]);
+// 	}
+// 	if (arr.length % 2 === 0) {
+// 		return res;
+// 	}
+// 	return res.slice(-res.length, -1)
+	
+// }
+// console.log(solve([78, 79, 52, 87, 16, 74, 31, 63, 80])); //,[87,16,80,31,79,52,78,63,74]))
+// console.log('[87,16,80,31,79,52,78,63,74]');
+// console.log(solve([1,6,9,4,3,7,8,2]))//,[9,1,8,2,7,3,6,4]);)
+// console.log('[9,1,8,2,7,3,6,4]');
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function isFibo(a, b, f) {
+	let c = a + b;
 }
-console.log('>>>',numObj([118,117,120,116]))//,[{'118':'v'}, {'117':'u'}, {'120':'x'}]);)
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+console.log(isFibo(100,101,301))//,false);)
+console.log(isFibo(4,5,23))//,true);)
