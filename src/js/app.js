@@ -2757,14 +2757,20 @@ countPeople([
 
 // console.log(pairs([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]))//,2))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// function solve(arr){
-// 	let res = null;
-// 	for (let i = 0; i < arr.length; i++) {
+function solve(arr) {
+	for (let i = 0; i < arr.length; i++) {
+		if (arr.some((el) => el === arr[i] * -1)) {
+			console.log(arr.some((el) => el !== arr[i] * -1))
+		}
+	}
 
-// 	}
-// };
 
-// console.log(solve([-110,110,-38,-38,-62,62,-38,-38,-38]))//,-38);)
+	
+
+	
+}
+
+console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38])); //,-38);)
 //----------------------------------Array element parity-------------------
 // function solve(arr) {
 // 	let min = [...arr].sort((a, b) => a - b);
@@ -2778,15 +2784,38 @@ countPeople([
 // 		return res;
 // 	}
 // 	return res.slice(-res.length, -1)
-	
+
 // }
 // console.log(solve([78, 79, 52, 87, 16, 74, 31, 63, 80])); //,[87,16,80,31,79,52,78,63,74]))
 // console.log('[87,16,80,31,79,52,78,63,74]');
 // console.log(solve([1,6,9,4,3,7,8,2]))//,[9,1,8,2,7,3,6,4]);)
 // console.log('[9,1,8,2,7,3,6,4]');
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function isFibo(a, b, f) {
-	let c = a + b;
-}
-console.log(isFibo(100,101,301))//,false);)
-console.log(isFibo(4,5,23))//,true);)
+// function isFibo(a, b, f) {
+// 	let c = a + b;
+// 	let res = c + b;
+
+// 	  if (f === 0) {
+// 			return false;
+// 		}
+
+// 		if (res === 0) {
+// 			return false;
+// 		}
+
+// 	for (let i = 0; i < f; i++) {
+// 		console.log('>>>>> res',res)
+// 		if (res === f) {
+// 			return true;
+// 		}
+// 		if (res > f) {
+// 			return false;
+// 		}
+// 		res = res + c;
+// 	}
+// }
+// console.log(isFibo(0, 1, 2)); //,true);)
+// console.log(isFibo(1, 4, 10)); //,false))
+// console.log(isFibo(100, 101, 301)); //,false);)
+// console.log(isFibo(4, 5, 23)); //,true);)
+//---------------------------------------------?????????????????????????????????????????????
