@@ -2756,12 +2756,12 @@ countPeople([
 // };
 
 // console.log(pairs([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]))//,2))
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function solve(arr) {
-	const res = arr.filter((el) => !arr.some((num) => el === num * -1));
-	return res[0];
-}
-console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38])); //,-38);)
+// //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function solve(arr) {
+// 	const res = arr.filter((el) => !arr.some((num) => el === num * -1));
+// 	return res[0];
+// }
+// console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38])); //,-38);)
 //----------------------------------Array element parity-------------------
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function solve(arr) {
@@ -2883,23 +2883,85 @@ console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38])); //,-38);)
 // 	});
 // }
 
-function maxGap2(numbers) {
-	let sortArr = numbers.sort((a,b) => b - a);
-	let count = 0;
-	for (let i = 0; i < sortArr.length; i++) {
-		if (count < sortArr[i] - sortArr[i + 1]) {
-			count = sortArr[i] - sortArr[i + 1];
-		}
-	}
-	return count
-} 
+// function maxGap2(numbers) {
+// 	let sortArr = numbers.sort((a,b) => b - a);
+// 	let count = 0;
+// 	for (let i = 0; i < sortArr.length; i++) {
+// 		if (count < sortArr[i] - sortArr[i + 1]) {
+// 			count = sortArr[i] - sortArr[i + 1];
+// 		}
+// 	}
+// 	return count
+// }
 
 
-function maxGap(numbers) {
-	return numbers.sort((a,b) => b - a).reduce((acc,curr,i) => {
-		const dif = curr - numbers[i + 1];
-		return dif > acc ? dif : acc;
-	}, 0)
-} 
-console.log(maxGap([24,299,131,14,26,25]))//,168))
-console.log(maxGap([-54,37,0,64,-15,640,0]))//,576);)
+// function maxGap(numbers) {
+// 	return numbers.sort((a,b) => b - a).reduce((acc,curr,i) => {
+// 		const dif = curr - numbers[i + 1];
+// 		return dif > acc ? dif : acc;
+// 	}, 0)
+// }
+// console.log(maxGap([24,299,131,14,26,25]))//,168))
+// console.log(maxGap([-54,37,0,64,-15,640,0]))//,576);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//______________________________________________________________________________________________
+
+// function multiplyAndFilter(array, multiplier) {
+// 	return array.reduce((acc,cur) => {
+// 		if (typeof cur === 'number') {
+// 			acc.push(cur * multiplier);
+// 		}
+// 		return acc
+// 	},[])
+// }
+
+// console.log(multiplyAndFilter([1, null, function(){}, 2.5, 'string', 10, undefined, {}, []], 3))//, [3,7.5,30]))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function dominator(arr) {
+	let res = arr.find((el) => el === 3)
+	console.log('res',res)
+	
+}
+
+console.log(dominator([3,4,3,2,3,1,3,3]));//,3))
+//-----------------------------------------------------What dominates your array?----------------------
+
+
+// const findAll = (array, n) => {
+// 	return array.reduce((acc,cur,ind) => {
+// 		if (cur === n) {
+// 			acc.push(ind);
+// 		}
+// 		return acc
+// 	} ,[])
+// };
+
+// console.log(findAll([10, 16, 20, 6, 14, 11, 20, 2, 17, 16, 14], 16))//, [1, 9]);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function shuffledArray(shuffled) {
+// 	let flag = false;
+// return shuffled.filter((el,ind) => {
+// 	let	sum = shuffled.reduce((acc,cur,index) => {
+// 			if (index !== ind) {
+// 				acc += cur
+// 			}
+// 			return acc
+// 	},0)
+// 	if (el !== sum || flag === true) {
+// 		// console.log('sum',sum);
+// 		// console.log('el',el);
+// 		// console.log('flag',flag)
+// 		return el;
+// 	}
+// 	if (el === sum) {
+// 		flag = true;
+// 	}
+// }).sort((a,b) => a -b)
+// }
+
+// console.log(shuffledArray([1,-3,-5,7,2]));//,[-5, -3, 2, 7]))
+// console.log(shuffledArray([2,-1,2,2,-1]))///,[-1, -1, 2, 2])
+// console.log(shuffledArray([1, 12, 3, 6, 2]))//,[1, 2, 3, 6]))
+//---------------------------------------------------------------------------------------?
