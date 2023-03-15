@@ -2757,10 +2757,13 @@ countPeople([
 
 // console.log(pairs([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]))//,2))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// function solve(arr) {
-// }
-// console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38])); //,-38);)
+function solve(arr) {
+	const res = arr.filter((el) => !arr.some((num) => el === num * -1));
+	return res[0];
+}
+console.log(solve([-110, 110, -38, -38, -62, 62, -38, -38, -38])); //,-38);)
 //----------------------------------Array element parity-------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function solve(arr) {
 // 	let min = [...arr].sort((a, b) => a - b);
 // 	let max = [...arr].sort((a, b) => b - a);
@@ -2802,14 +2805,101 @@ countPeople([
 // console.log(isFibo(100, 101, 301)); //,false);)
 // console.log(isFibo(4, 5, 23)); //,true);)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-const sumAverage = (arr) => {
-	let result;
-	let res = arr.reduce((acc,cur) => {
-		acc.push(cur.reduce((acc,el) => (acc += el) ,0))
-		return acc
-	},[])
-	console.log('>>>>',res)
-	return result;
-};
+// const sumAverage = (arr) => {
+// 	return Math.floor(
+// 		arr.reduce((acc, cur) => {
+// 			acc += cur.reduce((s, el) => (s += el), 0) / cur.length;
+// 			return acc;
+// 		}, 0)
+// 	);
+// };
 
-console.log(sumAverage([[3, 4, 1, 3, 5, 1, 4], [21, 54, 33, 21, 77]]))//, 44))
+// console.log(
+// 	sumAverage([
+// 		[3, 4, 1, 3, 5, 1, 4],
+// 		[21, 54, 33, 21, 77],
+// 	])
+// ); //, 44))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//___________________________________________________________________________________________________________
+// function solve(arr) {
+// 	const res = arr.filter((curr, i) => {
+// 		return arr.every((el, idx) => idx <= i || el < curr);
+// 	});
+// 	return res;
+// }
+
+// function solve2(arr) {
+// 	const res = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		let flag = true;
+// 		let curr = arr[i];
+// 		for (let c = i + 1; c < arr.length; c++) {
+// 			if (curr < arr[c]) {
+// 				flag = false;
+// 				c = arr.length;
+// 			}
+// 		}
+// 		if (flag) {
+// 			res.push(curr);
+// 		}
+// 	}
+// 	return res;
+// }
+
+// console.log(solve2([67, 54, 27, 85, 66, 88, 31, 24, 49])); //,[88,49]))
+
+// function replaceAll(seq, find, replace) {
+// 	if (!seq.length) {
+// 		return [];
+// 	}
+// 	if (typeof seq === 'string') {
+// 		return seq.toString().replaceAll(find, replace).split(',').toString();
+// 	}
+// 	if (typeof seq[0] === 'number') {
+// 		return seq.map((el) =>
+// 			el
+// 				.toString()
+// 				.replaceAll(find, replace)
+// 				.split(',')
+// 				.map((el) => el * 1)
+// 		);
+// 	}
+// }
+
+// console.log(replaceAll2([1, 2, 2, 31, 411315], 1, 2)); //, [2,2,2, 32]))
+// console.log(replaceAll2('hello word', 'l', 'r')); //, [2,2,2]))
+// // 12546
+// function replaceAll2(seq, find, replace) {
+// 	if (typeof seq === 'string') {
+// 		return seq.toString().replaceAll(find, replace);
+// 	}
+// 	return seq.map((el) => {
+// 		if (el !== undefined) {
+// 			return +el.toString().replaceAll(find,replace)
+// 		} else {
+// 			return el;
+// 		};
+// 	});
+// }
+
+function maxGap2(numbers) {
+	let sortArr = numbers.sort((a,b) => b - a);
+	let count = 0;
+	for (let i = 0; i < sortArr.length; i++) {
+		if (count < sortArr[i] - sortArr[i + 1]) {
+			count = sortArr[i] - sortArr[i + 1];
+		}
+	}
+	return count
+} 
+
+
+function maxGap(numbers) {
+	return numbers.sort((a,b) => b - a).reduce((acc,curr,i) => {
+		const dif = curr - numbers[i + 1];
+		return dif > acc ? dif : acc;
+	}, 0)
+} 
+console.log(maxGap([24,299,131,14,26,25]))//,168))
+console.log(maxGap([-54,37,0,64,-15,640,0]))//,576);)
