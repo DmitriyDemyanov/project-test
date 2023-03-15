@@ -2919,12 +2919,30 @@ countPeople([
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 function dominator(arr) {
-	let res = arr.find((el) => el === 3)
-	console.log('res',res)
+	// console.log('length:', arr.length / 2);
+	for (let i = 0; i <= arr.length; i++) {
+		let count = [arr[i]];
+		for (let c = i + 1; c <= arr.length; c++) {
+			if (arr[i] === arr[c]) {
+				count.push(arr[c])
+				// console.log('MMMMMM',count);
+				// console.log('c',c)
+			}
+		}
+		// console.log('count>>>>>',count.length)
+		if (count.length >= arr.length / 2) {
+			// console.log(count);
+			return count[0]
+		}
+	}
 	
+	return -1
 }
 
 console.log(dominator([3,4,3,2,3,1,3,3]));//,3))
+console.log(dominator([1,2,3,4,5]))//,-1);)
+console.log(dominator([1,1,1,2,2,2]))//,-1));
+console.log(dominator([1,1,1,2,2,2,2]))//,2));
 //-----------------------------------------------------What dominates your array?----------------------
 
 
