@@ -2083,9 +2083,9 @@ countPeople([
 // 	return 'There will be no Python developers';
 // }
 
-// console.log(getFirstPython(list1)); //, 'Victoria, Puerto Rico'));
+//  console.log(getFirstPython(list1)); //, 'Victoria, Puerto Rico'));
 // console.log(getFirstPython(list2)); //, 'There will be no Python developers');
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // var list1 = [
 // 	{
 // 		firstName: 'Sofia',
@@ -2894,7 +2894,6 @@ countPeople([
 // 	return count
 // }
 
-
 // function maxGap(numbers) {
 // 	return numbers.sort((a,b) => b - a).reduce((acc,curr,i) => {
 // 		const dif = curr - numbers[i + 1];
@@ -2918,33 +2917,27 @@ countPeople([
 // console.log(multiplyAndFilter([1, null, function(){}, 2.5, 'string', 10, undefined, {}, []], 3))//, [3,7.5,30]))
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function dominator(arr) {
-	// console.log('length:', arr.length / 2);
-	for (let i = 0; i <= arr.length; i++) {
-		let count = [arr[i]];
-		for (let c = i + 1; c <= arr.length; c++) {
-			if (arr[i] === arr[c]) {
-				count.push(arr[c])
-				// console.log('MMMMMM',count);
-				// console.log('c',c)
-			}
-		}
-		// console.log('count>>>>>',count.length)
-		if (count.length >= arr.length / 2) {
-			// console.log(count);
-			return count[0]
-		}
-	}
-	
-	return -1
-}
+// function dominator(arr) {
+// 	let obj = {};
 
-console.log(dominator([3,4,3,2,3,1,3,3]));//,3))
-console.log(dominator([1,2,3,4,5]))//,-1);)
-console.log(dominator([1,1,1,2,2,2]))//,-1));
-console.log(dominator([1,1,1,2,2,2,2]))//,2));
-//-----------------------------------------------------What dominates your array?----------------------
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (obj[arr[i]] === undefined) {
+// 			obj[arr[i]] = 0;
+// 		}
+// 		obj[arr[i]]++;
+// 	}
+// 	let res = Object.entries(obj).filter((el) => el[1] >= arr.length / 2)
 
+// 	if (res.length === 1) {
+// 		return +res[0][0];
+// 	}
+// 	return -1
+// };
+// console.log(dominator([3,4,3,2,3,1,3,3]));//,3))
+// console.log(dominator([1,2,3,4,5]))//,-1);)
+// console.log(dominator([1,1,1,2,2,2]))//,-1));
+// console.log(dominator([1,1,1,2,2,2,2]))//,2));
+//-----------------------------------------------------What dominates your array?----------------------=----------------------------------------------------------------------
 
 // const findAll = (array, n) => {
 // 	return array.reduce((acc,cur,ind) => {
@@ -2960,26 +2953,105 @@ console.log(dominator([1,1,1,2,2,2,2]))//,2));
 
 // function shuffledArray(shuffled) {
 // 	let flag = false;
-// return shuffled.filter((el,ind) => {
-// 	let	sum = shuffled.reduce((acc,cur,index) => {
+// 	return shuffled.filter((el,ind) => {
+// 		let sum = shuffled.reduce((acc,cur,index) => {
 // 			if (index !== ind) {
 // 				acc += cur
 // 			}
-// 			return acc
-// 	},0)
-// 	if (el !== sum || flag === true) {
-// 		// console.log('sum',sum);
-// 		// console.log('el',el);
-// 		// console.log('flag',flag)
-// 		return el;
-// 	}
-// 	if (el === sum) {
-// 		flag = true;
-// 	}
-// }).sort((a,b) => a -b)
+// 			return acc;
+// 		},0);
+
+// 		if (el !== sum || flag === true) {
+// 			// console.log('sum',sum);
+// 			// console.log('el',el);
+// 			// console.log('flag',flag)
+// 			return true;
+// 		}
+
+// 		if (el === sum) {
+// 			flag = true;
+// 			return false;
+// 		}
+// 	}).sort((a,b) => a - b);
 // }
 
 // console.log(shuffledArray([1,-3,-5,7,2]));//,[-5, -3, 2, 7]))
 // console.log(shuffledArray([2,-1,2,2,-1]))///,[-1, -1, 2, 2])
-// console.log(shuffledArray([1, 12, 3, 6, 2]))//,[1, 2, 3, 6]))
+// console.log(shuffledArray([1, 12, 3, +0, 6, 2]))//,[1, 2, 3, 6]))
 //---------------------------------------------------------------------------------------?
+//____________________________________________________________________________________________________________________________________________________________
+// function arrayMash(array1, array2) {
+// 	const res = [];
+// 	for (let i = 0; i < array1.length; i++) {
+// 		res.push(array1[i]);
+// 		res.push(array2[i]);
+// 	}
+// 	return res;
+// }
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function matchArrays(v,r) {
+// 	return v.filter((el) => r.find((cur) => el === cur)).length;
+
+// }
+
+// console.log(matchArrays(['incapsulation','OOP','array'],
+// 	['time','propert','paralelism','OOP']));//,1););
+// console.log(matchArrays([1,2,3,4,5],
+// 	[2,3,4,5,6]));//,4);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Array.prototype.reverse = function() {
+//   const arr = [];
+// 	for (let i = 0; i < this.length; i++) {
+//     arr.unshift(this[i])
+//   }
+//   this = arr;
+// };
+
+// function sortByValueAndIndex(array) {
+// 	let res = array.sort(() => {
+
+// 	} )
+// }
+
+///--------------------------------------------------------------------------------------------------------------------------------------
+
+// function swap(string) {
+
+// 	return string.split('').reduce((acc,cur,ind) => {
+// 		if ( ["a", "e", "i","o","u"].includes(cur)) {
+// 			acc.push(cur.toUpperCase())
+// 		} else {
+// 			acc.push(cur)
+// 		}
+// 		return acc
+// 	},[]).join('')
+
+// }
+// console.log(swap("AbrAcAdAbrA"))//, "AbrAcAdAbrA");))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function keepOrder(ary, val) {
+	
+// 	for (let i = 0; i < ary.length; i++) {
+// 		if (ary[i] >= val) {
+// 			return i
+// 		}
+// 	}
+// 	return ary.length;
+// }
+// console.log(keepOrder([1, 1, 2, 2, 2], 2)); //, 2))
+// console.log(keepOrder([1, 2, 3, 4, 7], 5)); //, 4))
+// console.log(keepOrder([1, 2, 3, 4], 5))//, 4))
+
+// function bandNameGenerator(str) {
+// 	let res = str.split('');
+	
+// 	if (res[0] !== res[res.length - 1]) {
+// 		return `The ${res[0].toUpperCase()}${str.slice(1)}`;
+// 	}
+// 	return `${res[0].toUpperCase()}${str.slice(1)}${str.slice(1)}`;
+// }
+
+// console.log(bandNameGenerator('sandles'))//, 'Sandlesandles')'//;)
+// console.log(bandNameGenerator('knife'))//, 'The Knife');)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
