@@ -3027,7 +3027,7 @@ countPeople([
 // console.log(swap("AbrAcAdAbrA"))//, "AbrAcAdAbrA");))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function keepOrder(ary, val) {
-	
+
 // 	for (let i = 0; i < ary.length; i++) {
 // 		if (ary[i] >= val) {
 // 			return i
@@ -3041,7 +3041,7 @@ countPeople([
 
 // function bandNameGenerator(str) {
 // 	let res = str.split('');
-	
+
 // 	if (res[0] !== res[res.length - 1]) {
 // 		return `The ${res[0].toUpperCase()}${str.slice(1)}`;
 // 	}
@@ -3053,31 +3053,65 @@ countPeople([
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //_________________________________________________________________________________________________________________
 // function avgArray(arr) {
-// 	let res = arr.reduce((acc,cur,ind) => {
-// 		let sum = 0;
-// 		acc += cur.forEach((el) => el)
-// 		return acc
-// 	},[])
-// 	console.log('res:::',res)
-//  }
+// 	const res = [];
 
-// console.log(avgArray([[1,2,3,4],[5,6,7,8]]));//, [3, 4, 5, 6]))
+// 	for (let i = 0; i < arr[0].length; i++) {
+
+// 		let sum = 0;
+// 		for (let c = 0; c < arr.length; c++) {
+// 			const currArray = arr[c];
+// 			sum += currArray[i];
+// 		}
+// 		console.log('SUM',sum);
+
+// 		res.push(sum / arr.length);
+// 	}
+
+// 	return res;
+// }
+
+// console.log(
+// 	avgArray([
+// 		[1, 2, 3, 4],
+// 		[5, 6, 7, 8],
+// 	])
+// ); //, [3, 4, 5, 6]))
+
+// function myArr(arr) {
+// 	let sum = 0;
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const currArray = arr[i];
+// 		sum += currArray[0];
+// 	}
+// 	console.log('SUM', sum);
+// }
+
 //------------------------------------------------Average Array-------------------------------------------
 
-// function repeats(arr){
-// 	let res = arr.filter((el) => console.log(arr.includes(el)));
-// 	console.log('res', res)
-// };
-
-// console.log(repeats([5,17,18,11,13,18,11,13]));//,22);)
-
-// //как сравнить элемен со всеми кроме сомого эл.
-//-----------------------------------------------------------------------------------------------------------------------
-function findMissing(arr1, arr2) {
-
-	
+function repeats(arr) {
+	const res = arr.reduce((acc, num) => {
+		if (!acc[num]) {
+			acc[num] = 0;
+		}
+		acc[num]++;
+		return acc;
+	}, {});
+	return Object.entries(res).reduce((acc, [key, value]) => {
+		if (value === 1) {
+			acc += +key;
+		}
+		return acc;
+	}, 0);
 }
 
-console.log(findMissing([4,3,3,61,8,8],[8,61,8,3,4]))//, 3);)
+console.log(repeats2([5, 17, 18, 11, 13, 18, 11, 13])); //,22);)
+
+//как сравнить элемен со всеми кроме сомого эл.
+//-----------------------------------------------------------------------------------------------------------------------
+// function findMissing(arr1,arr2) {
+
+// }
+
+// console.log(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4])); //, 3);)
 
 //-------------------------------------------------------------------------
