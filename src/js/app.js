@@ -3088,26 +3088,26 @@ countPeople([
 
 //------------------------------------------------Average Array-------------------------------------------
 
-function repeats(arr) {
-	const res = arr.reduce((acc, num) => {
-		if (!acc[num]) {
-			acc[num] = 0;
-		}
-		acc[num]++;
-		return acc;
-	}, {});
-	return Object.entries(res).reduce((acc, [key, value]) => {
-		if (value === 1) {
-			acc += +key;
-		}
-		return acc;
-	}, 0);
-}
+// function repeats(arr) {
+// 	const res = arr.reduce((acc, num) => {
+// 		if (!acc[num]) {
+// 			acc[num] = 0;
+// 		}
+// 		acc[num]++;
+// 		return acc;
+// 	}, {});
+// 	return Object.entries(res).reduce((acc, [key, value]) => {
+// 		if (value === 1) {
+// 			acc += +key;
+// 		}
+// 		return acc;
+// 	}, 0);
+// // }
 
-console.log(repeats2([5, 17, 18, 11, 13, 18, 11, 13])); //,22);)
+// console.log(repeats2([5, 17, 18, 11, 13, 18, 11, 13])); //,22);)
 
 //как сравнить элемен со всеми кроме сомого эл.
-//-----------------------------------------------------------------------------------------------------------------------
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function findMissing(arr1,arr2) {
 
 // }
@@ -3115,3 +3115,39 @@ console.log(repeats2([5, 17, 18, 11, 13, 18, 11, 13])); //,22);)
 // console.log(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4])); //, 3);)
 
 //-------------------------------------------------------------------------
+
+//_______________________________________________________________________________________________________________
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function removeNthElement(arr, n) {
+//   // Fix it
+
+//   var arrCopy = [...arr];
+//   arrCopy.splice(n, 1);
+// 	console.log('rrrr',arr)
+//   return arrCopy;
+// }
+
+// console.log(removeNthElement([9, 7, 6, 9], 6))//, [7, 6, 9]);
+
+function pluck(objs, name) {
+	return objs.reduce((acc,cur) => {
+		let test =  Object.entries(cur);
+
+		test.forEach((el) => {
+			if (el[0] === name) {
+				acc.push(el[1])
+			}
+			console.log('el[1]',el[1])
+			if (!el[1]) {
+				acc.push('undefined')
+			}
+		})
+
+		return acc
+	} ,[])
+}
+
+
+console.log(pluck([{a:4}, {a:6, b:undefined}], 'a'))//, [1,2]))
+// console.log(pluck([{a:1, b:3}, {a:2}], 'a')) // -> [3, undefined])
+//---------------------------------------------------pluck----------------------------
