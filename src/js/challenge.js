@@ -103,10 +103,10 @@ function isEqual(a, b) {
 	return a === b;
 }
 
-function isEqual2(a, b) {
-	console.log(JSON.stringify(a));
-	console.log(JSON.stringify(b));
-	return JSON.stringify(a) === JSON.stringify(b);
-}
+// function isEqual2(a, b) {
+// 	console.log(JSON.stringify(a));
+// 	console.log(JSON.stringify(b));
+// 	return JSON.stringify(a) === JSON.stringify(b);
+// }
 
-console.log('isEqual: ', isEqual2(arr_1, arr_2));
+// console.log('isEqual: ', isEqual2(arr_1, arr_2));
