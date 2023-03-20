@@ -1776,26 +1776,7 @@ countPeople([
 // console.log(getLargerNumbers(a, b));
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// function consecutiveOnes(nums) {
-// 	const res = [];
-// 	let count = 1;
-// 	for (let i = 0; i < nums.length; i++) {
-// 		if (nums[i] === nums[i + 1] && nums[i] !== 0) {
-// 			count++;
-// 		} else if (nums[i] !== nums[i + 1] && count !== 1) {
-// 			res.push(count);
-// 			count = 1;
-// 		}
-// 	}
-// 	res.sort((a, b) => b - a);
-// 	if (res.length === 0 && nums.filter((el) => el === 0).length !== 0) {
-// 		return 1;
-// 	}
-// 	return res[0];
-// }
-// //ONE ONe One one
-// console.log(consecutiveOnes([0, 0, 0, 0, 1])); //, 1); //, 3))
-//--------------------------------------------------------------------------------------------------------------------
+
 
 // function scoreTest(str,right,omit,wrong) {
 // 	let good = 0;
@@ -2263,7 +2244,7 @@ countPeople([
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function sabb(s,val,happiness) { }
 // //
-// The Office VI - Sabbatical
+// For the sake of argument
 // console.log(sabb('Can I have a sabbatical?',5,5));//, 'Sabbatical! Boom!'))
 
 //?????????????????????????????????????????????????????????????????????????????????????????????????????????????
@@ -3130,24 +3111,13 @@ countPeople([
 // console.log(removeNthElement([9, 7, 6, 9], 6))//, [7, 6, 9]);
 
 function pluck(objs, name) {
-	return objs.reduce((acc,cur) => {
-		let test =  Object.entries(cur);
-
-		test.forEach((el) => {
-			if (el[0] === name) {
-				acc.push(el[1])
-			}
-			console.log('el[1]',el[1])
-			if (!el[1]) {
-				acc.push('undefined')
-			}
-		})
-
-		return acc
-	} ,[])
+	return objs.reduce((acc, cur) => {
+		acc.push(cur[name]);
+		console.log(cur);
+		return acc;
+	}, []);
 }
 
-
-console.log(pluck([{a:4}, {a:6, b:undefined}], 'a'))//, [1,2]))
+console.log(pluck([{a: 4}, {a: 6, b: 43}, {a: 7}, {b: 55}], 'a')); //, [1,2]))
 // console.log(pluck([{a:1, b:3}, {a:2}], 'a')) // -> [3, undefined])
 //---------------------------------------------------pluck----------------------------
