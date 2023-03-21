@@ -3129,3 +3129,30 @@ console.log(pluck([{a: 4}, {a: 6, b: 43}, {a: 7}, {b: 55}], 'a')); //, [1,2]))
 
 // console.log(avg([0, 1, 2, 3, 4]))//, 2, "returns valid avg number");)
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_______________________________________________________________________________________________________________________________________________
+// function allNonConsecutive(arr) {
+// 	let res = [];
+// 	for (let i = arr.length - 1; i >= 0; i--) {
+// 		let obj = {i: 0, n: 0};
+// 		console.log('I>>',i)
+// 		console.log('arr[i]',arr[i])
+// 		console.log('arr[i - 1]',arr[i - 1]);
+// 		if (arr[i] !== arr[i - 1] + 1 && arr[i - 1] !== undefined) {
+// 			obj.i = i;
+// 			obj.n = arr[i];
+// 			res.push(obj);
+// 			console.log('obj[i]', obj[i]);
+// 		}
+// 	}
+// 	return res.reverse()
+//  }
+
+// console.log(allNonConsecutive([1,2,3,4,6,7,8,10]));
+// console.log('RESULT: [{i: 4, n:6}, {i: 7, n:10}]');
+// // results, [{i: 4, n:6}, {i: 7, n:10}])
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function missingWord(nums, str) {
+
+}
+//Jenny the youngest detective
+console.log(missingWord([29, 31, 8], "The quick brown fox jumps over the lazy dog"))//, "bay"))
