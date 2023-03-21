@@ -1776,8 +1776,6 @@ countPeople([
 // console.log(getLargerNumbers(a, b));
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-
 // function scoreTest(str,right,omit,wrong) {
 // 	let good = 0;
 // 	let noGood = 0;
@@ -3151,8 +3149,50 @@ console.log(pluck([{a: 4}, {a: 6, b: 43}, {a: 7}, {b: 55}], 'a')); //, [1,2]))
 // console.log('RESULT: [{i: 4, n:6}, {i: 7, n:10}]');
 // // results, [{i: 4, n:6}, {i: 7, n:10}])
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function missingWord(nums, str) {
+// function missingWord(nums,str) {
+// 	const sortArr = [...nums].sort((a,b) => a - b);
+// 	let res = str.replaceAll(' ','').split('').reduce((acc,curr,ind) => {
+// 		sortArr.forEach(el => {
+// 			if (el === ind) {
+// 				acc += curr.toLowerCase()
+// 			}
+// 		})
+// 		return acc
+// 	},'');
+// 	return res.length === 3 ? res : 'No mission today';
+// }
+// //Jenny the youngest detective
+// // 'No mission today';
+// console.log(
+// 	missingWord([29, 31, 8], 'The quick Brown fox jumps over the lazy dog')
+// ); //, "bay"))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function cleanedCounts(data) {
 
-}
-//Jenny the youngest detective
-console.log(missingWord([29, 31, 8], "The quick brown fox jumps over the lazy dog"))//, "bay"))
+// 	let res = [];
+// 	let count = data[0];
+// 	for (let i = 1; i <= data.length; i++) {
+// 		res.push(count);
+// 		if (count < data[i]) {
+// 			count = data[i]
+// 		}
+// 	}
+
+// 	return res
+// }
+// console.log('RES>>>>>>>>>>>>>>>>..',cleanedCounts([5,5,6,5,5,5,5,6]))//, [5,5,6,6,6,6,6,6], `cleanedCounts [5,5,6,5,5,5,5,6]` );)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function kookaCounter(laughing) {
+// 	let res = laughing.replaceAll('a','');
+// 	let count = 0;
+// 	for (let i = 0; i < res.length; i++) {
+// 		if (res[i] !== res[i + 1]) {
+// 			count++
+// 		}
+// 	}
+// 	return count
+// }
+
+// console.log(kookaCounter("HaHaHahahaHaHa"))//, 3);)
+// console.log(kookaCounter(""))//, 2))
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
