@@ -3108,15 +3108,15 @@ countPeople([
 
 // console.log(removeNthElement([9, 7, 6, 9], 6))//, [7, 6, 9]);
 
-function pluck(objs, name) {
-	return objs.reduce((acc, cur) => {
-		acc.push(cur[name]);
-		console.log(cur);
-		return acc;
-	}, []);
-}
+// function pluck(objs, name) {
+// 	return objs.reduce((acc, cur) => {
+// 		acc.push(cur[name]);
+// 		console.log(cur);
+// 		return acc;
+// 	}, []);
+// }
 
-console.log(pluck([{a: 4}, {a: 6, b: 43}, {a: 7}, {b: 55}], 'a')); //, [1,2]))
+// console.log(pluck([{a: 4}, {a: 6, b: 43}, {a: 7}, {b: 55}], 'a')); //, [1,2]))
 // console.log(pluck([{a:1, b:3}, {a:2}], 'a')) // -> [3, undefined])
 //---------------------------------------------------pluck----------------------------
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -3196,3 +3196,106 @@ console.log(pluck([{a: 4}, {a: 6, b: 43}, {a: 7}, {b: 55}], 'a')); //, [1,2]))
 // console.log(kookaCounter("HaHaHahahaHaHa"))//, 3);)
 // console.log(kookaCounter(""))//, 2))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//__________________________________________________________________________________________________________________________________________
+
+// function pooRoulette(p) {
+// 	let indexB = null;
+// 	let count = 0;
+// 	p.forEach((cur) => {
+// 		cur.forEach((el, ind) => {
+// 			if( el === 'B') {
+// 				indexB = ind;
+// 			}
+
+// 		})
+// 	} )
+// 	for (let i =0; i < p.length; i++) {
+// 		if (p[i][indexB] === '~') {
+// 			count++
+// 		}
+// 		if (p[i][indexB] === 'B' && count === 3) {
+// 			return "Get the wipes!"
+// 		}
+// 		if (p[i][indexB] !== '~' ) {
+// 			count = 0
+// 		}
+// 		if (p[i][indexB] === 'B' && p[i][indexB + 1] === '~' && p[i][indexB + 2] === '~' && p[i][indexB + 3] === '~'
+// 		) {
+// 			return "You disgust me!"
+// 		}
+// 		for (let c = 0; c < p.length; c++) {
+
+// 			if (p[i][c] === '~' && p[i][c + 1] === '~' && p[i][c + 2] === '~' && p[i][c + 3] === 'B'
+// 		) {
+// 			return "You disgust me!"
+// 		}
+// 		}
+// 	}
+// 	return "Calm before the storm"
+// }
+// console.log(pooRoulette([
+// 	[ '1', '2', '3', '~', '~', '~', 'B'],
+// 	[ 'o', '~', 'o', 'o', 'o', 'o', 'o'],
+// 	[ 'o', '0', 'o', 'o', 'o', 'o', 'o'],
+// 	[ 'o', '~', 'o', 'o', 'o', 'o', 'o'],
+// 	[ 'o', '0', 'o', 'o', 'o', 'o', 'o'],
+// 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// 	]));//, "Get the wipes!");)
+// // console.log(pooRoulette([
+// // 	[ 'B', '~', '~', '~', 'o', 'o', 'o'],
+// // 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// // 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// // 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// // 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// // 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// // 	[ 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+// // 	]));//, "You disgust me!");)
+// // 	console.log(pooRoulette([
+// //     [ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// //     [ 'o', 'o', '~', 'o', 'o', 'o', 'o'],
+// //     [ 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+// //     [ 'o', 'o', '~', 'o', 'o', 'o', 'o'],
+// //     [ 'o', 'o', '~', 'o', 'o', 'o', 'o'],
+// //     [ 'o', 'o', 'B', 'o', '~', '~', '~'],
+// //     [ 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+// //     ]))//, "Calm before the storm");)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function getVillainName(birthday){
+//   const m = ["Evil","Vile","Cruel","Trashy","Despicable","Embarrassing","Disreputable","Atrocious","Twirling","Orange","Terrifying","Awkward"];
+//   const d = ["Mustache","Pickle","Hood Ornament","Raisin","Recycling Bin","Potato","Tomato","House Cat","Teaspoon","Laundry Basket"];
+
+// 	const date = [birthday.getMonth(),birthday.getDate().toString().slice(-1)];
+// 	console.log('date',date)
+// 	console.log('may=>',m[date[0]])
+// 	return `The ${m[date[0]]} ${d[date[1]]}`;
+// }
+
+// console.log(getVillainName(new Date("May 3"))) //"The Despicable Raisin"
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function withoutLast(arr) {
+// let x = [...arr].pop();
+// console.log('x',x)
+//   return arr;
+// }
+//  console.log(withoutLast([ 34, 7, 77, 72, 99, 60, 87, 100, 22 ,3 ]));//,  [ 34, 7, 77, 72, 99, 60, 87 ]);)
+//  console.log(withoutLast([6, 7, 8, 9]));//, [6, 7, 8]);)
+//  console.log(withoutLast([]))
+//----------------------------------------------Working with arrays I (and why your code fails in some katas)
+
+// function vowelOne(s){
+//  const vowels = ["a", "e", "i","o","u"];
+//  return s.split('').reduce((acc, cur) => {
+// 	if (vowels.includes(cur.toLowerCase())) {
+// 		acc += '1'
+// 	} else {
+// 		acc += '0'
+// 	}
+// 	return acc
+//  },'')
+// }
+
+// console.log( vowelOne( "vowelOne" ));//, "01010101" );)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
