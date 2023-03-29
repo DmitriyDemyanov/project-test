@@ -3299,3 +3299,61 @@ countPeople([
 
 // console.log( vowelOne( "vowelOne" ));//, "01010101" );)
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//_____________________________________________________________________________________________________________________________
+// function cubeVolume(h, r) {
+// return 3.14 * Math.pow(r, 2) * h
+// }
+
+// console.log(cubeVolume( 3, 7 ));//27? cubeVolume(11,5);    //353.55
+
+// //v = p*r2 * h
+//----------------------------------------------Volume of the Largest Cube that Fits Inside a Given Cylinder
+
+// function add(...x) {
+// 	return Math.round(x.reduce((acc,cur,ind) => acc+= cur / (ind + 1) ,0))
+// }
+// console.log(add(4, -3, -2));//, 2);
+// console.log(add(-1, -2, -3, -4));//,-4);)
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+var mispelled = function(word1, word2){
+	const arr1 = word1.split('');
+	const arr2 = word2.split('');
+	let count = 0;
+	let length = arr1.length >= arr2.length ? arr1.length : arr2.length
+
+	// if ( arr1.length === arr2.length) {
+	// 	for (let i =0; i < length; i++) {
+	// 		if(arr1[i] === arr2[i]) {
+	// 			count++
+	// 		}
+	// 	}
+	// }
+
+	// if (arr1[0] === arr2[0] &&  arr1.length !== arr2.length) {
+	// 	for (let i =0; i < length; i++) {
+	// 		console.log('arr1[i]',arr1[i]);
+	// 		console.log('arr2[i]==>',arr2[i]);
+	// 		if(arr1[i] === arr2[i]) {
+	// 			count++
+	// 		}
+	// 	}
+	// }
+
+	if (arr1[arr1.length - 1] === arr2[arr2.length - 1] && arr1.length !== arr2.length) {
+		for (let i = length - 1; i > 0 ; i--) {
+			console.log('arr1[i]++',arr1[i]);
+			console.log('arr2[i]==>',arr2[i]);
+			if(arr1[i] === arr2[i]) {
+				count++
+			}
+		}
+		return count
+	}
+
+
+	return count === arr1.length || count === arr2.length
+}
+
+console.log(mispelled('versed', 'verseda'));   //, true
+console.log(mispelled('versed', 'aversed'));   //, true
