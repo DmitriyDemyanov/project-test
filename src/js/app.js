@@ -3316,44 +3316,97 @@ countPeople([
 // console.log(add(-1, -2, -3, -4));//,-4);)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-var mispelled = function(word1, word2){
-	const arr1 = word1.split('');
-	const arr2 = word2.split('');
-	let count = 0;
-	let length = arr1.length >= arr2.length ? arr1.length : arr2.length
+// var mispelled = function (word1, word2) {
+// 	let arr1 = word1.split('');
+// 	let arr2 = word2.split('');
+// 	let count = 0;
+// 	let length = arr1.length >= arr2.length ? arr1.length : arr2.length;
 
-	// if ( arr1.length === arr2.length) {
-	// 	for (let i =0; i < length; i++) {
-	// 		if(arr1[i] === arr2[i]) {
-	// 			count++
-	// 		}
-	// 	}
-	// }
+// 	if (arr1.length === arr2.length) {
+// 		for (let i = 0; i < length; i++) {
+// 			if (arr1[i] === arr2[i]) {
+// 				count++;
+// 			}
+// 		}
+// 		return count === arr1.length || count + 1 === arr1.length;
+// 	}
 
-	// if (arr1[0] === arr2[0] &&  arr1.length !== arr2.length) {
-	// 	for (let i =0; i < length; i++) {
-	// 		console.log('arr1[i]',arr1[i]);
-	// 		console.log('arr2[i]==>',arr2[i]);
-	// 		if(arr1[i] === arr2[i]) {
-	// 			count++
-	// 		}
-	// 	}
-	// }
+// 	if (arr1.length !== arr2.length) {
+// 		if (arr1[0] !== arr2[0]) {
+// 			arr1 = arr1.reverse();
+// 			arr2 = arr2.reverse();
+// 		}
+// 		for (let i = 0; i < length; i++) {
+// 			if (arr1[i] === arr2[i]) {
+// 				count++;
+// 			}
+// 		}
+// 		return count === length - 1;
+// 	}
+// };
 
-	if (arr1[arr1.length - 1] === arr2[arr2.length - 1] && arr1.length !== arr2.length) {
-		for (let i = length - 1; i > 0 ; i--) {
-			console.log('arr1[i]++',arr1[i]);
-			console.log('arr2[i]==>',arr2[i]);
-			if(arr1[i] === arr2[i]) {
-				count++
-			}
-		}
-		return count
+// function misspelled(w1, w2) {
+
+// }
+
+// console.log(mispelled('versed', 'versedh')); //, true
+//    arrayOfArrays = [
+// 			[1, 2, 3, 4, 5, 6],
+// 			[7, 7, 7, -7, 7, 7],
+// 			[1, 1, 1, 1, 1, 1],
+// 		];
+// 		// expected = [1, 2, 3, 11, 12, 13, -6, 8, 8, 1, 1, 1];
+// Mispelled word
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// function addingShifted(arrayOfArrays,shift) {
+// 	const newArr = [];
+// 	console.log('<><><><>',arrayOfArrays[0].length)
+// 	// for (let i = 0; i < )
+// // }
+
+// console.log(addingShifted(arrayOfArrays,3))
+
+// function validParentheses(parenStr) {
+// 	let count = 0;
+// 	for (let i = 0; i < parenStr.length; i++) {
+// 		if (parenStr[i] === '(') {
+// 			count++
+// 		}
+// 		if (parenStr[i] === ')') {
+// 			count--;
+// 		}
+// 		if (count < 0 ) {
+// 			return false
+// 		}
+// 	}
+// 	return count === 0
+// }
+
+// console.log(validParentheses(')('));//true
+//_=+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// function sortEmotions(arr, order) {
+// 	const settings = {
+// 		':D': 5,
+// 		':)': 4,
+// 		':|': 3,
+// 		':(': 2,
+// 		T_T: 1,
+// 	};
+// 	const multiple = order ? 1 : -1;
+// 	return arr.sort((a, b) => {
+// 		return (settings[b] - settings[a]) * multiple;
+// 	});
+// }
+
+// console.log(sortEmotions([':)', 'T_T', ':)', ':D', ':D'], false)); //, [ ':D', ':D', ':)', ':)', 'T_T' ]))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++SORT+++++++++++++++++++++++++++++++++++++++++++++
+function deepCount(a) {
+	let count = a.length;
+	const idx = a.findIndex((el) => Array.isArray(el));
+	if (idx !== -1) {
+		count = count + deepCount(a[idx]);
 	}
-
-
-	return count === arr1.length || count === arr2.length
+	return count;
 }
-
-console.log(mispelled('versed', 'verseda'));   //, true
-console.log(mispelled('versed', 'aversed'));   //, true
+console.log(deepCount([1, 2, [3, 4, [5, [1,2,3,4,5]]]]))//, 7, "Expected 7"))
