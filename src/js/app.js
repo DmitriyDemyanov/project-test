@@ -3409,20 +3409,29 @@ function deepCount(a) {
 	}
 	return count;
 }
-console.log(deepCount([1, 2, [3, 4, [5, [1,2,3,4,5]]]]))//, 7, "Expected 7"))
+// console.log(deepCount([1, 2, [3, 4, [5, [1,2,3,4,5]]]]))//, 7, "Expected 7"))
 
 function sortByValueAndIndex(array){
+	let count = 1;
 
-	for (let i = 0; i < array.length; i++) {
-		array.sort((a, b) => {
-			console.log('IIIII',i)
-			console.log(a * (i + 1))
-			console.log(b * (i + 1))
-			console.log('___________________')
-			return a * (i + 1) - b * (i + 1)
-		})
-	}
-	console.log(array)
+ const res = array.sort((a,b) => {
+
+		if (a * count > b * count) {
+			count++
+
+			return 1
+		}
+		else if  (a * count < b * count) {
+			count++
+			return -1
+		}
+		else {
+			count++
+			return 0
+		}
+	})
+	console.log('>>>',count)
+	return	res
 }
 
 console.log(sortByValueAndIndex([ 23, 2, 3, 4, 5 ]))
