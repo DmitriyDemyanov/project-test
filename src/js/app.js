@@ -3410,3 +3410,20 @@ function deepCount(a) {
 	return count;
 }
 console.log(deepCount([1, 2, [3, 4, [5, [1,2,3,4,5]]]]))//, 7, "Expected 7"))
+
+function sortByValueAndIndex(array){
+
+	for (let i = 0; i < array.length; i++) {
+		array.sort((a, b) => {
+			console.log('IIIII',i)
+			console.log(a * (i + 1))
+			console.log(b * (i + 1))
+			console.log('___________________')
+			return a * (i + 1) - b * (i + 1)
+		})
+	}
+	console.log(array)
+}
+
+console.log(sortByValueAndIndex([ 23, 2, 3, 4, 5 ]))
+//-------------------------------------------------------Sort an array by value and index
