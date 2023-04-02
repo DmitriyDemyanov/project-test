@@ -3412,27 +3412,55 @@ function deepCount(a) {
 // console.log(deepCount([1, 2, [3, 4, [5, [1,2,3,4,5]]]]))//, 7, "Expected 7"))
 
 function sortByValueAndIndex(array){
-	let count = 1;
 
- const res = array.sort((a,b) => {
+return array.sort((a,b) =>  {
 
-		if (a * count > b * count) {
-			count++
-
-			return 1
-		}
-		else if  (a * count < b * count) {
-			count++
-			return -1
-		}
-		else {
-			count++
-			return 0
-		}
-	})
-	console.log('>>>',count)
-	return	res
+	if ((array.indexOf(a)+ 1)* a >  (array.indexOf(b)+ 1)* b ) {
+		console.log('array.indexOf(a)+ 1)* a',(array.indexOf(a)+ 1)* a)
+		console.log('array.indexOf(a)+ 1)* b',(array.indexOf(b)+ 1)* b)
+		console.log('____________________________________________________')
+		return 1
+	}
+	if ((array.indexOf(a)+ 1)* a <  (array.indexOf(b)+ 1)* b ) {
+		return -1
+	}
+	return 0
+})
 }
 
 console.log(sortByValueAndIndex([ 23, 2, 3, 4, 5 ]))
-//-------------------------------------------------------Sort an array by value and index
+//-------------------------------------------------------Sort an array by value and index ???
+
+// function myLanguages(results) {
+// 	return Object.entries(results).sort((a,b) => b[1] - a[1]).reduce((acc, cur) => {
+// 		if(cur[1] >= 60) {
+// 			acc.push(cur[0])
+// 		}
+// 		return acc
+// 	},[])
+// }
+
+// console.log(myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93}));//, ["Dutch", "Greek", "Hindi"]))
+// console.log('>>>',myLanguages({"Java" : 10, "Ruby" : 80, "Python" : 65}));//, ["Ruby", "Python"]))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// var naughty = [
+// 	{ name: 'Warrior reading this kata', wasNice: true },
+// 	{ name: 'xDranik', wasNice: false },
+// 	{ name: 'Santa', wasNice: true }
+// ];
+// var nice = [
+//   {name: 'Santa', wasNice: true},
+//   {name: 'Warrior reading this kata', wasNice: true}
+// ];
+
+// function getNiceNames(people){
+// 	return people.reduce((acc, cur) => {
+// 		if (cur.wasNice === true) {
+// 			acc.push(cur.name)
+// 		}
+// 		return acc
+// 	},[])
+// }
+
+// console.log(getNiceNames(naughty))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
