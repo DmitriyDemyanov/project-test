@@ -1,52 +1,52 @@
 function countPeople(people) {
-	const res = people.reduce(
-		(acc, current) => {
-			acc.sumAge += current.age;
-			acc.sumEyes += current.eyes;
-			return acc;
-		},
-		{
-			sumAge: 0,
-			sumEyes: 0,
-		}
-	);
-	// console.log(res);
-	return res;
+  const res = people.reduce(
+    (acc, current) => {
+      acc.sumAge += current.age;
+      acc.sumEyes += current.eyes;
+      return acc;
+    },
+    {
+      sumAge: 0,
+      sumEyes: 0,
+    }
+  );
+  // console.log(res);
+  return res;
 }
 
 countPeople([
-	{
-		age: 32,
-		eyes: 1,
-	},
-	{
-		age: 22,
-		eyes: 2,
-	},
-	{
-		age: 45,
-		eyes: 2,
-	},
-	{
-		age: 55,
-		eyes: 14,
-	},
-	{
-		age: 12,
-		eyes: 2,
-	},
-	{
-		age: 13,
-		eyes: 1,
-	},
-	{
-		age: 75,
-		eyes: 2,
-	},
-	{
-		age: 22,
-		eyes: 3,
-	},
+  {
+    age: 32,
+    eyes: 1,
+  },
+  {
+    age: 22,
+    eyes: 2,
+  },
+  {
+    age: 45,
+    eyes: 2,
+  },
+  {
+    age: 55,
+    eyes: 14,
+  },
+  {
+    age: 12,
+    eyes: 2,
+  },
+  {
+    age: 13,
+    eyes: 1,
+  },
+  {
+    age: 75,
+    eyes: 2,
+  },
+  {
+    age: 22,
+    eyes: 3,
+  },
 ]);
 
 // function arrayMadness(a, b) {
@@ -3467,58 +3467,108 @@ countPeople([
 const map = ["_id", "name", "isActive", "balance"];
 const users = [
   {
-    "_id": "5d220b10e8265cc978e2586b",
-    "isActive": true,
-    "balance": 2853.33,
-    "age": 20,
-    "name": "Buckner Osborne",
-    "gender": "male",
-    "company": "EMPIRICA",
-    "email": "bucknerosborne@empirica.com",
-    "phone": "+1 (850) 411-2997",
-    "registered": "2018-08-13T04:28:45 -03:00",
-		"nestedField": { total: 300 }
+    _id: "5d220b10e8265cc978e2586b",
+    isActive: true,
+    balance: 2853.33,
+    age: 20,
+    name: "Buckner Osborne",
+    gender: "male",
+    company: "EMPIRICA",
+    email: "bucknerosborne@empirica.com",
+    phone: "+1 (850) 411-2997",
+    registered: "2018-08-13T04:28:45 -03:00",
+    nestedField: { total: 300 },
   },
   {
-    "_id": "5d220b10144ef972f6c2b332",
-    "isActive": true,
-    "balance": 1464.63,
-    "age": 38,
-    "name": "Rosalie Smith",
-    "gender": "female",
-    "company": "KATAKANA",
-    "email": "rosaliesmith@katakana.com",
-    "phone": "+1 (943) 463-2496",
-    "registered": "2016-12-09T05:15:34 -02:00",
-		"nestedField": { total: 400 }
+    _id: "5d220b10144ef972f6c2b332",
+    isActive: true,
+    balance: 1464.63,
+    age: 38,
+    name: "Rosalie Smith",
+    gender: "female",
+    company: "KATAKANA",
+    email: "rosaliesmith@katakana.com",
+    phone: "+1 (943) 463-2496",
+    registered: "2016-12-09T05:15:34 -02:00",
+    nestedField: { total: 400 },
   },
   {
-    "_id": "5d220b1083a0494655cdecf6",
-    "isActive": false,
-    "balance": 2823.39,
-    "age": 40,
-    "name": "Estrada Davenport",
-    "gender": "male",
-    "company": "EBIDCO",
-    "email": "estradadavenport@ebidco.com",
-    "phone": "+1 (890) 461-2088",
-    "registered": "2016-03-04T03:36:38 -02:00",
-		"nestedField": { total: 200 }
-  }
+    _id: "5d220b1083a0494655cdecf6",
+    isActive: false,
+    balance: 2823.39,
+    age: 40,
+    name: "Estrada Davenport",
+    gender: "male",
+    company: "EBIDCO",
+    email: "estradadavenport@ebidco.com",
+    phone: "+1 (890) 461-2088",
+    registered: "2016-03-04T03:36:38 -02:00",
+    nestedField: { total: 200 },
+  },
 ];
 
+function getUsers(users, map) {
+  return users.reduce((acc, current) => {
+    let obg = {};
+    map.forEach((el) => {
+      obg[el] = current[el];
+    });
+    acc.push(obg);
+    return acc;
+  }, []);
+}
 
-	function getUsers(users, map) {
+// console.log(getUsers(users,map))++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ask about reverse?
 
-	return	users.reduce((acc, current) => {
-			let obg = {}
-			map.forEach((el) => {
-				obg[el] = current[el]
-			} )
-			acc.push(obg)
-			return acc
-		} ,[]);
-	};
+function sort(users, balance, order) {
+  let res = [...users];
+  // let str = balance.slice(0, balance.indexOf("."));
+  // let second = balance.slice(balance.indexOf(".") + 1, balance.length);
 
-	// console.log(getUsers(users,map))++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	// ask obout reverse?
+  const [str, second] = balance.split(".");
+
+  // console.log('balance',Object.values(balance).some((el) => el === '.'))
+
+  if (second) {
+    if (order === "desc") {
+      return res.sort((a, b) => b[str][second] - a[str][second]);
+    }
+    return res.sort((a, b) => a[str][second] - b[str][second]);
+  } else {
+    if (order === "desc") {
+      return res.sort((a, b) => {
+        if (a[balance] > b[balance]) {
+          return 1;
+        }
+        if (a[balance] < b[balance]) {
+          return -1;
+        }
+        return 0;
+      });
+    }
+		return res.sort((a, b) => {
+			if (a[balance] < b[balance]) {
+				return 1;
+			}
+			if (a[balance] > b[balance]) {
+				return -1;
+			}
+			return 0;
+		});
+  }
+}
+console.log("USERS:::", users);
+console.log("desc====", sort(users, "balance", "desc"));
+console.log("asc", sort(users, "balance", "asc"));
+console.log("asc by name", sort(users, "name", "asc"));
+console.log("desc by name", sort(users, "name", "desc"));
+console.log("<><nestedField.total><>", sort(users, "nestedField.total", "asc"));
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function debounce(callback, delay) {
+  // ....
+}
+
+debounce();
