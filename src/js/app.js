@@ -1,52 +1,52 @@
 function countPeople(people) {
-	const res = people.reduce(
-		(acc, current) => {
-			acc.sumAge += current.age;
-			acc.sumEyes += current.eyes;
-			return acc;
-		},
-		{
-			sumAge: 0,
-			sumEyes: 0,
-		}
-	);
-	// console.log(res);
-	return res;
+  const res = people.reduce(
+    (acc, current) => {
+      acc.sumAge += current.age;
+      acc.sumEyes += current.eyes;
+      return acc;
+    },
+    {
+      sumAge: 0,
+      sumEyes: 0,
+    }
+  );
+  // console.log(res);
+  return res;
 }
 
 countPeople([
-	{
-		age: 32,
-		eyes: 1,
-	},
-	{
-		age: 22,
-		eyes: 2,
-	},
-	{
-		age: 45,
-		eyes: 2,
-	},
-	{
-		age: 55,
-		eyes: 14,
-	},
-	{
-		age: 12,
-		eyes: 2,
-	},
-	{
-		age: 13,
-		eyes: 1,
-	},
-	{
-		age: 75,
-		eyes: 2,
-	},
-	{
-		age: 22,
-		eyes: 3,
-	},
+  {
+    age: 32,
+    eyes: 1,
+  },
+  {
+    age: 22,
+    eyes: 2,
+  },
+  {
+    age: 45,
+    eyes: 2,
+  },
+  {
+    age: 55,
+    eyes: 14,
+  },
+  {
+    age: 12,
+    eyes: 2,
+  },
+  {
+    age: 13,
+    eyes: 1,
+  },
+  {
+    age: 75,
+    eyes: 2,
+  },
+  {
+    age: 22,
+    eyes: 3,
+  },
 ]);
 
 // console.log('[9,1,8,2,7,3,6,4]');
@@ -915,9 +915,9 @@ countPeople([
 
 // console.log(sayHello());
 function removeSmallest(numbers) {
-	let res = [...numbers];
-	const ind = res.splice(res.indexOf(Math.min.apply(null, res)), 1);
-	return res;
+  let res = [...numbers];
+  const ind = res.splice(res.indexOf(Math.min.apply(null, res)), 1);
+  return res;
 }
 
 console.log(removeSmallest([5, 3, 2, 1, 4])); //, [5, 3, 2, 4], "Wrong result for [5, 3, 2, 1, 4]"))
@@ -968,31 +968,60 @@ console.log(removeSmallest([2, 2, 1, 2, 1])); //, [2, 2, 2, 1], "Wrong result fo
 // };
 
 // // console.log(countIslands(image));  //  2
-// console.log(countIslands(image2));  //  1
-function findIncorrectValue(tree) {
-	const res = [];
-	for (let i = 0; i < 1; i++) {
-		if (tree[0] !== tree[1] + tree[2]) {
-			res.push(i);
-			res.push(tree[0] - tree[2]);
-			return res;
-		}
-	}
-	for (let c = 1; c < tree.length; c++) {
-		console.log('tree[c]',tree[c]);
-		console.log('tree[c + 2]', tree[c + 2]);
-		console.log(' tree[c + 3]',tree[c + 3]);
-		console.log('___________________________________')
-		if (tree[c] !== tree[c + 2] + tree[c + 3]) {
-			res.push(c + 2);
-			res.push(tree[c] - tree[c + 3]);
-			return res
-		}
-	}
-	return res
-}
+// // console.log(countIslands(image2));  //  1
+// function findIncorrectValue(tree) {
+// 	const res = [];
+// 	for (let i = 0; i < 1; i++) {
+// 		if (tree[0] !== tree[1] + tree[2]) {
+// 			res.push(i);
+// 			res.push(tree[0] - tree[2]);
+// 			return res;
+// 		}
+// 	}
+// 	for (let c = 1; c < tree.length; c++) {
+// 		console.log('tree[c]',tree[c]);
+// 		console.log('tree[c + 2]', tree[c + 2]);
+// 		console.log(' tree[c + 3]',tree[c + 3]);
+// 		console.log('___________________________________')
+// 		if (tree[c] !== tree[c + 2] + tree[c + 3]) {
+// 			res.push(c + 2);
+// 			res.push(tree[c] - tree[c + 3]);
+// 			return res
+// 		}
+// 	}
+// 	return res
+// }
 
-console.log(
-	findIncorrectValue([19, 9, 10, 5, 5, 4, 6, 2, 2, 1, 4, 1, 3, 2, 4])
-); //, [3, 4], "First node on level 2 should be 4");)
-console.log(findIncorrectValue([27, 13, 15, 6, 7, 5, 9]))//, [2,14], "Root's rightchild should be 14");)
+// console.log(
+// 	findIncorrectValue([19, 9, 10, 5, 5, 4, 6, 2, 2, 1, 4, 1, 3, 2, 4])
+// ); //, [3, 4], "First node on level 2 should be 4");)
+// console.log(findIncorrectValue([27, 13, 15, 6, 7, 5, 9]))//, [2,14], "Root's rightchild should be 14");)
+
+function scoreboard(string) {
+  const number = ["nil", "one", "two", "three", "four", 'five', 'six', 'seven', 'eight','nine'];
+
+ return string.split(" ").slice(-2).reduce((acc, current) => {
+
+    number.forEach((el, ind) => {
+
+    if(el === current) {
+      acc.push(ind);
+    }
+   })
+
+   return acc
+  }, []);
+}
+console.log(scoreboard("The score is four one")); //, [4,0], "Should return: [4,1]"))
+
+function getAges(sum,difference){
+  if(sum < 0 || difference < 0) {
+    return null
+  }
+ let x = (sum + difference) / 2;
+ let y = sum - x;
+
+return [x,y]
+};
+
+console.log(getAges(24 , 4 ))//, [14,10]);)
