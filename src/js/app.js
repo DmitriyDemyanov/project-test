@@ -999,62 +999,78 @@ countPeople([
 
 // console.log(getAges(24 , 4 ))//, [14,10]);)
 
-function findIncorrectValue(tree) {
-	const res = [];
-	let sum = (tree.length - 1) / 2 - 1;
-	if (tree.length < 8) {
-		for (let i = tree.length - 1; i > 0; i = i - 2) {
-			if (tree[sum] !== tree[i] + tree[i - 1]) {
-				if (
-					tree[sum - 2] !== tree[sum] + tree[sum + 1] &&
-					tree[sum - 2] !== tree[0]
-				) {
+// function findIncorrectValue(tree) {
+// 	const res = [];
+// 	let sum = (tree.length - 1) / 2 - 1;
+// 	if (tree.length < 8) {
+// 			for (let i = tree.length - 1; i > 0; i = i - 2) {
+// 				if (
+// 					tree[0] !== tree[1] + tree[2] &&
+// 					tree[1] !== tree[3] + tree[4] &&
+// 					tree[2] === tree[5] + tree[6]
+// 				) {
+// 					res.push(1);
+// 					res.push(tree[0] - tree[2]);
+// 				}
+// 				if (
+// 					tree[0] !== tree[1] + tree[2] &&
+// 					tree[1] === tree[3] + tree[4] &&
+// 					tree[2] === tree[5] + tree[6]
+// 				) {
+// 					res.push(0);
+// 					res.push(tree[1] + tree[2]);
+// 				}
+// 			if (tree[sum] !== tree[i] + tree[i - 1]) {
+// 				if (
+// 					tree[sum - 2] !== tree[sum] + tree[sum + 1] &&
+// 					tree[sum - 2] !== tree[0]
+// 				) {
 				
-					res.push(tree.indexOf(tree[sum]));
-					res.push(tree[i] + tree[i - 1]);
-				} else if (
-					tree[sum - 2] === tree[sum] + tree[sum + 1] ||
-					tree[sum - 2] === tree[0]
-				) {
-					console.log('INDX', i);
+// 					res.push(tree.indexOf(tree[sum]));
+// 					res.push(tree[i] + tree[i - 1]);
+// 				} else if (
+// 					tree[sum - 2] === tree[sum] + tree[sum + 1] ||
+// 					tree[sum - 2] === tree[0]
+// 				) {
+// 					console.log('INDX', i);
 
-					res.push(i);
-					res.push(tree[sum] - tree[i - 1]);
-				}
+// 					res.push(i);
+// 					res.push(tree[sum] - tree[i - 1]);
+// 				}
 
-				console.log('RES', res);
-				return res;
-			}
-			sum--;
-		}
-	}
+// 				console.log('RES', res);
+// 				return res;
+// 			}
+// 			sum--;
+// 		}
+// 	}
 
-		for (let i = tree.length - 1; i > 0; i = i - 2) {
-			if (tree[sum] !== tree[i] + tree[i - 1]) {
-				if (
-					tree[sum - 2] !== tree[sum] + tree[sum + 1] &&
-					tree[sum - 2] !== tree[0]
-				) {
+// 		for (let i = tree.length - 1; i > 0; i = i - 2) {
+// 			if (tree[sum] !== tree[i] + tree[i - 1]) {
+// 				if (
+// 					tree[sum - 2] !== tree[sum] + tree[sum + 1] &&
+// 					tree[sum - 2] !== tree[0]
+// 				) {
 				
-					res.push(tree.indexOf(tree[sum]));
-					res.push(tree[i] + tree[i - 1]);
-				} else if (
-					tree[sum - 2] === tree[sum] + tree[sum + 1] ||
-					tree[sum - 2] === tree[0]
-				) {
+// 					res.push(tree.indexOf(tree[sum]));
+// 					res.push(tree[i] + tree[i - 1]);
+// 				} else if (
+// 					tree[sum - 2] === tree[sum] + tree[sum + 1] ||
+// 					tree[sum - 2] === tree[0]
+// 				) {
 				
 
-					res.push(i);
-					res.push(tree[sum] - tree[i - 1]);
-				}
+// 					res.push(i);
+// 					res.push(tree[sum] - tree[i - 1]);
+// 				}
 
 			
-				return res;
-			}
-			sum--;
-		}
-	return res;
-}
+// 				return res;
+// 			}
+// 			sum--;
+// 		}
+// 	return res;
+// }
 
 // console.log(
 // 	'[3, 4]',
@@ -1069,5 +1085,37 @@ function findIncorrectValue(tree) {
 // 	'[0,19]',
 // 	findIncorrectValue([21, 9, 10, 4, 5, 4, 6, 2, 2, 1, 4, 1, 3, 2, 4])
 // ); //, [0,19], "Root should be 19"))
-console.log('[6, 7]', findIncorrectValue([29, 13, 16, 5, 8, 9, 1]));//, [6, 7], "The last leaf should be 7");)
-console.log('[2,14]', findIncorrectValue([27, 13, 15, 6, 7, 5, 9]));//, [2,14], "Root's rightchild should be 14"))
+
+
+// function giveChange(amount) {
+// 	let res = [];
+// 	let sum = amount % 100;
+// 	res.unshift((amount - (amount % 100)) / 100);
+// 	res.unshift((sum - (sum % 50)) / 50);
+// 	sum = sum % 50;
+// 	res.unshift((sum - (sum % 20)) / 20);
+// 	sum = sum % 20;
+// 	res.unshift((sum - (sum % 10)) / 10);
+// 	sum = sum % 10;
+// 	res.unshift((sum - (sum % 5)) / 5);
+// 	sum = sum % 5;
+// 	res.unshift((sum - (sum % 1)) / 1);
+// return res
+// }
+
+// console.log('[0,1,1,0,1,3]', giveChange(365));//, [0,1,1,0,1,3]);)
+// console.log('[2,1,1,0,0,2]',giveChange(217));//, [2,1,1,0,0,2]))
+// console.log('[3,1,0,0,0,0]', giveChange(8));//,   [3,1,0,0,0,0]);)
+// array[0] ---> represents $1 bills
+
+// array[1] ---> represents $5 bills
+
+// array[2] ---> represents $10 bills
+
+// array[3] ---> represents $20 bills
+
+// array[4] ---> represents $50 bills
+
+// array[5] ---> represents $100 bills
+
+

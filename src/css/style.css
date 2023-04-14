@@ -47,6 +47,23 @@ nav {
 	font-weight: 900;
 }
 
+.wrapper-btn {
+	display: flex;
+	justify-content: center;
+}
+#btn-start {
+	cursor: pointer;
+	width: 100px;
+	height: 50px;
+	background-color: #746c6c;
+}
+#btn-stop {
+	width: 100px;
+	height: 50px;
+	background-color: #ce2828;
+	cursor: pointer;
+}
+
 .box {
 	height: 300px; /*  высота */
 	width: 300px; /* ширина */
@@ -58,3 +75,10 @@ nav {
 .big-font {
 	font-size: 1.5rem;
 }
+.wrapper-timer {
+	font-size: 20px;
+	color:aquamarine;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
