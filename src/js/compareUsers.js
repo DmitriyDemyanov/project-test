@@ -94,10 +94,10 @@ const user4 = {
 	},
 };
 
-function compareUsers(u1, u2) {
-	console.log('U 1', u1);
-	console.log('U 2', u2);
-}
+// function compareUsers(u1, u2) {
+// 	return JSON.stringify(u1) === JSON.stringify(u2);
+
+// }
 
 // console.log('User 1 vs User 2', compareUsers(user1, user2));
 // console.log('User 2 vs User 3', compareUsers(user2, user3));
