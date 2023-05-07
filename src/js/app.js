@@ -1,6 +1,6 @@
 function countPeople(people) {
 	const res = people.reduce(
-		(acc, current) => {
+		(acc,current) => {
 			acc.sumAge += current.age;
 			acc.sumEyes += current.eyes;
 			return acc;
@@ -3027,7 +3027,7 @@ countPeople([
 // console.log(swap("AbrAcAdAbrA"))//, "AbrAcAdAbrA");))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function keepOrder(ary, val) {
-	
+
 // 	for (let i = 0; i < ary.length; i++) {
 // 		if (ary[i] >= val) {
 // 			return i
@@ -3041,7 +3041,7 @@ countPeople([
 
 // function bandNameGenerator(str) {
 // 	let res = str.split('');
-	
+
 // 	if (res[0] !== res[res.length - 1]) {
 // 		return `The ${res[0].toUpperCase()}${str.slice(1)}`;
 // 	}
@@ -3073,11 +3073,42 @@ countPeople([
 
 // //как сравнить элемен со всеми кроме сомого эл.
 //-----------------------------------------------------------------------------------------------------------------------
-function findMissing(arr1, arr2) {
-
-	
+function findMissing(arr1,arr2) {
+	let sortArr1 = arr1.sort((a,b) => a - b);
+	let sortArr2 = arr2.sort((a,b) => a - b);
+	for (let i = 0; i < arr1.length; i++) {
+		if (sortArr1[i] !== sortArr2[i]) {
+			return sortArr1[i];
+		}
+	}
 }
 
 console.log(findMissing([4,3,3,61,8,8],[8,61,8,3,4]))//, 3);)
 
-//-------------------------------------------------------------------------
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function largestPairSum(numbers) {
+	let newArr = [...numbers].sort((a,b) => b - a)
+	return newArr[0] + newArr[1];
+
+}
+
+console.log(largestPairSum([1,2,3,4,6,-1,2]));//,10);)
+console.log(largestPairSum([-61,7,-92,69,-30,-25,-36,48,-25,60,-25,48,-11,55,-35,-98,-80,-26,58,41,49,-39,-80,62,-78,-18,-52,55,14,-32,-43,56,78,-92,64,-41,22]));//,10);)
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function explode(x) {
+	let num = null;
+	if (typeof x[0] === 'number') {
+		num = x[0];
+	}
+	if (typeof x[1] === 'number') {
+		num += x[1]
+	}
+	if (num === null) {
+		return 'Void!'
+	}
+	return new Array(num).fill(x);
+}
+
+console.log(explode([6,'c']));//,[[6,'c'],[6,'c'],[6,'c'],[6,'c'],[6,'c'],[6,'c']]))
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
