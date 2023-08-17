@@ -1,6 +1,6 @@
 function countPeople(people) {
 	const res = people.reduce(
-		(acc, current) => {
+		(acc,current) => {
 			acc.sumAge += current.age;
 			acc.sumEyes += current.eyes;
 			return acc;
@@ -283,28 +283,28 @@ countPeople([
 // const input = [0, 0, 4, 6, 8, 8, 0, 8, 5, 5, 7]; //output: 2
 // console.log(setReducer(input));
 
-function setReducerHomeVersion(input) {
-	const newArr = [];
-	let count = 1;
-	for (let i = 0; i < input.length; i++) {
-		console.log(input[i]);
-		// ecли число не равно следующему числу из списка то добавить к newArr единицу  newArr.push(1)
-		// если число  равно следующему числу из списка (input[i] === input[i + 1]), то вкл перебор второй(let c) и не добовлять к newArr единицу
-		for (let c = i + 1; input[c] === input[i]; c++) {
-			// а добавить число количеств повторений этого перебора  (count++;) и вконце обнулить счетчик
-			console.log();
-			console.log('>>>>>input[c]',input[c]);
-			console.log('--------input[i]',input[i]); //разобраться как сделать перебор до кол-ва повторов чисел. Например 4ре восьмёрки 4ре повтора, а не шесть!
-			count++;
-			console.log('count+++',count);
-		}
-		if (count !== 1) {
-			newArr.push(count);
-			count = 1;
-		}
-	}
-	console.log('newArr',newArr);
-}
+// function setReducerHomeVersion(input) {
+// 	const newArr = [];
+// 	let count = 1;
+// 	for (let i = 0; i < input.length; i++) {
+// 		console.log(input[i]);
+// 		// ecли число не равно следующему числу из списка то добавить к newArr единицу  newArr.push(1)
+// 		// если число  равно следующему числу из списка (input[i] === input[i + 1]), то вкл перебор второй(let c) и не добовлять к newArr единицу
+// 		for (let c = i + 1; input[c] === input[i]; c++) {
+// 			// а добавить число количеств повторений этого перебора  (count++;) и вконце обнулить счетчик
+// 			console.log();
+// 			console.log('>>>>>input[c]',input[c]);
+// 			console.log('--------input[i]',input[i]); //разобраться как сделать перебор до кол-ва повторов чисел. Например 4ре восьмёрки 4ре повтора, а не шесть!
+// 			count++;
+// 			console.log('count+++',count);
+// 		}
+// 		if (count !== 1) {
+// 			newArr.push(count);
+// 			count = 1;
+// 		}
+// 	}
+// 	console.log('newArr',newArr);
+// }
 
 // function setReducer(input) {
 // 	const newArr = [];
@@ -365,33 +365,33 @@ function setReducerHomeVersion(input) {
 // console.log(minMinMax([-23, -22, -1, 4, 5, 24])); //[-23, -22, 24])
 // console.log(minMinMax([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-function cupAndBalls(b, arr) {
-	let pos = b;
+// function cupAndBalls(b, arr) {
+// 	let pos = b;
 
-	for (let i = 0; i < arr.length; i++) {
-		const man = arr[i];
-		const index = man.indexOf(pos);
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const man = arr[i];
+// 		const index = man.indexOf(pos);
 
-		if (index === 0) {
-			pos = man[1];
-		}
-		if (index === 1) {
-			pos = man[0];
-		}
-	}
+// 		if (index === 0) {
+// 			pos = man[1];
+// 		}
+// 		if (index === 1) {
+// 			pos = man[0];
+// 		}
+// 	}
 
-	return pos;
-}
+// 	return pos;
+// }
 
-console.log(
-	'oooo',
-	cupAndBalls(2, [
-		[1, 3],
-		[1, 2],
-		[2, 1],
-		[2, 3],
-	])
-); ////           [3]
+// console.log(
+// 	'oooo',
+// 	cupAndBalls(2, [
+// 		[1, 3],
+// 		[1, 2],
+// 		[2, 1],
+// 		[2, 3],
+// 	])
+// ); ////           [3]
 
 // function isSquare(arr) {
 // 	if (arr.length === 0) {
@@ -417,20 +417,20 @@ console.log(
 // Math.sqrt(16);
 //Number.isInteger()
 
-function isSquare(arr) {
-	if (arr.length === 0) {
-		return undefined;
-	}
-	const newArr = [];
-	for (let i = 0; i < arr.length; i++) {
-		newArr.push(Math.sqrt(arr[i]));
-		if (!Number.isInteger(newArr[i])) {
-			return false;
-		}
-	}
-	return true;
-}
-// console.log(isSquare([1, 4, 9, 16, 25, 36]));
+// function isSquare(arr) {
+// 	if (arr.length === 0) {
+// 		return undefined;
+// 	}
+// 	const newArr = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		newArr.push(Math.sqrt(arr[i]));
+// 		if (!Number.isInteger(newArr[i])) {
+// 			return false;
+// 		}
+// 	}
+// 	return true;
+// }
+// // console.log(isSquare([1, 4, 9, 16, 25, 36]));
 // console.log(
 // 	input([
 // 		['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
@@ -474,27 +474,52 @@ function isSquare(arr) {
 
 // console.log(nthSmallest([-102, -16, -1, -2, -367,8,11, -9], 5)); //, -2)
 
-function minSum(arr) {
-	const sortArr = arr.sort((a, b) => a - b);
-	let result = 0;
-	for (let i = 0; sortArr.length; i++) {
-		console.log('min: sort', sortArr[0]);
-		console.log('max: sort', sortArr[sortArr.length - 1]);
-		result += sortArr[0] * sortArr[sortArr.length - 1];
-		sortArr.pop();
-		sortArr.shift();
-	}
-	console.log(result);
-	return result;
+// function minSum(arr) {
+// 	const sortArr = arr.sort((a, b) => a - b);
+// 	let result = 0;
+// 	for (let i = 0; sortArr.length; i++) {
+// 		console.log('min: sort', sortArr[0]);
+// 		console.log('max: sort', sortArr[sortArr.length - 1]);
+// 		result += sortArr[0] * sortArr[sortArr.length - 1];
+// 		sortArr.pop();
+// 		sortArr.shift();
+// 	}
+// 	console.log(result);
+// 	return result;
+// }
+
+// function minSum2(arr) {
+// 	let res = 0;
+// 	const sorted = arr.sort((a, b) => a - b);
+// 	for (let i = 0; i < sorted.length / 2; i++) {
+// 		res += sorted[0] * sorted[sorted.length - (i + 1)];
+// 	}
+// 	return res;
+// }
+
+// console.log(minSum([12, 6, 10, 26, 3, 24])); //, 342));
+function boredom(staff) {
+	console.log('staff::::::::',staff);
+	const bored = {
+		accounts: 1,
+		finance: 2,
+		canteen: 10,
+		regulation: 3,
+		trading: 6,
+		change: 6,
+		IS: 8,
+		retail: 5,
+		cleaning: 4,
+		'pissing about': 25,
+	};
+	let count = 0;
+	console.log(Object.entries(staff).reduce((acc, cur) => console.log('Test::::',cur[1])))
 }
 
-function minSum2(arr) {
-	let res = 0;
-	const sorted = arr.sort((a, b) => a - b);
-	for (let i = 0; i < sorted.length / 2; i++) {
-		res += sorted[0] * sorted[sorted.length - (i + 1)];
-	}
-	return res;
-}
-
-console.log(minSum([12, 6, 10, 26, 3, 24])); //, 342));
+console.log(boredom({
+	tim: 'IS',jim: 'finance',
+	randy: 'pissing about',sandy: 'cleaning',andy: 'cleaning',
+	katie: 'cleaning',laura: 'pissing about',saajid: 'regulation',
+	alex: 'regulation',john: 'accounts',mr: 'canteen'
+}))
+	// 'i can handle this')
